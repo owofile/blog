@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="owofile">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/11/18/git/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git的基础使用">
+<meta property="og:url" content="http://example.com/2023/11/18/Git/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2023-11-17T23:05:36.000Z">
+<meta property="article:modified_time" content="2025-04-11T13:18:26.050Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Git的基础使用 | owofile&#39;blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"无论在哪 人与人都是相互连接的","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                owofile&#39;blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">53</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Git的基础使用</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/redefine-avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">owofile</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-18 07:05:36</span>
+        <span class="mobile">2023-11-18 07:05:36</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-11 21:18:26</span>
+            <span class="mobile">2025-04-11 21:18:26</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Git/">Git</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="Git的基础使用"><a href="#Git的基础使用" class="headerlink" title="Git的基础使用"></a>Git的基础使用</h1><p>以下是关于Git中几个区域及其作用的表格，包括暂存区、工作区、本地仓库和远程仓库：</p>
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>暂存区（Stage&#x2F;Index）</td>
+<td>用于暂存待提交的更改。通过<code>git add</code>命令将文件添加到暂存区，可以将其标记为待提交的更改。</td>
+</tr>
+<tr>
+<td>工作区（Working Directory）</td>
+<td>用户在本地计算机上实际看到的目录和文件。工作区是Git仓库的根目录，其中包含所有版本控制下的文件。</td>
+</tr>
+<tr>
+<td>本地仓库（Local Repository）</td>
+<td>存储在用户计算机上的实际Git仓库。它包含所有提交的历史记录、分支、标签等信息。</td>
+</tr>
+<tr>
+<td>远程仓库（Remote Repository）</td>
+<td>存储在远程服务器上的Git仓库。通常用于与他人共享代码或备份代码。可以通过<code>git push</code>命令将本地仓库的更改推送到远程仓库。</td>
+</tr>
+</tbody></table>
+<p>这些区域在Git中扮演着不同的角色，它们协同工作以实现版本控制和协作。通过使用暂存区，用户可以临时保存多个版本的更改，并在准备好提交时将它们一起提交到本地仓库。工作区是用户实际看到和操作的文件和目录，而本地仓库则存储了整个Git仓库的历史记录和元数据。远程仓库用于与他人共享代码或备份代码，可以通过<code>git push</code>命令将本地仓库的更改推送到远程仓库。</p>
+<ol>
+<li><strong>工作区</strong>：从Git版本库解包出来的实际可编辑的文件，放在磁盘上供我们使用或修改，即我们能直接看到的项目目录。</li>
+<li><strong>暂存区</strong>：是一个文件，实际位于.git&#x2F;index，所以把暂存区也叫做索引（Index），保存了下次将要提交的文件列表信息。通过执行<code>git add</code>命令将工作区中的文件添加到暂存区。</li>
+<li><strong>本地仓库</strong>：存储在用户计算机上的实际Git仓库，包含所有提交的历史记录、分支、标签等信息。执行<code>git commit</code>命令将暂存区的文件提交到本地仓库。</li>
+<li><strong>远程仓库</strong>：存储在远程服务器上的Git仓库，通常用于与他人共享代码或备份代码。通过执行<code>git push</code>命令将本地仓库的更改推送到远程仓库。</li>
+</ol>
+<p>命令:</p>
+<p>克隆 远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span></span><br></pre></td></tr></table></figure>
+
+<p>检查本地仓库状态</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>将工作区的修改添加到暂存区</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将暂存区的修改提交到本地仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &lt;msg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将本地仓库提交到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>查看日志</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>tip:输入q退出</p>
+<p>查看提交记录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>tip:使用此方式查看的文件Id比较短</p>
+<p>编写：</p>
+<p>在工作区撤销指定文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>从暂存区撤销到工作区</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset <span class="built_in">head</span> .</span><br></pre></td></tr></table></figure>
+
+<p>tip:当你已经将代码add 到暂存区的时候 你想要撤回先要将代码从暂存区撤销回工作区 才能使用checkout撤销文件做出修改</p>
+<p>从本地仓库撤销已提交消息</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard</span><br></pre></td></tr></table></figure>
+
+<p>假设您有一个 Git 仓库，里面包含了一些提交记录，并且当前分支位于最新的提交上。现在，假设您误提交了一些代码并且想撤回这个提交。</p>
+<p>您可以使用 <code>git log</code> 命令查看提交记录，找到您想要撤回的提交的哈希值或引用，然后运行 <code>git reset --hard &lt;commit-hash&gt;</code> 命令撤回提交。在这个例子中，假设您要撤回最后一个提交，可以使用 <code>git reset --hard HEAD~1</code> 命令。</p>
+<p>这个命令的效果是将工作目录和索引恢复到上一个提交状态，并且丢弃所有在重置点之后进行的修改。任何未提交的更改都会被丢弃。</p>
+<p>回到之前的版本</p>
+<p>首先，使用 <code>git reflog</code> 命令可以查看提交历史记录以及每次操作对应的哈希值。这可以帮助你找到需要回退到的特定提交。接下来，你可以使用 <code>git revert --no-edit &lt;hash&gt;</code> 命令来撤销指定提交的更改，但不会打开编辑器以供编辑提交信息。</p>
+<p>例如，假设要回退到哈希值为 <code>&lt;hash&gt;</code> 的提交，你可以执行以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert --no-edit &lt;<span class="built_in">hash</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这将会创建一个新的提交，内容是撤销了哈希值为 <code>&lt;hash&gt;</code> 的提交所引入的更改。该命令不会打开编辑器以进行提交信息的修改，而是使用默认的撤销提交信息。</p>
+<p>分支</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>git init</code></td>
+<td>初始化一个Git仓库</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>git branch</code></td>
+<td>查看当前分支列表</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>git branch &lt;branch-name&gt;</code></td>
+<td>创建一个新的分支，名为<code>&lt;branch-name&gt;</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>git checkout &lt;branch-name&gt;</code></td>
+<td>切换到新创建的分支，名为<code>&lt;branch-name&gt;</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>git merge &lt;branch-name&gt;</code></td>
+<td>将当前分支与指定的<code>&lt;branch-name&gt;</code>分支合并</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>git branch -d &lt;branch-name&gt;</code></td>
+<td>删除名为<code>&lt;branch-name&gt;</code>的分支（如果合并后的分支已被删除）</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>git branch -D &lt;branch-name&gt;</code></td>
+<td>强制删除名为<code>&lt;branch-name&gt;</code>的分支（即使合并未完成）</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>git push origin &lt;branch-name&gt;</code></td>
+<td>将名为<code>&lt;branch-name&gt;</code>的分支推送到远程仓库（如果已关联）</td>
+</tr>
+</tbody></table>
+<p>创建本地仓库和远程仓库然后链接仓库进行操作</p>
+<p>使用</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+<p>关联远程仓库</p>
+<p>强制拉取远程仓库的数据</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+
+<p>如果在强制拉取的时候报错则需要输入当前远程仓库名字和分支</p>
+<p>然后将本地仓库内容推送到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &lt;msg&gt;</span><br><span class="line"><span class="comment">#origin 是你链接远程仓库时设置的名称 master是你要推送的分支</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<p>tip:如果报错</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br><span class="line">fatal: The current branch master has no upstream branch.</span><br><span class="line">To push the current branch and <span class="built_in">set</span> the remote as upstream, use</span><br><span class="line">git push --set-upstream origin master</span><br><span class="line">To have this happen automatically <span class="keyword">for</span> branches without a tracking</span><br><span class="line">upstream, see <span class="string">&#x27;push.autoSetupRemote&#x27;</span> <span class="keyword">in</span> <span class="string">&#x27;git help config&#x27;</span>.</span><br></pre></td></tr></table></figure>
+
+<p>则是因为你没有设置你要推送的远程仓库名称和分支</p>
+<p>分支:</p>
+<p>不同的分支都是独立的，合并分支后才会统一，适合多线程操作</p>
+<p>创建分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;分支名称&gt; master</span><br></pre></td></tr></table></figure>
+
+<p>推送分支到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push - u origin &lt;分支名称&gt;</span><br></pre></td></tr></table></figure>
+
+<p>创建一个新分支到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;new branch name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>删除远程仓库的分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;old-branch-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>删除本地分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>查看分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>查看所有分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+
+<p>tip:如果你创建了但是没有显示分支，那么就切换你创建的分支再回到主分支就出现了</p>
+<p>切换分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;分支名称&gt;</span><br></pre></td></tr></table></figure>
+
+<p>合并分支</p>
+<p>git merge master</p>
+<p>如果想要将其他分支的内容合并到master那么按照以下流程操作</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge frr</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<p>或者直接</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>分支改名</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -m &lt;旧名字&gt; &lt;新名字&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h4 id="一-作用"><a href="#一-作用" class="headerlink" title="一.作用"></a>一.作用</h4><p>分布式版本控制工具,主要管理java源代码,xml文件,html页面,可以通过它进行 代码回溯,版本切换,多人协作,远程备份</p>
+<h4 id="二-git常用命令"><a href="#二-git常用命令" class="headerlink" title="二.git常用命令"></a>二.git常用命令</h4><ol>
+<li><p>全局设置</p>
+<p>当安装Git后首先要做的事情是设置用户名称和email地址。这是非常重要的，因为每次Git提交都会使用该用户信息。<br>在Git命令行中执行下面命令:<br>◆设置用户信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;zyw&quot;</span><br><span class="line">git config --global user.email &quot;1024655706@qq.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>◆查看配置信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+<p>注意:上面设置的user.name和user.email并不是我们在注册码云账号时使用的用户名和邮箱，此处可以任意设置。</p>
+</li>
+<li><p>获取git仓库</p>
+<ol>
+<li>在本地初始化仓库 git init(不常用)</li>
+<li>拉去远程仓库(常用)</li>
+</ol>
+</li>
+<li><p>git基本概念</p>
+<ol>
+<li>版本库 git文件包含配置信息,日志信息,文件信息.</li>
+<li>工作区包含git文件的目录存放开发代码<ul>
+<li>untracked未跟踪(未被纳入版本控制) 创建完文件没有执行git add *</li>
+<li>tracked已跟踪(被纳入版本控制)<ol>
+<li>unmodified 未修改状态</li>
+<li>Modified 已修改状态</li>
+<li>staged 已暂存状态</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>暂存区.git目录中的index文件也叫stage</li>
+</ol>
+</li>
+<li><p>本地仓库操作命令</p>
+<ol>
+<li><p>git status 查看文件状态</p>
+</li>
+<li><p>git add 将文件存入暂存区</p>
+</li>
+<li><p>git reset 将暂存区的文件取消 或者切换到指定版本 git rest –hard</p>
+</li>
+<li><p>git commit 将暂存区的文件提交到 版本库</p>
+<p>ps:处理完冲突后提交报错 后面跟 -i</p>
+</li>
+<li><p>git log 查看日志</p>
+</li>
+</ol>
+</li>
+<li><p>远程仓库操作命令</p>
+<ol>
+<li><p>git remote -v 查看远程仓库</p>
+</li>
+<li><p>git remote add origin 添加远程仓库 将本地仓库和远程仓库进行关联</p>
+<p>ps: git pull origin master</p>
+<p>ps:关联后拉取远程仓库信息会报错,在拉取的后面添加–allow-unrelated-histories</p>
+</li>
+<li><p>git clone 从远程仓库克隆</p>
+</li>
+<li><p>git pull 从远程仓库拉取</p>
+</li>
+<li><p>git push 推送远程仓库</p>
+</li>
+</ol>
+</li>
+<li><p>分支操作命令</p>
+<ol>
+<li>git branch 查看分支 -r 远程分支 -a 远程分支和本地分支</li>
+<li>git branch [name] 创建分支</li>
+<li>git checkout [name] 切换分支</li>
+<li>git push [shortName] [name] 推送至远程仓库分支</li>
+<li>git merge [name] 合并分支</li>
+</ol>
+</li>
+<li><p>标签操作命令(版本)</p>
+<ol>
+<li>git tag 查看标签</li>
+<li>git tag [name] 创建标签</li>
+<li>git push [shortName] [name] 推送至远程仓库</li>
+<li>git checkout -b [branch] [name] 检出标签</li>
+</ol>
+</li>
+</ol>
+<h4 id="三-在idea中使用git"><a href="#三-在idea中使用git" class="headerlink" title="三.在idea中使用git"></a>三.在idea中使用git</h4><ol>
+<li><p>初始化仓库</p>
+<ol>
+<li>本地初始化仓库 去cvs中</li>
+<li>克隆远程仓库 去cvs中</li>
+</ol>
+</li>
+<li><p>按照图形化界面提交代码即可</p>
+</li>
+<li><p>如果是本地初始化仓库需要拉取 代码在进行提交</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Push rejected</span><br><span class="line">推拒</span><br><span class="line">Push to origin/master was rejected</span><br><span class="line">推到原点/主人被拒绝</span><br><span class="line">git pull origin master -–allow-unrelated-histories</span><br><span class="line">git push -u origin master -f</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Git的基础使用</li>
+        <li><strong>Author:</strong> owofile</li>
+        <li><strong>Created at
+                :</strong> 2023-11-18 07:05:36</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-04-11 21:18:26
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/11/18/Git/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Git/">#Git</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/12/11/python/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">python学习笔记</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2023/10/13/Web/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Web学习笔记</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">Git的基础使用</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="nav-text">Git的基础使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-text">git</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">owofile</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        78 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

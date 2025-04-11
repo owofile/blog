@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="owofile">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/08/10/python爬虫学习笔记/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫学习笔记">
+<meta property="og:url" content="http://example.com/2024/08/10/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-08-10T06:16:54.000Z">
+<meta property="article:modified_time" content="2025-04-11T13:18:27.391Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            python爬虫学习笔记 | owofile&#39;blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"无论在哪 人与人都是相互连接的","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                owofile&#39;blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">53</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">python爬虫学习笔记</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/redefine-avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">owofile</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-08-10 14:16:54</span>
+        <span class="mobile">2024-08-10 14:16:54</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-11 21:18:27</span>
+            <span class="mobile">2025-04-11 21:18:27</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/python/">python</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="python爬虫学习笔记"><a href="#python爬虫学习笔记" class="headerlink" title="python爬虫学习笔记"></a>python爬虫学习笔记</h1><p>我记得当初刚接触编程的时候，就想要学习爬虫，因为那时候我对自己的定位是偏向黑客方面的23333，感觉很酷，但当时连一门编程语言都没有搞明白，所以也学的一塌糊涂。</p>
+<p>这也说明了学习顺序的重要性，还记得之前学渗透的时候，提前搞明白了通信原理，学习的速度快了很多，反之则迟迟无法理解。</p>
+<p>回到主题，这次我学习的是python爬虫。为什么选择python，因为python提供了很多的包，这让我们实现功能更加的方便，当然你也可以使用JAVA，C等去写，但对于新手而言，我还是推荐python，同时Python 提供了多线程和异步编程的支持，可以提高爬虫的效率，在抓取大量数据时尤为重要。</p>
+<h2 id="什么是爬虫"><a href="#什么是爬虫" class="headerlink" title="什么是爬虫"></a>什么是爬虫</h2><p><strong>爬虫（Web Crawler）</strong> 是一种自动访问互联网并提取特定信息的程序或脚本。它通过模拟浏览器行为，访问网页并获取数据。</p>
+<p>主要功能：</p>
+<ol>
+<li>数据采集：从网站上收集文本、图片等信息，广泛应用于市场研究、数据分析等领域。</li>
+<li>搜索引擎索引：搜索引擎使用爬虫来抓取和索引网页，以便提供相关的搜索结果。</li>
+<li>内容监控：监测特定网站的更新，如价格变化、新闻发布等。</li>
+<li>机器学习数据准备：为模型训练收集大量数据。</li>
+</ol>
+<p>工作原理：</p>
+<ol>
+<li>初始化：从一个或多个种子 URL 开始。</li>
+<li>发送请求：向种子 URL 发送 HTTP 请求以获取网页内容。</li>
+<li>解析数据：解析 HTML 文档，提取所需的信息。</li>
+<li>存储数据：将提取的数据保存到数据库或文件中。</li>
+<li>提取新链接：从当前网页中提取新的链接，并加入待爬取列表。</li>
+<li>循环执行：重复上述步骤，直到满足停止条件。</li>
+</ol>
+<p>注意事项：</p>
+<ul>
+<li>遵循法律法规及网站的 <code>robots.txt</code> 文件规则。</li>
+<li>控制爬取频率，避免对目标网站造成影响。</li>
+</ul>
+<h2 id="爬取百度主页"><a href="#爬取百度主页" class="headerlink" title="爬取百度主页"></a>爬取百度主页</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导包</span></span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="comment"># 设置网站路径</span></span><br><span class="line">url = <span class="string">&quot;http://www.baidu.com&quot;</span></span><br><span class="line"><span class="comment"># 打开网站并返回结果</span></span><br><span class="line">resp = urlopen(url)</span><br><span class="line">html\_<span class="built_in">str</span> = resp.read().decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"><span class="comment"># 编写一个正则表达式来匹配card\_title的值</span></span><br><span class="line"><span class="comment"># 假设card\_title总是以&quot;card\_title&quot;: &quot;开始并以&quot;结尾</span></span><br><span class="line">pattern = <span class="string">r&#x27;&quot;card\_title&quot;: &quot;(.\*?)&quot;&#x27;</span></span><br><span class="line"><span class="comment"># 使用re.findall查找所有匹配的card\_title</span></span><br><span class="line">card\_titles = re.findall(pattern, html\_<span class="built_in">str</span>, re.DOTALL)</span><br><span class="line"><span class="comment"># 打印所有找到的card\_title</span></span><br><span class="line"><span class="keyword">for</span> title <span class="keyword">in</span> card\_titles:</span><br><span class="line"><span class="built_in">print</span>(title)</span><br></pre></td></tr></table></figure>
+
+<p>这段代码实现了爬取baidu.com的页面，然后获取主页的新闻标题并且打印在控制台</p>
+<h3 id="代码解释"><a href="#代码解释" class="headerlink" title="代码解释"></a>代码解释</h3><p>可以看到开头我导入了两个包，分别是urlopen 和 re，第一个包名字就很直观，打开url，因为我们只需要urlopen，所以可以看到from 来自 urllib.request 的 urlopen被我们单独拿出来导入了项目里。</p>
+<p>而 re 是为了快速找到我们需要的字符串，通过re.findall方法按规则输入好相关参数就可以提取出来内容。</p>
+<p>要注意的是，使用urlopen方法返回的结果如果是乱码，那就需要根据网页的编码设置去设置，不然是无法显示中文的，比如这里的baidu.com是utf-8，所以我们要调用阅读的方法然后设置好编码后再次返回结果，这次返回的就是整个正常的网页源代码。</p>
+<h2 id="Web请求过程刨析"><a href="#Web请求过程刨析" class="headerlink" title="Web请求过程刨析"></a>Web请求过程刨析</h2><p>现在的网站大体分为两种，静态网站和动态网站，顾名思义，静态网站的一些信息（如文本、图像等）直接包含在网页的 HTML 代码中，访问网页时能直接看到，而动态网站有些数据则需要在网页加载后通过 JavaScript 进行请求，这部分数据不会出现在源代码中。</p>
+<p>所以想要获取到动态网站的数据，我们要理解其原理。</p>
+<h3 id="网页数据提取原理"><a href="#网页数据提取原理" class="headerlink" title="网页数据提取原理"></a>网页数据提取原理</h3><p>在现代网页中，有些数据不是直接嵌入到 HTML 源代码中的，而是通过 JavaScript 进行动态加载。这些数据通常来自于额外的 API 请求。以下是这一过程的基本原理：</p>
+<h4 id="1-网页结构"><a href="#1-网页结构" class="headerlink" title="1. 网页结构"></a>1. <strong>网页结构</strong></h4><ul>
+<li><strong>静态内容</strong>：一些信息（如文本、图像等）直接包含在网页的 HTML 代码中，访问网页时能直接看到。</li>
+<li><strong>动态内容</strong>：有些数据则需要在网页加载后通过 JavaScript 进行请求，这部分数据不会出现在源代码中。</li>
+</ul>
+<h4 id="2-如何加载数据"><a href="#2-如何加载数据" class="headerlink" title="2. 如何加载数据"></a>2. <strong>如何加载数据</strong></h4><p>当用户打开网页时，浏览器会：</p>
+<ul>
+<li>加载 HTML 文件。</li>
+<li>解析 HTML 中的 JavaScript 代码，执行其中的 AJAX 或 Fetch 请求，以从服务器获取更多数据。</li>
+<li>将这些数据插入到网页中，更新页面的内容。</li>
+</ul>
+<h4 id="3-数据请求"><a href="#3-数据请求" class="headerlink" title="3. 数据请求"></a>3. <strong>数据请求</strong></h4><ul>
+<li><strong>API 请求</strong>：网页通常会向特定的 URL 发送 HTTP 请求（例如 GET 或 POST），并从服务器获取 JSON 或 XML 格式的数据。这些请求可以在浏览器的开发者工具中查看。</li>
+</ul>
+<h4 id="4-如何抓取这种数据"><a href="#4-如何抓取这种数据" class="headerlink" title="4. 如何抓取这种数据"></a>4. <strong>如何抓取这种数据</strong></h4><p>要获取这些动态加载的数据，可以按照以下步骤操作：</p>
+<ol>
+<li><strong>使用开发者工具</strong>：<ul>
+<li>在浏览器中打开目标网页，右键点击元素并选择“检查”。</li>
+<li>切换到“网络”（Network）选项卡。</li>
+<li>刷新页面并观察所有的网络请求，找到返回所需数据的请求（通常是以 <code>JSON</code> 格式返回的数据）。</li>
+</ul>
+</li>
+<li><strong>获取请求信息</strong>：<ul>
+<li>查看请求的 URL 和所需的头部信息（Headers）。</li>
+<li>确认请求方法（GET 或 POST）和请求参数（如果有的话）。</li>
+</ul>
+</li>
+<li><strong>编写爬虫代码</strong>：<ul>
+<li>使用像 <code>Requests</code> 库发送相同的请求，从而获取并处理响应中的数据。</li>
+</ul>
+</li>
+</ol>
+<h2 id="AJAX-请求及原理简介"><a href="#AJAX-请求及原理简介" class="headerlink" title="AJAX 请求及原理简介"></a>AJAX 请求及原理简介</h2><p>因为我之前学过Web网站部署，所以理解前端和后端的通信原理，如果要学习python爬虫，理解网站请求的原理很重要。</p>
+<h3 id="什么是AJAX？"><a href="#什么是AJAX？" class="headerlink" title="什么是AJAX？"></a>什么是AJAX？</h3><ul>
+<li><strong>AJAX</strong>（Asynchronous JavaScript and XML）是一种用于在不重新加载整个页面的情况下，与服务器异步通信的技术。</li>
+<li>它允许网页动态更新内容，提升用户体验。</li>
+</ul>
+<h3 id="AJAX-的工作原理"><a href="#AJAX-的工作原理" class="headerlink" title="AJAX 的工作原理"></a>AJAX 的工作原理</h3><ol>
+<li><strong>用户操作</strong>：用户在网页上执行某个操作（例如点击按钮）。</li>
+<li>发送请求：<ul>
+<li>使用JavaScript创建一个AJAX请求。</li>
+<li>选择HTTP请求方法（如GET或POST），并设置请求的URL和参数。</li>
+</ul>
+</li>
+<li>后台通信：<ul>
+<li>AJAX请求被发送到服务器，服务器处理请求并返回数据（通常为JSON、XML或HTML格式）。</li>
+</ul>
+</li>
+<li>接收响应：<ul>
+<li>页面通过JavaScript接收到服务器的响应。</li>
+</ul>
+</li>
+<li>更新页面：<ul>
+<li>根据服务器返回的数据，动态更新网页的部分内容，而无需刷新整个页面。</li>
+</ul>
+</li>
+</ol>
+<h3 id="请求类型"><a href="#请求类型" class="headerlink" title="请求类型"></a>请求类型</h3><ul>
+<li><strong>GET</strong>：用于从服务器请求数据，参数通过URL传递。</li>
+<li><strong>POST</strong>：用于向服务器发送数据，数据包含在请求体中，适合表单提交等操作。</li>
+</ul>
+<h3 id="主要优点"><a href="#主要优点" class="headerlink" title="主要优点"></a>主要优点</h3><ul>
+<li>提升用户体验：页面不需要完全刷新。</li>
+<li>减少带宽消耗：仅请求必要的数据。</li>
+<li>更快的交互：实现实时更新。</li>
+</ul>
+<h3 id="简单示例代码"><a href="#简单示例代码" class="headerlink" title="简单示例代码"></a>简单示例代码</h3><p>以下是一个简单的AJAX请求示例，使用jQuery库：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line"><span class="attr">url</span>: <span class="string">&#x27;server-endpoint&#x27;</span>, <span class="comment">// 服务器地址</span></span><br><span class="line"><span class="attr">type</span>: <span class="string">&#x27;GET&#x27;</span>, <span class="comment">// 请求方式（GET/POST）</span></span><br><span class="line"><span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">response</span>) &#123;</span><br><span class="line"><span class="comment">// 成功接收响应后执行的代码</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(response);</span><br><span class="line">$(<span class="string">&#x27;#result&#x27;</span>).<span class="title function_">html</span>(response); <span class="comment">// 更新页面内容</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">error</span>: <span class="keyword">function</span>(<span class="params">error</span>) &#123;</span><br><span class="line"><span class="comment">// 处理错误</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败:&#x27;</span>, error);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Requests入门"><a href="#Requests入门" class="headerlink" title="Requests入门"></a>Requests入门</h2><p><code>Requests</code> 是一个用于发送 HTTP 请求的 Python 库，它提供了一个简单而直观的 API，方便开发者与 Web 进行交互。以下是对 <code>Requests</code> 的简单介绍，包括其特点和一些基本用法。</p>
+<h3 id="Requests-简介"><a href="#Requests-简介" class="headerlink" title="Requests 简介"></a>Requests 简介</h3><ul>
+<li><strong>易于使用</strong>：<code>Requests</code> 库的设计旨在简化 HTTP 请求的过程，使得用户能够以极少的代码完成复杂的请求操作。</li>
+<li><strong>支持各种 HTTP 方法</strong>：包括 <code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code>、<code>HEAD</code> 等。</li>
+<li><strong>自动处理 Cookies</strong>：能够轻松管理会话中的 Cookies。</li>
+<li><strong>支持 URL 参数和表单数据</strong>：可以很方便地将参数附加到 URL 上或通过表单提交。</li>
+<li><strong>响应对象</strong>：提供丰富的响应对象，包括状态码、响应内容、头信息等，方便获取和解析服务器返回的信息。</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>要使用 <code>Requests</code>，首先需要安装它。可以使用 pip 来安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+
+<p>在国内可能因为因为网络波动出现安装失败，可以通过切换镜像源或者临时使用镜像源来下载</p>
+<p>推荐使用清华镜像源：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">清华镜像源网站</a></p>
+<p>我使用临时下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple requests</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>以下是一些常见操作的示例：</p>
+<h4 id="1-发送-GET-请求"><a href="#1-发送-GET-请求" class="headerlink" title="1. 发送 GET 请求"></a>1. 发送 GET 请求</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="string">&#x27;https://api.example.com/data&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.status\_code) <span class="comment"># 输出状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.json()) <span class="comment"># 如果响应是 JSON 格式，可以直接解析为字典</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-发送-POST-请求"><a href="#2-发送-POST-请求" class="headerlink" title="2. 发送 POST 请求"></a>2. 发送 POST 请求</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">data = &#123;</span><br><span class="line"><span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;age&#x27;</span>: <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line">response = requests.post(<span class="string">&#x27;https://api.example.com/users&#x27;</span>, json=data)</span><br><span class="line"><span class="built_in">print</span>(response.status\_code)</span><br><span class="line"><span class="built_in">print</span>(response.text) <span class="comment"># 输出响应内容</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-添加-URL-参数"><a href="#3-添加-URL-参数" class="headerlink" title="3. 添加 URL 参数"></a>3. 添加 URL 参数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">params = &#123;<span class="string">&#x27;id&#x27;</span>: <span class="number">123</span>&#125;</span><br><span class="line">response = requests.get(<span class="string">&#x27;https://api.example.com/users&#x27;</span>, params=params)</span><br><span class="line"><span class="built_in">print</span>(response.url) <span class="comment"># 输出完整的请求 URL</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-处理-Cookies"><a href="#4-处理-Cookies" class="headerlink" title="4. 处理 Cookies"></a>4. 处理 Cookies</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">session = requests.Session() <span class="comment"># 创建会话对象</span></span><br><span class="line">response = session.get(<span class="string">&#x27;https://api.example.com/login&#x27;</span>)</span><br><span class="line"><span class="comment"># 系统会自动处理 Cookies</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-错误处理"><a href="#5-错误处理" class="headerlink" title="5. 错误处理"></a>5. 错误处理</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">response = requests.get(<span class="string">&#x27;https://api.example.com/data&#x27;</span>)</span><br><span class="line">response.<span class="keyword">raise</span>\_<span class="keyword">for</span>\_status() <span class="comment"># 检查响应是否成功，若不成功则引发异常</span></span><br><span class="line"><span class="keyword">except</span> requests.exceptions.HTTPError <span class="keyword">as</span> err:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;HTTP error occurred: <span class="subst">&#123;err&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> err:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;An error occurred: <span class="subst">&#123;err&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="爬取百度请求网页"><a href="#爬取百度请求网页" class="headerlink" title="爬取百度请求网页"></a>爬取百度请求网页</h3><p>使用Requests请求爬取自定义的数据，原理为正常状态下我们打开百度然后输入查询的内容，返回网页数据，在这个过程中，点击百度按钮后，浏览器发送get请求附带查询的内容，得到返回结果，在使用Requests的情况下，我们通过提前定义好url和查询内容的变量，使用方法requests.get()，进行模拟浏览器请求。</p>
+<p>然后返回结果，分拣出我们想要的数据。</p>
+<p>代码展示:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment">#导入req lib</span></span><br><span class="line"><span class="comment">#定义Url 当然你可以使用input去更加自由的检索想要的数据</span></span><br><span class="line">url = <span class="string">&quot;https://www.baidu.com/s?wd=阿梓&quot;</span></span><br><span class="line"><span class="comment">#请求头 加入了设备的信息值后，能返回想要的数据，否则可能没办法获取成功</span></span><br><span class="line">headers = &#123;</span><br><span class="line"><span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#调用req的get方法并且填写相关参数 这里是rul路径 和 headers请求头</span></span><br><span class="line">resp = requests.get(url,headers=headers)</span><br><span class="line"><span class="comment">#打印到控制台，如果需要也可以保存在本地</span></span><br><span class="line"><span class="built_in">print</span>(resp.text)</span><br></pre></td></tr></table></figure>
+
+<p>我每次学习代码都习惯性的会加入自己的理解，比如我认为这一段代码实际上是一个功能，为了更加方便的调用这个功能，可以将它写成一个方法，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fetch</span>\_data\_<span class="keyword">from</span>\_baidu(search\_term):</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">从百度获取搜索结果的 HTML 内容。</span></span><br><span class="line"><span class="string">:param search\_term: 要搜索的关键词</span></span><br><span class="line"><span class="string">:return: 搜索结果的 HTML 内容</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 定义 URL，使用提供的搜索词进行格式化</span></span><br><span class="line">url = <span class="string">f&quot;https://www.baidu.com/s?wd=<span class="subst">&#123;search\_term&#125;</span>&quot;</span></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = &#123;</span><br><span class="line"><span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 发起 GET 请求</span></span><br><span class="line">resp = requests.get(url, headers=headers)</span><br><span class="line"><span class="comment"># 检查请求是否成功</span></span><br><span class="line"><span class="keyword">if</span> resp.status\_code == <span class="number">200</span>:</span><br><span class="line"><span class="keyword">return</span> resp.text <span class="comment"># 返回 HTML 内容</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;请求失败，状态码：<span class="subst">&#123;resp.status\_code&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">return</span> <span class="literal">None</span> <span class="comment"># 如果请求失败返回 None</span></span><br><span class="line"><span class="comment"># 使用该方法，输入想要搜索的关键词</span></span><br><span class="line"><span class="comment">#主程序执行</span></span><br><span class="line"><span class="keyword">if</span> \_\_name\_\_ == <span class="string">&quot;\_\_main\_\_&quot;</span>:</span><br><span class="line">term = <span class="string">&quot;阿梓&quot;</span> <span class="comment"># 或者通过 input() 获取用户输入</span></span><br><span class="line">html\_content = fetch\_data\_<span class="keyword">from</span>\_baidu(term)</span><br><span class="line"><span class="keyword">if</span> html\_content:</span><br><span class="line"><span class="built_in">print</span>(html\_content) <span class="comment"># 打印返回的 HTML 内容</span></span><br></pre></td></tr></table></figure>
+
+<p>这样完善后，更加坚固，同时增加了报错的处理。</p>
+<p>另外也可以将这个脚本功能写多个方法，然后通过导包就可以导入在其他脚本里调用方法了。这就是python的模块化编程，允许将功能分隔到不同的文件中便于管理和重用。</p>
+<p>这里想到了，所以顺便提一嘴。</p>
+<h2 id="增加参数的请求"><a href="#增加参数的请求" class="headerlink" title="增加参数的请求"></a>增加参数的请求</h2><p>上一个案例增加了headers请求头，这是为了避免一些反爬的措施，初次之外，很多时候，我们使用get请求都需要增加参数，比如搜索的结果，页数，本质上都是传递参数，返回JSON结果，在做数据分析和筛选。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&#x27;https://api.example.com/search&#x27;</span></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = &#123;</span><br><span class="line"><span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Accept-Language&#x27;</span>: <span class="string">&#x27;en-US,en;q=0.9&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 查询参数</span></span><br><span class="line">params = &#123;</span><br><span class="line"><span class="string">&#x27;q&#x27;</span>: <span class="string">&#x27;Python&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;page&#x27;</span>: <span class="number">1</span>,</span><br><span class="line"><span class="string">&#x27;size&#x27;</span>: <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line">response = requests.get(url, headers=headers, params=params)</span><br><span class="line"><span class="comment">#记得关闭resp,否则容易堵塞</span></span><br><span class="line">resp.close()</span><br><span class="line"><span class="comment"># 打印请求的 URL、状态码和响应内容</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;请求的 URL: <span class="subst">&#123;response.url&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;状态码: <span class="subst">&#123;response.status\_code&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.json())</span><br></pre></td></tr></table></figure>
+
+<p>这次的案例是我使用chatgpt生成的，仅作为理解使用，可以看到请求的时候增加了params和headers。</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> python爬虫学习笔记</li>
+        <li><strong>Author:</strong> owofile</li>
+        <li><strong>Created at
+                :</strong> 2024-08-10 14:16:54</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-04-11 21:18:27
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/08/10/python爬虫学习笔记/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/python/">#python</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E7%88%AC%E8%99%AB/">#爬虫</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2024/08/21/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%B7%A7%E6%80%9D/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">游戏设计的巧思</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/07/13/%E8%B5%8C%E5%BE%92%E7%9A%84%E5%BF%83%E7%90%86/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">赌徒的心理</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">python爬虫学习笔记</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">python爬虫学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%88%AC%E8%99%AB"><span class="nav-text">什么是爬虫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%88%AC%E5%8F%96%E7%99%BE%E5%BA%A6%E4%B8%BB%E9%A1%B5"><span class="nav-text">爬取百度主页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A"><span class="nav-text">代码解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B%E5%88%A8%E6%9E%90"><span class="nav-text">Web请求过程刨析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%8E%9F%E7%90%86"><span class="nav-text">网页数据提取原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX-%E8%AF%B7%E6%B1%82%E5%8F%8A%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B"><span class="nav-text">AJAX 请求及原理简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFAJAX%EF%BC%9F"><span class="nav-text">什么是AJAX？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-text">AJAX 的工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B"><span class="nav-text">请求类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E4%BC%98%E7%82%B9"><span class="nav-text">主要优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="nav-text">简单示例代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requests%E5%85%A5%E9%97%A8"><span class="nav-text">Requests入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Requests-%E7%AE%80%E4%BB%8B"><span class="nav-text">Requests 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%AC%E5%8F%96%E7%99%BE%E5%BA%A6%E8%AF%B7%E6%B1%82%E7%BD%91%E9%A1%B5"><span class="nav-text">爬取百度请求网页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E5%8F%82%E6%95%B0%E7%9A%84%E8%AF%B7%E6%B1%82"><span class="nav-text">增加参数的请求</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">owofile</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        78 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="owofile">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/09/22/archlinux基础命令/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArchLinux基础命令">
+<meta property="og:url" content="http://example.com/2024/09/22/ArchLinux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-09-22T11:13:11.000Z">
+<meta property="article:modified_time" content="2025-04-11T13:18:27.501Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            ArchLinux基础命令 | owofile&#39;blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"无论在哪 人与人都是相互连接的","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                owofile&#39;blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">53</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">ArchLinux基础命令</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/redefine-avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">owofile</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-09-22 19:13:11</span>
+        <span class="mobile">2024-09-22 19:13:11</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-11 21:18:27</span>
+            <span class="mobile">2025-04-11 21:18:27</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="ArchLinux基础命令"><a href="#ArchLinux基础命令" class="headerlink" title="ArchLinux基础命令"></a>ArchLinux基础命令</h1><h2 id="Arch-Linux-简介"><a href="#Arch-Linux-简介" class="headerlink" title="Arch Linux 简介"></a>Arch Linux 简介</h2><p><strong>Arch Linux</strong> 是一个轻量级的、灵活的 Linux 发行版，以简洁性和KISS原则（Keep It Simple, Stupid）为设计理念。它主要面向高级用户，为他们提供了一个高度可定制的环境。Arch Linux 不仅适合那些希望深入理解 Linux 的用户，还鼓励用户根据自己的需求进行系统配置。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下载官方ios</p>
+<p><a target="_blank" rel="noopener" href="https://archlinux.org/download/">https://archlinux.org/download/</a></p>
+<p>下载完成后烧录到U盘,我使用的烧录软件是:balenaEtcher-Portable-1.18.11.exe</p>
+<p>烧录完成后，插入U盘，不同的电脑型号不同，我的是F8进入引导界面选择USB</p>
+<p>开始进入引导安装界面，这里提供两种方法安装，自定义安装和快速安装，这里演示快速安装</p>
+<p>首先使用iwctl进行连接wif</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br><span class="line">device list</span><br><span class="line">station wlan0 scan</span><br><span class="line">station wlan0 get-networks</span><br><span class="line">station wlan0 connect SSID</span><br><span class="line">exit</span><br><span class="line">archlinux install</span><br></pre></td></tr></table></figure>
+
+<p>输入 archlinux install后会自动下载一段时间，然后进入界面配置，配置完成后会自动进行安装，等待即可</p>
+<h3 id="系统更新"><a href="#系统更新" class="headerlink" title="系统更新"></a>系统更新</h3><ul>
+<li><p><code>pacman</code></p>
+<p>：Arch Linux 的包管理器，用于安装、卸载和管理软件包。</p>
+<ul>
+<li><p>更新系统：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -Syu</span><br></pre></td></tr></table></figure></li>
+<li><p>安装软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S package\_name</span><br></pre></td></tr></table></figure></li>
+<li><p>卸载软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -R package\_name</span><br></pre></td></tr></table></figure></li>
+<li><p>查找软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Ss keyword</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a>文件和目录操作</h3><ul>
+<li><p>**<code>ls</code>**：列出当前目录的文件和子目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l <span class="comment"># 详细列表</span></span><br><span class="line"><span class="built_in">ls</span> -a <span class="comment"># 包含隐藏文件</span></span><br></pre></td></tr></table></figure></li>
+<li><p>**<code>cd</code>**：改变当前目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/directory</span><br></pre></td></tr></table></figure></li>
+<li><p>**<code>pwd</code>**：显示当前工作目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></li>
+<li><p>**<code>mkdir</code>**：创建新目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> new\_directory</span><br></pre></td></tr></table></figure></li>
+<li><p>**<code>rm</code>**：删除文件或目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> file.txt <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -r directory\_name <span class="comment"># 递归删除目录</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Rofi来打开软件窗口"><a href="#Rofi来打开软件窗口" class="headerlink" title="Rofi来打开软件窗口"></a>Rofi来打开软件窗口</h3><p>在 Arch Linux 及其他 Linux 发行版中，<strong>Rofi</strong> 是一个非常流行的应用程序启动器和窗口管理器。它主要用于替代默认的 <code>dmenu</code>，并提供了一种更灵活、更用户友好的方式来访问应用程序、窗口和文件。</p>
+<h3 id="Rofi-的主要特点"><a href="#Rofi-的主要特点" class="headerlink" title="Rofi 的主要特点"></a>Rofi 的主要特点</h3><ol>
+<li><strong>应用程序启动器</strong>：Rofi 可以用来快速启动已安装的应用程序，非常适合那些喜欢键盘操作的用户。</li>
+<li><strong>窗口切换器</strong>：Rofi 可列出当前打开的窗口，让用户能够快速切换到所需的窗口。</li>
+<li><strong>自定义</strong>：Rofi 支持主题和配置文件，可以根据用户的需求进行高度定制，包括外观和行为。</li>
+<li><strong>快捷搜索</strong>：通过输入关键字，Rofi 可以快速过滤出匹配的应用程序或窗口，使得查找变得更加高效。</li>
+<li><strong>多种模式</strong>：Rofi 提供不同的模式，如运行模式、窗口模式、ssh 模式等，满足不同的使用场景。</li>
+<li><strong>可扩展性</strong>：用户可以扩展 Rofi 的功能，通过脚本或插件实现更多自定义功能。</li>
+</ol>
+<h3 id="如何安装-Rofi"><a href="#如何安装-Rofi" class="headerlink" title="如何安装 Rofi"></a>如何安装 Rofi</h3><p>在 Arch Linux 上，你可以通过 <code>pacman</code> 包管理器安装 Rofi：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S rofi</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>安装完成后，你可以通过在终端中输入 <code>rofi</code> 来启动它。例如，如果你想使用 Rofi 作为应用程序启动器，可以在终端中执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rofi -show run</span><br></pre></td></tr></table></figure>
+
+<p>这将打开 Rofi，并允许你输入要启动的应用程序名称。</p>
+<h3 id="Nano"><a href="#Nano" class="headerlink" title="Nano"></a>Nano</h3><h3 id="1-使用-Nano-编辑器"><a href="#1-使用-Nano-编辑器" class="headerlink" title="1. 使用 Nano 编辑器"></a>1. 使用 Nano 编辑器</h3><p><code>nano</code> 是一个简单易用的命令行文本编辑器。</p>
+<h4 id="安装-Nano（如果未安装）"><a href="#安装-Nano（如果未安装）" class="headerlink" title="安装 Nano（如果未安装）"></a>安装 Nano（如果未安装）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S nano</span><br></pre></td></tr></table></figure>
+
+<h4 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /path/to/your/file.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用箭头键移动光标。</li>
+<li>输入文本进行编辑。</li>
+<li>保存并退出：按 <code>Ctrl + O</code>，然后按 <code>Enter</code> 保存更改；按 <code>Ctrl + X</code> 退出。</li>
+</ul>
+<h3 id="Arch-Linux-目录结构说明"><a href="#Arch-Linux-目录结构说明" class="headerlink" title="Arch Linux 目录结构说明"></a>Arch Linux 目录结构说明</h3><p>Arch Linux 的目录结构遵循 UNIX 文件系统的标准，即 Filesystem Hierarchy Standard (FHS)。下面是 Arch Linux 各个主要目录的功能介绍，以帮助你更好地理解它们的作用。</p>
+<h4 id="1"><a href="#1" class="headerlink" title="1. /"></a>1. <code>/</code></h4><ul>
+<li>**根目录 (Root Directory)**，所有文件和目录的起始点。所有其他目录都位于此目录之下。</li>
+</ul>
+<h4 id="2-bin"><a href="#2-bin" class="headerlink" title="2. /bin"></a>2. <code>/bin</code></h4><ul>
+<li><strong>基本用户命令</strong>存放的地方，包含系统启动和修复所需的二进制可执行文件。例如：<code>ls</code>, <code>cp</code>, <code>mv</code> 等。</li>
+</ul>
+<h4 id="3-boot"><a href="#3-boot" class="headerlink" title="3. /boot"></a>3. <code>/boot</code></h4><ul>
+<li>存放启动加载器（如 GRUB）的文件及内核映像文件。例如：<code>vmlinuz-linux</code> 内核文件和启动加载器配置。</li>
+</ul>
+<h4 id="4-dev"><a href="#4-dev" class="headerlink" title="4. /dev"></a>4. <code>/dev</code></h4><ul>
+<li><strong>设备文件目录</strong>，Linux 系统中一切设备（如硬盘、光驱、USB 设备）都以文件的形式存在于此。例如：<code>/dev/sda1</code> 代表一块硬盘分区。</li>
+</ul>
+<h4 id="5-etc"><a href="#5-etc" class="headerlink" title="5. /etc"></a>5. <code>/etc</code></h4><ul>
+<li><p>系统配置文件目录</p>
+<p>。该目录包含系统的各种配置文件，例如：网络配置、用户账户、守护进程启动配置等。</p>
+<ul>
+<li>常见配置文件：<code>/etc/fstab</code> (文件系统表)、<code>/etc/passwd</code> (用户账户信息)。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-home"><a href="#6-home" class="headerlink" title="6. /home"></a>6. <code>/home</code></h4><ul>
+<li><strong>用户主目录</strong>，每个普通用户在 <code>/home</code> 下都有自己独立的目录。例如：<code>/home/username</code> 是用户名为 <code>username</code> 的用户的主目录。</li>
+</ul>
+<h4 id="7-lib-和-lib64"><a href="#7-lib-和-lib64" class="headerlink" title="7. /lib 和 /lib64"></a>7. <code>/lib</code> 和 <code>/lib64</code></h4><ul>
+<li><strong>系统库文件</strong>存放目录，主要存储用于支持 <code>/bin</code> 和 <code>/sbin</code> 中的基本命令的共享库。</li>
+<li><code>/lib64</code> 目录专门为 64 位库文件设计。</li>
+</ul>
+<h4 id="8-media-和-mnt"><a href="#8-media-和-mnt" class="headerlink" title="8. /media 和 /mnt"></a>8. <code>/media</code> 和 <code>/mnt</code></h4><ul>
+<li><p>挂载点</p>
+<p>：</p>
+<ul>
+<li><code>/media</code> 目录通常用于自动挂载的设备，如 USB 设备或 CD&#x2F;DVD。</li>
+<li><code>/mnt</code> 通常用于临时挂载的文件系统。</li>
+</ul>
+</li>
+</ul>
+<h4 id="9-opt"><a href="#9-opt" class="headerlink" title="9. /opt"></a>9. <code>/opt</code></h4><ul>
+<li><strong>可选软件包目录</strong>，用于存放那些第三方软件的可选文件。一般是一些大型的、非标准的软件包。</li>
+</ul>
+<h4 id="10-proc"><a href="#10-proc" class="headerlink" title="10. /proc"></a>10. <code>/proc</code></h4><ul>
+<li><strong>内核和进程信息</strong>的虚拟文件系统，包含系统内核、进程、内存等信息。文件内容是动态生成的，例如：<code>/proc/cpuinfo</code> 包含 CPU 信息。</li>
+</ul>
+<h4 id="11-root"><a href="#11-root" class="headerlink" title="11. /root"></a>11. <code>/root</code></h4><ul>
+<li><strong>root 用户的主目录</strong>，超级用户的专属主目录，普通用户无权访问。</li>
+</ul>
+<h4 id="12-run"><a href="#12-run" class="headerlink" title="12. /run"></a>12. <code>/run</code></h4><ul>
+<li><strong>系统运行时的临时文件</strong>，用于存放系统进程启动时所需的临时文件和进程间的通信文件。</li>
+</ul>
+<h4 id="13-sbin"><a href="#13-sbin" class="headerlink" title="13. /sbin"></a>13. <code>/sbin</code></h4><ul>
+<li><strong>系统管理命令</strong>，类似于 <code>/bin</code>，但主要用于系统管理员执行的命令，例如：<code>reboot</code>, <code>shutdown</code> 等。</li>
+</ul>
+<h4 id="14-srv"><a href="#14-srv" class="headerlink" title="14. /srv"></a>14. <code>/srv</code></h4><ul>
+<li><strong>服务数据目录</strong>，用于存放由系统提供的服务（如 Web 服务器、FTP 服务器）的数据。例如：Web 服务器的文档根目录可能在 <code>/srv/http</code>。</li>
+</ul>
+<h4 id="15-sys"><a href="#15-sys" class="headerlink" title="15. /sys"></a>15. <code>/sys</code></h4><ul>
+<li><strong>系统设备的虚拟文件系统</strong>，类似于 <code>/proc</code>，用于反映设备与内核之间的关系。</li>
+</ul>
+<h4 id="16-tmp"><a href="#16-tmp" class="headerlink" title="16. /tmp"></a>16. <code>/tmp</code></h4><ul>
+<li><strong>临时文件目录</strong>，用于存储各种临时文件，系统和应用程序的临时文件通常都保存在此目录。系统重启时该目录会被清空。</li>
+</ul>
+<h4 id="17-usr"><a href="#17-usr" class="headerlink" title="17. /usr"></a>17. <code>/usr</code></h4><ul>
+<li><p>用户二级目录</p>
+<p>，包含系统程序和库文件的集合。它包括了多个子目录：</p>
+<ul>
+<li><code>/usr/bin</code>: 用户应用程序。</li>
+<li><code>/usr/sbin</code>: 系统管理程序。</li>
+<li><code>/usr/lib</code>: 应用程序的库文件。</li>
+<li><code>/usr/share</code>: 存放共享数据，如文档、手册等。</li>
+</ul>
+</li>
+</ul>
+<h4 id="18-var"><a href="#18-var" class="headerlink" title="18. /var"></a>18. <code>/var</code></h4><ul>
+<li><p>可变数据文件</p>
+<p>，如日志文件、缓存、软件包管理器的数据库等都会存储在此。例如：</p>
+<ul>
+<li><code>/var/log</code>: 系统日志文件。</li>
+<li><code>/var/cache</code>: 缓存文件。</li>
+<li><code>/var/lib</code>: 应用程序状态数据。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>这个目录结构遵循 Linux 的标准，并通过合理分配功能使系统更加模块化和易于管理。理解这些目录的功能有助于更好地使用和管理 Arch Linux 系统。</p>
+<h3 id="mv-命令的用法简介"><a href="#mv-命令的用法简介" class="headerlink" title="mv 命令的用法简介"></a><code>mv</code> 命令的用法简介</h3><p><code>mv</code> 命令是 Linux 系统中用于<strong>移动文件或目录</strong>，以及<strong>重命名文件或目录</strong>的命令。其基本语法如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> [选项] 源文件 目标位置</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-移动文件"><a href="#1-移动文件" class="headerlink" title="1. 移动文件"></a>1. <strong>移动文件</strong></h4><ul>
+<li><p>基本用法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> 源文件 目标目录</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>例子：将文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file.txt</span><br></pre></td></tr></table></figure>
+
+<p>移动到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure>
+
+<p>目录下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-重命名文件"><a href="#2-重命名文件" class="headerlink" title="2. 重命名文件"></a>2. <strong>重命名文件</strong></h4><ul>
+<li><p>基本用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv 旧文件名 新文件名</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>例子：将</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oldname.txt</span><br></pre></td></tr></table></figure>
+
+<p>重命名为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newname.txt</span><br></pre></td></tr></table></figure>
+
+<p>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> oldname.txt newname.txt</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="3-移动并重命名文件"><a href="#3-移动并重命名文件" class="headerlink" title="3. 移动并重命名文件"></a>3. <strong>移动并重命名文件</strong></h4><ul>
+<li><p>你可以同时移动和重命名文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> oldname.txt /home/user/newname.txt</span><br></pre></td></tr></table></figure>
+
+<p>该命令将</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oldname.txt</span><br></pre></td></tr></table></figure>
+
+<p>文件移动到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure>
+
+<p>目录并重命名为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newname.txt</span><br></pre></td></tr></table></figure>
+
+<p>。</p>
+</li>
+</ul>
+<h4 id="4-移动目录"><a href="#4-移动目录" class="headerlink" title="4. 移动目录"></a>4. <strong>移动目录</strong></h4><ul>
+<li><p>基本用法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> 源目录 目标目录</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>例子：将目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">folder1</span><br></pre></td></tr></table></figure>
+
+<p>移动到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure>
+
+<p>目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> folder1 /home/user/</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="5-常用选项"><a href="#5-常用选项" class="headerlink" title="5. 常用选项"></a>5. <strong>常用选项</strong></h4><ul>
+<li><p><code>-i</code>：<strong>提示覆盖</strong>。如果目标文件已存在，使用此选项将提示是否覆盖文件。</p>
+<ul>
+<li><p>例子：移动文件时提示是否覆盖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -i file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><code>-f</code>：<strong>强制覆盖</strong>。默认覆盖目标文件，不提示确认（<code>-f</code> 是默认行为）。</p>
+<ul>
+<li><p>例子：强制覆盖已存在的文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -f file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><code>-n</code>：<strong>不覆盖</strong>。如果目标文件已存在，不进行任何操作，也不会提示用户。</p>
+<ul>
+<li><p>例子：不覆盖已存在的文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -n file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><code>-v</code>：<strong>显示详细信息</strong>。显示每个移动或重命名操作的详细过程。</p>
+<ul>
+<li><p>例子：显示移动文件的详细信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -v file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="6-示例"><a href="#6-示例" class="headerlink" title="6. 示例"></a>6. <strong>示例</strong></h4><ul>
+<li><p><strong>将多个文件移动到一个目录：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> file1.txt file2.txt file3.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>将整个目录（包含文件和子目录）移动到另一个位置：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> /path/to/source\_directory /path/to/destination/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="7-注意事项"><a href="#7-注意事项" class="headerlink" title="7. 注意事项"></a>7. <strong>注意事项</strong></h4><ul>
+<li>如果目标目录已存在，<code>mv</code> 会将文件移动到该目录中。</li>
+<li>如果目标文件已存在且没有使用 <code>-i</code> 或 <code>-n</code> 选项，<code>mv</code> 会直接覆盖目标文件。</li>
+</ul>
+<h3 id="iwctl-使用指南"><a href="#iwctl-使用指南" class="headerlink" title="iwctl 使用指南"></a><code>iwctl</code> 使用指南</h3><p><code>iwctl</code> 是 iNet Wireless Daemon (IWD) 的一个命令行工具，专用于管理 Linux 系统中的 Wi-Fi 连接。它适用于轻量级、简洁的网络管理需求，特别是 Arch Linux 等发行版。</p>
+<h4 id="1-安装和启动-iwd"><a href="#1-安装和启动-iwd" class="headerlink" title="1. 安装和启动 iwd"></a>1. <strong>安装和启动 <code>iwd</code></strong></h4><ul>
+<li><p>安装 <code>iwd</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S iwd</span><br></pre></td></tr></table></figure></li>
+<li><p>启动 <code>iwd</code> 服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start iwd</span><br></pre></td></tr></table></figure></li>
+<li><p>设置 <code>iwd</code> 随系统启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> iwd</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-进入-iwctl-交互模式"><a href="#2-进入-iwctl-交互模式" class="headerlink" title="2. 进入 iwctl 交互模式"></a>2. <strong>进入 <code>iwctl</code> 交互模式</strong></h4><p>在终端中输入以下命令进入 <code>iwctl</code> 交互模式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br></pre></td></tr></table></figure>
+
+<p>进入交互模式后，后续的命令都将在此模式下运行。</p>
+<h4 id="3-查看网络设备"><a href="#3-查看网络设备" class="headerlink" title="3. 查看网络设备"></a>3. <strong>查看网络设备</strong></h4><ul>
+<li><p>使用以下命令列出所有无线网络设备：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">device list</span><br></pre></td></tr></table></figure></li>
+<li><p>输出示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Devices:</span><br><span class="line">Name Address Powered Adapter Mode</span><br><span class="line">wlan0 xx:xx:xx:xx:xx:xx on phy0 station</span><br></pre></td></tr></table></figure></li>
+<li><p><code>wlan0</code> 是网络接口名，后续步骤中会用到它。</p>
+</li>
+</ul>
+<h4 id="4-扫描可用-Wi-Fi-网络"><a href="#4-扫描可用-Wi-Fi-网络" class="headerlink" title="4. 扫描可用 Wi-Fi 网络"></a>4. <strong>扫描可用 Wi-Fi 网络</strong></h4><ul>
+<li><p>在指定设备上扫描 Wi-Fi 网络：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 scan</span><br></pre></td></tr></table></figure></li>
+<li><p>等待扫描完成后，使用以下命令列出所有可用的 Wi-Fi 网络：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 get-networks</span><br></pre></td></tr></table></figure></li>
+<li><p>输出示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Available networks:</span><br><span class="line">SSID Security</span><br><span class="line">MyHomeWiFi psk</span><br><span class="line">OpenNetwork open</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="5-连接到-Wi-Fi-网络"><a href="#5-连接到-Wi-Fi-网络" class="headerlink" title="5. 连接到 Wi-Fi 网络"></a>5. <strong>连接到 Wi-Fi 网络</strong></h4><ul>
+<li><p>连接到一个指定的 Wi-Fi 网络（例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyHomeWiFi</span><br></pre></td></tr></table></figure>
+
+<p>）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 connect MyHomeWiFi</span><br></pre></td></tr></table></figure></li>
+<li><p>如果 Wi-Fi 网络需要密码，系统会提示你输入密码。</p>
+</li>
+<li><p>成功连接后，你会看到类似以下的输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connected to MyHomeWiFi</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="6-断开-Wi-Fi-网络"><a href="#6-断开-Wi-Fi-网络" class="headerlink" title="6. 断开 Wi-Fi 网络"></a>6. <strong>断开 Wi-Fi 网络</strong></h4><ul>
+<li><p>如果你想断开 Wi-Fi 连接，可以使用以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 disconnect</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="7-显示当前连接状态"><a href="#7-显示当前连接状态" class="headerlink" title="7. 显示当前连接状态"></a>7. <strong>显示当前连接状态</strong></h4><ul>
+<li><p>查看当前的连接状态，包括 IP 地址、SSID 等信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 show</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="8-列出保存的-Wi-Fi-配置"><a href="#8-列出保存的-Wi-Fi-配置" class="headerlink" title="8. 列出保存的 Wi-Fi 配置"></a>8. <strong>列出保存的 Wi-Fi 配置</strong></h4><ul>
+<li><p>显示系统中保存的 Wi-Fi 网络配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">known-networks list</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="9-删除保存的-Wi-Fi-配置"><a href="#9-删除保存的-Wi-Fi-配置" class="headerlink" title="9. 删除保存的 Wi-Fi 配置"></a>9. <strong>删除保存的 Wi-Fi 配置</strong></h4><ul>
+<li><p>删除某个保存的 Wi-Fi 网络配置（例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyHomeWiFi</span><br></pre></td></tr></table></figure>
+
+<p>）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">known-networks remove MyHomeWiFi</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="10-退出-iwctl"><a href="#10-退出-iwctl" class="headerlink" title="10. 退出 iwctl"></a>10. <strong>退出 <code>iwctl</code></strong></h4><p>完成操作后，可以输入以下命令退出 <code>iwctl</code> 交互模式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="示例操作流程（完整流程）："><a href="#示例操作流程（完整流程）：" class="headerlink" title="示例操作流程（完整流程）："></a>示例操作流程（完整流程）：</h3><ol>
+<li><p><strong>启动 <code>iwd</code> 服务：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start iwd</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>进入 <code>iwctl</code>：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>查看网络设备：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">device list</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>扫描 Wi-Fi 网络：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 scan</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>显示扫描结果：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 get-networks</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>连接到指定 Wi-Fi 网络：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 connect MyHomeWiFi</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>显示当前连接状态：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 show</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>退出 <code>iwctl</code>：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="常用命令列表"><a href="#常用命令列表" class="headerlink" title="常用命令列表"></a>常用命令列表</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动 <code>iwd</code> 服务</td>
+<td><code>sudo systemctl start iwd</code></td>
+</tr>
+<tr>
+<td>启用开机自启 <code>iwd</code> 服务</td>
+<td><code>sudo systemctl enable iwd</code></td>
+</tr>
+<tr>
+<td>进入 <code>iwctl</code> 交互模式</td>
+<td><code>iwctl</code></td>
+</tr>
+<tr>
+<td>列出网络设备</td>
+<td><code>device list</code></td>
+</tr>
+<tr>
+<td>扫描 Wi-Fi 网络</td>
+<td><code>station wlan0 scan</code></td>
+</tr>
+<tr>
+<td>显示扫描结果</td>
+<td><code>station wlan0 get-networks</code></td>
+</tr>
+<tr>
+<td>连接 Wi-Fi 网络</td>
+<td><code>station wlan0 connect SSID</code></td>
+</tr>
+<tr>
+<td>断开 Wi-Fi 连接</td>
+<td><code>station wlan0 disconnect</code></td>
+</tr>
+<tr>
+<td>查看当前连接状态</td>
+<td><code>station wlan0 show</code></td>
+</tr>
+<tr>
+<td>列出保存的网络配置</td>
+<td><code>known-networks list</code></td>
+</tr>
+<tr>
+<td>删除保存的网络配置</td>
+<td><code>known-networks remove SSID</code></td>
+</tr>
+<tr>
+<td>退出 <code>iwctl</code></td>
+<td><code>exit</code></td>
+</tr>
+</tbody></table>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> ArchLinux基础命令</li>
+        <li><strong>Author:</strong> owofile</li>
+        <li><strong>Created at
+                :</strong> 2024-09-22 19:13:11</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-04-11 21:18:27
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/09/22/ArchLinux基础命令/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Linux/">#Linux</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2024/09/23/%E5%85%B3%E4%BA%8E%E4%B8%80%E5%BF%B5%E6%88%90%E4%BB%99QQ%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E7%A0%94%E7%A9%B6%E6%94%BB%E7%95%A5/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">关于一念成仙QQ机器人的研究攻略</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/09/20/Android-studio%E5%BC%80%E5%8F%91MPAndroidChart%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%9B%BE%E8%A1%A8%E5%8C%96/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Android studio开发MPAndroidChart实现数据图表化</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">ArchLinux基础命令</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArchLinux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-text">ArchLinux基础命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Arch-Linux-%E7%AE%80%E4%BB%8B"><span class="nav-text">Arch Linux 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0"><span class="nav-text">系统更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="nav-text">文件和目录操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rofi%E6%9D%A5%E6%89%93%E5%BC%80%E8%BD%AF%E4%BB%B6%E7%AA%97%E5%8F%A3"><span class="nav-text">Rofi来打开软件窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rofi-%E7%9A%84%E4%B8%BB%E8%A6%81%E7%89%B9%E7%82%B9"><span class="nav-text">Rofi 的主要特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85-Rofi"><span class="nav-text">如何安装 Rofi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nano"><span class="nav-text">Nano</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8-Nano-%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">1. 使用 Nano 编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Arch-Linux-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="nav-text">Arch Linux 目录结构说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="nav-text">mv 命令的用法简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iwctl-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span class="nav-text">iwctl 使用指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%EF%BC%89%EF%BC%9A"><span class="nav-text">示例操作流程（完整流程）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%88%97%E8%A1%A8"><span class="nav-text">常用命令列表</span></a></li></ol></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">owofile</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        78 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

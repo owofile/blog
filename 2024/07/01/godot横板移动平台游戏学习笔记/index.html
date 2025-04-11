@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="owofile">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/07/01/godot横板移动平台游戏学习笔记/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="godot横板移动平台游戏学习笔记">
+<meta property="og:url" content="http://example.com/2024/07/01/godot%E6%A8%AA%E6%9D%BF%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%8F%B0%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-07-01T03:01:26.000Z">
+<meta property="article:modified_time" content="2025-04-11T13:18:27.351Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="godot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            godot横板移动平台游戏学习笔记 | owofile&#39;blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"无论在哪 人与人都是相互连接的","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                owofile&#39;blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">53</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">78</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">godot横板移动平台游戏学习笔记</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/redefine-avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">owofile</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-07-01 11:01:26</span>
+        <span class="mobile">2024-07-01 11:01:26</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-11 21:18:27</span>
+            <span class="mobile">2025-04-11 21:18:27</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/godot/">godot</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="godot横板移动平台游戏学习笔记"><a href="#godot横板移动平台游戏学习笔记" class="headerlink" title="godot横板移动平台游戏学习笔记"></a>godot横板移动平台游戏学习笔记</h1><h1 id="2D战斗"><a href="#2D战斗" class="headerlink" title="2D战斗"></a>2D战斗</h1><h2 id="基础移动"><a href="#基础移动" class="headerlink" title="基础移动"></a>基础移动</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">extends Area2D</span><br><span class="line">@onready var icon = $Icon</span><br><span class="line">#移动速率</span><br><span class="line">@export var speed = 100</span><br><span class="line">func \_ready():</span><br><span class="line">pass</span><br><span class="line">func \_process(delta):</span><br><span class="line">var direction = Vector2.ZERO</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_right&quot;):</span><br><span class="line">direction.x = 1</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_left&quot;):</span><br><span class="line">direction.x = -1</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_up&quot;):</span><br><span class="line">direction.y = -1</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_down&quot;):</span><br><span class="line">direction.y = 1</span><br><span class="line">position += direction \* delta \* speed</span><br></pre></td></tr></table></figure>
+
+<p>通过每帧获取当前节点二位向量位置，根据Input按键输入判断移动当当前节点位置</p>
+<p>然后然后* delta是为了稳定帧率下的运行 *speed是为了灵活的调节移动速度</p>
+<h2 id="重力碰撞检测和动画播放"><a href="#重力碰撞检测和动画播放" class="headerlink" title="重力碰撞检测和动画播放"></a>重力碰撞检测和动画播放</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">extends CharacterBody2D</span><br><span class="line">@onready var animation\_player = $AnimationPlayer</span><br><span class="line">@onready var sprite\_2d = $Sprite2D</span><br><span class="line">const GRAVITY = 2000.0</span><br><span class="line">const WALK\_SPEED = 200</span><br><span class="line">#跳跃高度</span><br><span class="line">const JUMP\_FORCE = 750</span><br><span class="line">#跳跃判断</span><br><span class="line">var is\_jumping = false</span><br><span class="line">func \_physics\_process(delta):</span><br><span class="line">print(velocity.y)</span><br><span class="line">#物体和墙壁发生了碰撞</span><br><span class="line">if is\_on\_wall():</span><br><span class="line">print(&quot;撞墙&quot;)</span><br><span class="line">#没有上下的撞墙判断 只有一个力</span><br><span class="line">if is\_on\_wall\_only():</span><br><span class="line">print(&quot;空中撞墙撞墙&quot;)</span><br><span class="line">if velocity.y == -JUMP\_FORCE:</span><br><span class="line">print(&quot;jump&quot;)</span><br><span class="line">is\_jumping = false</span><br><span class="line">velocity.y += delta \* GRAVITY</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_left&quot;):</span><br><span class="line">velocity.x = -WALK\_SPEED</span><br><span class="line">sprite\_2d.flip\_h = true</span><br><span class="line">animation\_player.play(&quot;walk&quot;)</span><br><span class="line">elif Input.is\_action\_pressed(&quot;move\_right&quot;):</span><br><span class="line">velocity.x = WALK\_SPEED</span><br><span class="line">sprite\_2d.flip\_h = false</span><br><span class="line">animation\_player.play(&quot;walk&quot;)</span><br><span class="line">else:</span><br><span class="line">velocity.x = 0</span><br><span class="line">move\_and\_slide()</span><br><span class="line">func \_process(delta):</span><br><span class="line">var direction = Input.get\_action\_strength(&quot;move\_right&quot;) - Input.get\_action\_strength(&quot;move\_left&quot;)</span><br><span class="line">if is\_jumping:</span><br><span class="line">#animation\_player.play(&quot;jump&quot;)</span><br><span class="line">pass</span><br><span class="line">elif direction == 0:</span><br><span class="line">animation\_player.play(&quot;idle&quot;)</span><br><span class="line">func \_input(event):</span><br><span class="line">if event.is\_action\_pressed(&quot;move\_up&quot;) and not is\_jumping and velocity.y == 0:</span><br><span class="line">velocity.y = -JUMP\_FORCE</span><br><span class="line">is\_jumping = true</span><br></pre></td></tr></table></figure>
+
+<p>使用move_and_slide()时，会检测碰撞并且滑动，从而实现了任意位置放置后，根据重力下落，然后进行移动</p>
+<p>播放动画则是根据不同时机的判断完成</p>
+<h2 id="窗口尺寸问题"><a href="#窗口尺寸问题" class="headerlink" title="窗口尺寸问题"></a>窗口尺寸问题</h2><p>如果出现运行场景后，窗口的尺寸会随着放大缩小发生改变，通过修改项目设置—-窗口—–模式—–canvas_items来让他自适应</p>
+<p>教学视频:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Se411k7kS/?spm_id_from=333.337.search-card.all.click&vd_source=adbd70f3395ed4825cbab1afe7aa152e">https://www.bilibili.com/video/BV1Se411k7kS/?spm_id_from=333.337.search-card.all.click&amp;vd_source=adbd70f3395ed4825cbab1afe7aa152e</a></p>
+<h2 id="实现变速移动"><a href="#实现变速移动" class="headerlink" title="实现变速移动"></a>实现变速移动</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">extends CharacterBody2D</span><br><span class="line">@onready var animation\_player = $AnimationPlayer</span><br><span class="line">@onready var sprite\_2d = $Sprite2D</span><br><span class="line">const GRAVITY = 2000.0</span><br><span class="line">const WALK\_SPEED = 200</span><br><span class="line">const JUMP\_FORCE = 750</span><br><span class="line">var is\_jumping = false</span><br><span class="line">var walk\_acceleration = 0.0</span><br><span class="line">var walk\_timer = 0.0</span><br><span class="line">const WALK\_ACCELERATION\_TIME = 2.0</span><br><span class="line">func \_physics\_process(delta):</span><br><span class="line">if is\_on\_wall():</span><br><span class="line">print(&quot;撞墙&quot;)</span><br><span class="line">if is\_on\_wall\_only():</span><br><span class="line">print(&quot;空中撞墙撞墙&quot;)</span><br><span class="line">if velocity.y == -JUMP\_FORCE:</span><br><span class="line">print(&quot;jump&quot;)</span><br><span class="line">is\_jumping = false</span><br><span class="line">velocity.y += delta \* GRAVITY</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_left&quot;):</span><br><span class="line">velocity.x = -WALK\_SPEED</span><br><span class="line">sprite\_2d.flip\_h = true</span><br><span class="line">animation\_player.play(&quot;walk&quot;)</span><br><span class="line">elif Input.is\_action\_pressed(&quot;move\_right&quot;):</span><br><span class="line">if walk\_timer &gt;= WALK\_ACCELERATION\_TIME:</span><br><span class="line">walk\_acceleration = 2.0 # 例如：超过2秒后加倍加速度</span><br><span class="line">else:</span><br><span class="line">walk\_acceleration = 1.0 # 正常加速度</span><br><span class="line">velocity.x = WALK\_SPEED \* walk\_acceleration</span><br><span class="line">sprite\_2d.flip\_h = false</span><br><span class="line">animation\_player.play(&quot;walk&quot;)</span><br><span class="line">else:</span><br><span class="line">velocity.x = 0</span><br><span class="line">walk\_acceleration = 0.0</span><br><span class="line">move\_and\_slide()</span><br><span class="line">func \_process(delta):</span><br><span class="line">var direction = Input.get\_action\_strength(&quot;move\_right&quot;) - Input.get\_action\_strength(&quot;move\_left&quot;)</span><br><span class="line">if is\_jumping:</span><br><span class="line"># animation\_player.play(&quot;jump&quot;)</span><br><span class="line">pass</span><br><span class="line">elif direction == 0:</span><br><span class="line">animation\_player.play(&quot;idle&quot;)</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_right&quot;):</span><br><span class="line">walk\_timer += delta</span><br><span class="line">else:</span><br><span class="line">walk\_timer = 0.0</span><br><span class="line">func \_input(event):</span><br><span class="line">if event.is\_action\_pressed(&quot;move\_up&quot;) and not is\_jumping and velocity.y == 0:</span><br><span class="line">velocity.y = -JUMP\_FORCE</span><br><span class="line">is\_jumping = true</span><br><span class="line">if event.is\_action\_pressed(&quot;Sprint&quot;):</span><br><span class="line">print(&quot;向右冲刺&quot;)</span><br><span class="line">velocity.x = -600</span><br></pre></td></tr></table></figure>
+
+<p>通过每帧判断，然后时间到了归0</p>
+<h2 id="LimboAI"><a href="#LimboAI" class="headerlink" title="LimboAI"></a>LimboAI</h2><p>使用这个插件来快速构建项目的状态机，状态机也可以依靠纯手写脚本构建，但是为了追求效率，目前先使用轮子，之后为了更加详细的了解状态机，会自己从头在造轮子。</p>
+<p>使用LimboAI自带的函数可以快速创建各种状态，通过使用start 和 update 来控制状态之间的切换。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line">extends CharacterBody2D</span><br><span class="line">@onready var animation\_player = $AnimationPlayer</span><br><span class="line">@onready var sprite\_2d = $Sprite2D</span><br><span class="line">@onready var trail\_timer = $TrailTimer</span><br><span class="line">@onready var label = $&quot;../Label&quot;</span><br><span class="line">#状态机</span><br><span class="line">var main\_sm: LimboHSM</span><br><span class="line">const GRAVITY = 2000.0</span><br><span class="line">const WALK\_SPEED = 200</span><br><span class="line">const JUMP\_FORCE = 750</span><br><span class="line">var speed : int</span><br><span class="line">#当前状态</span><br><span class="line">var state : String</span><br><span class="line">var is\_jumping = false</span><br><span class="line">var walk\_acceleration = 0.0</span><br><span class="line">var walk\_timer = 0.0</span><br><span class="line">const WALK\_ACCELERATION\_TIME = 0.5</span><br><span class="line">func \_ready():</span><br><span class="line">initate\_start\_machine()</span><br><span class="line">func \_physics\_process(delta):</span><br><span class="line">label.text = &quot;speed:&quot; + str(speed) + &quot;\n&quot; + &quot;Player状态:&quot; + str(main\_sm.get\_active\_state())</span><br><span class="line">if is\_on\_wall():</span><br><span class="line">print(&quot;撞墙&quot;)</span><br><span class="line">state = &quot;落地后检测到碰撞&quot;</span><br><span class="line">if is\_on\_wall\_only():</span><br><span class="line">print(&quot;空中撞墙撞墙&quot;)</span><br><span class="line">state = &quot;浮空下检测到碰撞&quot;</span><br><span class="line">if velocity.y == -JUMP\_FORCE:</span><br><span class="line">print(&quot;jump&quot;)</span><br><span class="line">is\_jumping = false</span><br><span class="line">velocity.y += delta \* GRAVITY</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_left&quot;):</span><br><span class="line">if walk\_timer &gt;= WALK\_ACCELERATION\_TIME:</span><br><span class="line">walk\_acceleration = 2.0 # 例如：超过2秒后加倍加速度</span><br><span class="line">else:</span><br><span class="line">walk\_acceleration = 1.0 # 正常加速度</span><br><span class="line">speed = -WALK\_SPEED \* walk\_acceleration</span><br><span class="line">velocity.x = speed</span><br><span class="line">#print(-WALK\_SPEED \* walk\_acceleration)</span><br><span class="line">sprite\_2d.flip\_h = true</span><br><span class="line">animation\_player.play(&quot;walk&quot;)</span><br><span class="line">elif Input.is\_action\_pressed(&quot;move\_right&quot;):</span><br><span class="line">if walk\_timer &gt;= WALK\_ACCELERATION\_TIME:</span><br><span class="line">walk\_acceleration = 2.0 # 例如：超过2秒后加倍加速度</span><br><span class="line">else:</span><br><span class="line">walk\_acceleration = 1.0 # 正常加速度</span><br><span class="line">velocity.x = WALK\_SPEED \* walk\_acceleration</span><br><span class="line">#print(WALK\_SPEED \* walk\_acceleration)</span><br><span class="line">sprite\_2d.flip\_h = false</span><br><span class="line">animation\_player.play(&quot;walk&quot;)</span><br><span class="line">else:</span><br><span class="line">velocity.x = 0</span><br><span class="line">walk\_acceleration = 0.0</span><br><span class="line">move\_and\_slide()</span><br><span class="line">func \_process(delta):</span><br><span class="line">var direction = Input.get\_action\_strength(&quot;move\_right&quot;) - Input.get\_action\_strength(&quot;move\_left&quot;)</span><br><span class="line">if is\_jumping:</span><br><span class="line"># animation\_player.play(&quot;jump&quot;)</span><br><span class="line">pass</span><br><span class="line">elif direction == 0:</span><br><span class="line">animation\_player.play(&quot;idle&quot;)</span><br><span class="line">#通过帧率对加速度进行计时判断</span><br><span class="line">if Input.is\_action\_pressed(&quot;move\_right&quot;) or Input.is\_action\_pressed(&quot;move\_left&quot;):</span><br><span class="line">walk\_timer += delta</span><br><span class="line">else:</span><br><span class="line">walk\_timer = 0.0</span><br><span class="line">#调用反转函数</span><br><span class="line">flip\_sprite(direction)</span><br><span class="line">func \_input(event):</span><br><span class="line">if event.is\_action\_pressed(&quot;move\_up&quot;) and not is\_jumping and velocity.y == 0:</span><br><span class="line">velocity.y = -JUMP\_FORCE</span><br><span class="line">is\_jumping = true</span><br><span class="line">if event.is\_action\_pressed(&quot;Sprint&quot;):</span><br><span class="line">print(&quot;冲刺&quot;)</span><br><span class="line">elif event.is\_action\_released(&quot;Sprint&quot;):</span><br><span class="line">print(&quot;释放冲刺&quot;)</span><br><span class="line">func \_on\_trail\_timer\_timeout():</span><br><span class="line">if velocity.x == 0:</span><br><span class="line">return</span><br><span class="line">var trail = preload(&quot;res://effects/trail.tscn&quot;).instantiate()</span><br><span class="line">get\_parent().add\_child(trail)</span><br><span class="line">get\_parent().move\_child(trail,get\_index())</span><br><span class="line">var properties = [</span><br><span class="line">&quot;hframes&quot;,</span><br><span class="line">&quot;vframes&quot;,</span><br><span class="line">&quot;frame&quot;,</span><br><span class="line">&quot;texture&quot;,</span><br><span class="line">&quot;global\_position&quot;,</span><br><span class="line">&quot;flip\_h&quot;,</span><br><span class="line">]</span><br><span class="line">for name in properties:</span><br><span class="line">trail.set(name,sprite\_2d.get(name))</span><br><span class="line">func flip\_sprite(dir):</span><br><span class="line">if dir == 1:</span><br><span class="line">#人物反转</span><br><span class="line">#print(&quot;人物右转&quot;)</span><br><span class="line">pass</span><br><span class="line">elif dir == -1:</span><br><span class="line">#print(&quot;人物左转&quot;)</span><br><span class="line">pass</span><br><span class="line">func \_unhandled\_input(event):</span><br><span class="line">if event.is\_action\_pressed(&quot;move\_up&quot;):</span><br><span class="line">main\_sm.dispatch(&amp;&quot;to\_jump&quot;)</span><br><span class="line">elif event.is\_action\_pressed(&quot;Sprint&quot;):</span><br><span class="line">#冲刺</span><br><span class="line">pass</span><br><span class="line">elif event.is\_action\_pressed(&quot;attack&quot;):</span><br><span class="line">main\_sm.dispatch(&amp;&quot;to\_attack&quot;)</span><br><span class="line">func initate\_start\_machine():</span><br><span class="line">#实例化状态机</span><br><span class="line">main\_sm = LimboHSM.new()</span><br><span class="line">#添加状态机</span><br><span class="line">add\_child(main\_sm)</span><br><span class="line">#创建idle状态 设置默认状态的启动方法 on\_enter 首次启动调用方法 update 更新后调用方法</span><br><span class="line">var idle\_state = LimboState.new().named(&quot;idle&quot;).call\_on\_enter(idle\_start).call\_on\_update(idle\_update)</span><br><span class="line">#创建walk状态</span><br><span class="line">var walk\_state = LimboState.new().named(&quot;walk&quot;).call\_on\_enter(walk\_start).call\_on\_update(walk\_update)</span><br><span class="line">#创建jump状态 设置默认状态的启动方法 on\_enter 首次启动调用方法 update 更新后调用方法</span><br><span class="line">var jump\_state = LimboState.new().named(&quot;jump&quot;).call\_on\_enter(jump\_start).call\_on\_update(jump\_update)</span><br><span class="line">#创建walk状态</span><br><span class="line">var attack\_state = LimboState.new().named(&quot;attack&quot;).call\_on\_enter(attack\_start).call\_on\_update(attack\_update)</span><br><span class="line">#加入状态机</span><br><span class="line">main\_sm.add\_child(idle\_state)</span><br><span class="line">main\_sm.add\_child(walk\_state)</span><br><span class="line">main\_sm.add\_child(jump\_state)</span><br><span class="line">main\_sm.add\_child(attack\_state)</span><br><span class="line">#设置初始状态</span><br><span class="line">main\_sm.initial\_state = idle\_state</span><br><span class="line">#状态机切换</span><br><span class="line">#从闲置状态切换到行走状态</span><br><span class="line">main\_sm.add\_transition(idle\_state,walk\_state,&amp;&quot;to\_walk&quot;)</span><br><span class="line">#从任意状态都可以回到闲置状态 这也符合游戏人物移动逻辑</span><br><span class="line">main\_sm.add\_transition(main\_sm.ANYSTATE,idle\_state,&amp;&quot;state\_ended&quot;)</span><br><span class="line">#两个转换，公用一个调用方法 实现更灵活的调用</span><br><span class="line">main\_sm.add\_transition(idle\_state,jump\_state,&amp;&quot;to\_jump&quot;)</span><br><span class="line">main\_sm.add\_transition(walk\_state,jump\_state,&amp;&quot;to\_jump&quot;)</span><br><span class="line">#任何状态都可以进行攻击的切换</span><br><span class="line">main\_sm.add\_transition(main\_sm.ANYSTATE,attack\_state,&amp;&quot;to\_attack&quot;)</span><br><span class="line">#初始化状态机</span><br><span class="line">main\_sm.initialize(self)</span><br><span class="line">#设置状态机激活状态 活动状态机</span><br><span class="line">main\_sm.set\_active(true)</span><br><span class="line">#idle的首次启动调用方法</span><br><span class="line">func idle\_start():</span><br><span class="line">print(&quot;idle start&quot;)</span><br><span class="line">#可以播放闲置动画</span><br><span class="line">#idle的每帧更新调用方法</span><br><span class="line">func idle\_update(delta: float):</span><br><span class="line">if velocity.x != 0:</span><br><span class="line">main\_sm.dispatch(&amp;&quot;to\_walk&quot;)</span><br><span class="line">#walk的首次启动调用方法</span><br><span class="line">func walk\_start():</span><br><span class="line">print(&quot;角色行走中&quot;)</span><br><span class="line">#walk的每帧更新调用方法</span><br><span class="line">func walk\_update(delta: float):</span><br><span class="line">if velocity.x == 0:</span><br><span class="line">main\_sm.dispatch(&amp;&quot;state\_ended&quot;)</span><br><span class="line">print(&quot;角色行走结束&quot;)</span><br><span class="line">#jump的首次启动调用方法</span><br><span class="line">func jump\_start():</span><br><span class="line">#调用动画播放Jump动画</span><br><span class="line">#改变velocity.y = jump\_power 来实现跳跃</span><br><span class="line">pass</span><br><span class="line">#jump的每帧更新调用方法</span><br><span class="line">func jump\_update(delta: float):</span><br><span class="line">#判断跳跃是否落地</span><br><span class="line">if is\_on\_floor():</span><br><span class="line">#落地后切换闲置状态</span><br><span class="line">main\_sm.dispatch(&amp;&quot;state\_ended&quot;)</span><br><span class="line">#attack的首次启动调用方法</span><br><span class="line">func attack\_start():</span><br><span class="line">#播放攻击动画</span><br><span class="line">pass</span><br><span class="line">#attack的每帧更新调用方法</span><br><span class="line">func attack\_update(delta: float):</span><br><span class="line">#当播放动画结束后，切换状态机回到闲置状态</span><br><span class="line">#由于目前没有这个动画所以只用注释解释 后续可以根据情况修改</span><br><span class="line">pass</span><br></pre></td></tr></table></figure>
+
+<p>视频教学:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Y6421Z7sV/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=adbd70f3395ed4825cbab1afe7aa152e">https://www.bilibili.com/video/BV1Y6421Z7sV/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&amp;vd_source=adbd70f3395ed4825cbab1afe7aa152e</a></p>
+<p>里面的一些状态我并没有用上，因为之前我就是直接在脚本里判断写的移动，不好桥接，所以只是做了一些演示。实际代码都用注释去讲了。</p>
+<p>但还是一个很好的学习项目</p>
+<h2 id="道具范围拾取检测"><a href="#道具范围拾取检测" class="headerlink" title="道具范围拾取检测"></a>道具范围拾取检测</h2><p>实现碰撞检测需要的关键节点是Area2D，它可以检测进入到区域的所有同类</p>
+<p>这是我的Player场景构成</p>
+<p><img src="/Blackcat-loveBlog/%5Cpng%5CQQ%E6%88%AA%E5%9B%BE20240630164451.png" alt="QQ截图20240630164451"></p>
+<p>其中有两个CollisionShape2D，但作用完全不一样，Player下的Col节点是为了实现地面的碰撞，可以实现基础的移动，跳跃。</p>
+<p>而Area2D，本质上不会达成碰撞，而是一个检测区域的作用。</p>
+<p>这是我的道具场景构成：</p>
+<p><img src="/Blackcat-loveBlog/%5Cpng%5CQQ%E6%88%AA%E5%9B%BE20240630164700.png" alt="QQ截图20240630164700"></p>
+<p>可以看到，我使用Area2D的信号返回给了Boom节点，然后当Area2D的Coll检测到同类Arrea2D碰撞后，也就是进入这个区域内，会启动这个信号。</p>
+<p><img src="/Blackcat-loveBlog/%5Cpng%5CQQ%E6%88%AA%E5%9B%BE20240630164818.png" alt="QQ截图20240630164818"></p>
+<p>就这样，我们实现了基础的道具拾取检测，也可以用来完成其他的功能</p>
+<h2 id="Tween"><a href="#Tween" class="headerlink" title="Tween"></a>Tween</h2><p>使用Tween可以通过代码直接创建动画，无需创建节点</p>
+<p>学习视频:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Cy411z7xE/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=adbd70f3395ed4825cbab1afe7aa152e">https://www.bilibili.com/video/BV1Cy411z7xE/?spm_id_from=333.1007.tianma.1-1-1.click&amp;vd_source=adbd70f3395ed4825cbab1afe7aa152e</a></p>
+<h2 id="场景切换"><a href="#场景切换" class="headerlink" title="场景切换"></a>场景切换</h2><p>实现场景切换需要三个节点</p>
+<p>CanvasLayer 父节点</p>
+<p>ColorRect 子节点 用来进行切换的动画效果</p>
+<p>AnimationPlayer子节点 用来进行切换的动画效果</p>
+<p>首先用ColorRect制作一个黑幕动画，画面从透明变成黑色</p>
+<p>父节点脚本:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">extends CanvasLayer</span><br><span class="line">@onready var animation\_player = $AnimationPlayer</span><br><span class="line">func \_ready():</span><br><span class="line">#隐藏自身</span><br><span class="line">self.hide()</span><br><span class="line">func changer\_scene(path):</span><br><span class="line">self.show()</span><br><span class="line">self.set\_layer(999)</span><br><span class="line">animation\_player.play(&quot;changer&quot;)</span><br><span class="line">await animation\_player.animation\_finished</span><br><span class="line">get\_tree().change\_scene\_to\_file(path)</span><br><span class="line">animation\_player.play\_backwards(&quot;changer&quot;)</span><br><span class="line">await animation\_player.animation\_finished</span><br><span class="line">self.set\_layer(-1)</span><br><span class="line">self.hide()</span><br><span class="line">pass</span><br></pre></td></tr></table></figure>
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> godot横板移动平台游戏学习笔记</li>
+        <li><strong>Author:</strong> owofile</li>
+        <li><strong>Created at
+                :</strong> 2024-07-01 11:01:26</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-04-11 21:18:27
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/07/01/godot横板移动平台游戏学习笔记/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/godot/">#godot</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2024/07/01/godot%E5%BC%80%E5%8F%91%E4%B9%8BLive2D%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">godot开发之Live2D插件使用教程</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">godot学习笔记</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">godot横板移动平台游戏学习笔记</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#godot%E6%A8%AA%E6%9D%BF%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%8F%B0%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">godot横板移动平台游戏学习笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2D%E6%88%98%E6%96%97"><span class="nav-text">2D战斗</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%A7%BB%E5%8A%A8"><span class="nav-text">基础移动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%8A%9B%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E5%92%8C%E5%8A%A8%E7%94%BB%E6%92%AD%E6%94%BE"><span class="nav-text">重力碰撞检测和动画播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%B0%BA%E5%AF%B8%E9%97%AE%E9%A2%98"><span class="nav-text">窗口尺寸问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8F%98%E9%80%9F%E7%A7%BB%E5%8A%A8"><span class="nav-text">实现变速移动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LimboAI"><span class="nav-text">LimboAI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%93%E5%85%B7%E8%8C%83%E5%9B%B4%E6%8B%BE%E5%8F%96%E6%A3%80%E6%B5%8B"><span class="nav-text">道具范围拾取检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tween"><span class="nav-text">Tween</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2"><span class="nav-text">场景切换</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">owofile</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        78 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
