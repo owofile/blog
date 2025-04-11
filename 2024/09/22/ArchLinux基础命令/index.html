@@ -304,12 +304,12 @@
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<h1 id="ArchLinux基础命令"><a href="#ArchLinux基础命令" class="headerlink" title="ArchLinux基础命令"></a>ArchLinux基础命令</h1><h2 id="Arch-Linux-简介"><a href="#Arch-Linux-简介" class="headerlink" title="Arch Linux 简介"></a>Arch Linux 简介</h2><p><strong>Arch Linux</strong> 是一个轻量级的、灵活的 Linux 发行版，以简洁性和KISS原则（Keep It Simple, Stupid）为设计理念。它主要面向高级用户，为他们提供了一个高度可定制的环境。Arch Linux 不仅适合那些希望深入理解 Linux 的用户，还鼓励用户根据自己的需求进行系统配置。</p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下载官方ios</p>
-<p><a target="_blank" rel="noopener" href="https://archlinux.org/download/">https://archlinux.org/download/</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://archlinux.org/download/" >https://archlinux.org/download/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>下载完成后烧录到U盘,我使用的烧录软件是:balenaEtcher-Portable-1.18.11.exe</p>
 <p>烧录完成后，插入U盘，不同的电脑型号不同，我的是F8进入引导界面选择USB</p>
 <p>开始进入引导安装界面，这里提供两种方法安装，自定义安装和快速安装，这里演示快速安装</p>
 <p>首先使用iwctl进行连接wif</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br><span class="line">device list</span><br><span class="line">station wlan0 scan</span><br><span class="line">station wlan0 get-networks</span><br><span class="line">station wlan0 connect SSID</span><br><span class="line">exit</span><br><span class="line">archlinux install</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br><span class="line">device list</span><br><span class="line">station wlan0 scan</span><br><span class="line">station wlan0 get-networks</span><br><span class="line">station wlan0 connect SSID</span><br><span class="line">exit</span><br><span class="line">archlinux install</span><br></pre></td></tr></table></figure></div>
 
 <p>输入 archlinux install后会自动下载一段时间，然后进入界面配置，配置完成后会自动进行安装，等待即可</p>
 <h3 id="系统更新"><a href="#系统更新" class="headerlink" title="系统更新"></a>系统更新</h3><ul>
@@ -317,27 +317,27 @@
 <p>：Arch Linux 的包管理器，用于安装、卸载和管理软件包。</p>
 <ul>
 <li><p>更新系统：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -Syu</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -Syu</span><br></pre></td></tr></table></figure></div></li>
 <li><p>安装软件包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S package\_name</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S package\_name</span><br></pre></td></tr></table></figure></div></li>
 <li><p>卸载软件包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -R package\_name</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -R package\_name</span><br></pre></td></tr></table></figure></div></li>
 <li><p>查找软件包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Ss keyword</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Ss keyword</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 </li>
 </ul>
 <h3 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a>文件和目录操作</h3><ul>
 <li><p>**<code>ls</code>**：列出当前目录的文件和子目录。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l <span class="comment"># 详细列表</span></span><br><span class="line"><span class="built_in">ls</span> -a <span class="comment"># 包含隐藏文件</span></span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l <span class="comment"># 详细列表</span></span><br><span class="line"><span class="built_in">ls</span> -a <span class="comment"># 包含隐藏文件</span></span><br></pre></td></tr></table></figure></div></li>
 <li><p>**<code>cd</code>**：改变当前目录。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/directory</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/directory</span><br></pre></td></tr></table></figure></div></li>
 <li><p>**<code>pwd</code>**：显示当前工作目录。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></div></li>
 <li><p>**<code>mkdir</code>**：创建新目录。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> new\_directory</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> new\_directory</span><br></pre></td></tr></table></figure></div></li>
 <li><p>**<code>rm</code>**：删除文件或目录。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> file.txt <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -r directory\_name <span class="comment"># 递归删除目录</span></span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> file.txt <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -r directory\_name <span class="comment"># 递归删除目录</span></span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h3 id="Rofi来打开软件窗口"><a href="#Rofi来打开软件窗口" class="headerlink" title="Rofi来打开软件窗口"></a>Rofi来打开软件窗口</h3><p>在 Arch Linux 及其他 Linux 发行版中，<strong>Rofi</strong> 是一个非常流行的应用程序启动器和窗口管理器。它主要用于替代默认的 <code>dmenu</code>，并提供了一种更灵活、更用户友好的方式来访问应用程序、窗口和文件。</p>
 <h3 id="Rofi-的主要特点"><a href="#Rofi-的主要特点" class="headerlink" title="Rofi 的主要特点"></a>Rofi 的主要特点</h3><ol>
@@ -349,16 +349,16 @@
 <li><strong>可扩展性</strong>：用户可以扩展 Rofi 的功能，通过脚本或插件实现更多自定义功能。</li>
 </ol>
 <h3 id="如何安装-Rofi"><a href="#如何安装-Rofi" class="headerlink" title="如何安装 Rofi"></a>如何安装 Rofi</h3><p>在 Arch Linux 上，你可以通过 <code>pacman</code> 包管理器安装 Rofi：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S rofi</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S rofi</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>安装完成后，你可以通过在终端中输入 <code>rofi</code> 来启动它。例如，如果你想使用 Rofi 作为应用程序启动器，可以在终端中执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rofi -show run</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rofi -show run</span><br></pre></td></tr></table></figure></div>
 
 <p>这将打开 Rofi，并允许你输入要启动的应用程序名称。</p>
 <h3 id="Nano"><a href="#Nano" class="headerlink" title="Nano"></a>Nano</h3><h3 id="1-使用-Nano-编辑器"><a href="#1-使用-Nano-编辑器" class="headerlink" title="1. 使用 Nano 编辑器"></a>1. 使用 Nano 编辑器</h3><p><code>nano</code> 是一个简单易用的命令行文本编辑器。</p>
-<h4 id="安装-Nano（如果未安装）"><a href="#安装-Nano（如果未安装）" class="headerlink" title="安装 Nano（如果未安装）"></a>安装 Nano（如果未安装）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S nano</span><br></pre></td></tr></table></figure>
+<h4 id="安装-Nano（如果未安装）"><a href="#安装-Nano（如果未安装）" class="headerlink" title="安装 Nano（如果未安装）"></a>安装 Nano（如果未安装）</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S nano</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /path/to/your/file.txt</span><br></pre></td></tr></table></figure>
+<h4 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /path/to/your/file.txt</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>使用箭头键移动光标。</li>
@@ -450,66 +450,66 @@
 <hr>
 <p>这个目录结构遵循 Linux 的标准，并通过合理分配功能使系统更加模块化和易于管理。理解这些目录的功能有助于更好地使用和管理 Arch Linux 系统。</p>
 <h3 id="mv-命令的用法简介"><a href="#mv-命令的用法简介" class="headerlink" title="mv 命令的用法简介"></a><code>mv</code> 命令的用法简介</h3><p><code>mv</code> 命令是 Linux 系统中用于<strong>移动文件或目录</strong>，以及<strong>重命名文件或目录</strong>的命令。其基本语法如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> [选项] 源文件 目标位置</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> [选项] 源文件 目标位置</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="1-移动文件"><a href="#1-移动文件" class="headerlink" title="1. 移动文件"></a>1. <strong>移动文件</strong></h4><ul>
 <li><p>基本用法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> 源文件 目标目录</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> 源文件 目标目录</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li><p>例子：将文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file.txt</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file.txt</span><br></pre></td></tr></table></figure></div>
 
 <p>移动到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure></div>
 
 <p>目录下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> file.txt /home/user/</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 </li>
 </ul>
 <h4 id="2-重命名文件"><a href="#2-重命名文件" class="headerlink" title="2. 重命名文件"></a>2. <strong>重命名文件</strong></h4><ul>
 <li><p>基本用法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv 旧文件名 新文件名</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv 旧文件名 新文件名</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li><p>例子：将</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oldname.txt</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oldname.txt</span><br></pre></td></tr></table></figure></div>
 
 <p>重命名为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newname.txt</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newname.txt</span><br></pre></td></tr></table></figure></div>
 
 <p>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> oldname.txt newname.txt</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> oldname.txt newname.txt</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 </li>
 </ul>
 <h4 id="3-移动并重命名文件"><a href="#3-移动并重命名文件" class="headerlink" title="3. 移动并重命名文件"></a>3. <strong>移动并重命名文件</strong></h4><ul>
 <li><p>你可以同时移动和重命名文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> oldname.txt /home/user/newname.txt</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> oldname.txt /home/user/newname.txt</span><br></pre></td></tr></table></figure></div>
 
 <p>该命令将</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oldname.txt</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oldname.txt</span><br></pre></td></tr></table></figure></div>
 
 <p>文件移动到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure></div>
 
 <p>目录并重命名为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newname.txt</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newname.txt</span><br></pre></td></tr></table></figure></div>
 
 <p>。</p>
 </li>
 </ul>
 <h4 id="4-移动目录"><a href="#4-移动目录" class="headerlink" title="4. 移动目录"></a>4. <strong>移动目录</strong></h4><ul>
 <li><p>基本用法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> 源目录 目标目录</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> 源目录 目标目录</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li><p>例子：将目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">folder1</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">folder1</span><br></pre></td></tr></table></figure></div>
 
 <p>移动到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/</span><br></pre></td></tr></table></figure></div>
 
 <p>目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> folder1 /home/user/</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> folder1 /home/user/</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 </li>
 </ul>
@@ -517,33 +517,33 @@
 <li><p><code>-i</code>：<strong>提示覆盖</strong>。如果目标文件已存在，使用此选项将提示是否覆盖文件。</p>
 <ul>
 <li><p>例子：移动文件时提示是否覆盖：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -i file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -i file.txt /home/user/</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 </li>
 <li><p><code>-f</code>：<strong>强制覆盖</strong>。默认覆盖目标文件，不提示确认（<code>-f</code> 是默认行为）。</p>
 <ul>
 <li><p>例子：强制覆盖已存在的文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -f file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -f file.txt /home/user/</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 </li>
 <li><p><code>-n</code>：<strong>不覆盖</strong>。如果目标文件已存在，不进行任何操作，也不会提示用户。</p>
 <ul>
 <li><p>例子：不覆盖已存在的文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -n file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -n file.txt /home/user/</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 </li>
 <li><p><code>-v</code>：<strong>显示详细信息</strong>。显示每个移动或重命名操作的详细过程。</p>
 <ul>
 <li><p>例子：显示移动文件的详细信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -v file.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> -v file.txt /home/user/</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 </li>
 </ul>
 <h4 id="6-示例"><a href="#6-示例" class="headerlink" title="6. 示例"></a>6. <strong>示例</strong></h4><ul>
 <li><p><strong>将多个文件移动到一个目录：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> file1.txt file2.txt file3.txt /home/user/</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> file1.txt file2.txt file3.txt /home/user/</span><br></pre></td></tr></table></figure></div></li>
 <li><p><strong>将整个目录（包含文件和子目录）移动到另一个位置：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> /path/to/source\_directory /path/to/destination/</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> /path/to/source\_directory /path/to/destination/</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h4 id="7-注意事项"><a href="#7-注意事项" class="headerlink" title="7. 注意事项"></a>7. <strong>注意事项</strong></h4><ul>
 <li>如果目标目录已存在，<code>mv</code> 会将文件移动到该目录中。</li>
@@ -552,83 +552,83 @@
 <h3 id="iwctl-使用指南"><a href="#iwctl-使用指南" class="headerlink" title="iwctl 使用指南"></a><code>iwctl</code> 使用指南</h3><p><code>iwctl</code> 是 iNet Wireless Daemon (IWD) 的一个命令行工具，专用于管理 Linux 系统中的 Wi-Fi 连接。它适用于轻量级、简洁的网络管理需求，特别是 Arch Linux 等发行版。</p>
 <h4 id="1-安装和启动-iwd"><a href="#1-安装和启动-iwd" class="headerlink" title="1. 安装和启动 iwd"></a>1. <strong>安装和启动 <code>iwd</code></strong></h4><ul>
 <li><p>安装 <code>iwd</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S iwd</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S iwd</span><br></pre></td></tr></table></figure></div></li>
 <li><p>启动 <code>iwd</code> 服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start iwd</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start iwd</span><br></pre></td></tr></table></figure></div></li>
 <li><p>设置 <code>iwd</code> 随系统启动：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> iwd</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> iwd</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h4 id="2-进入-iwctl-交互模式"><a href="#2-进入-iwctl-交互模式" class="headerlink" title="2. 进入 iwctl 交互模式"></a>2. <strong>进入 <code>iwctl</code> 交互模式</strong></h4><p>在终端中输入以下命令进入 <code>iwctl</code> 交互模式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br></pre></td></tr></table></figure></div>
 
 <p>进入交互模式后，后续的命令都将在此模式下运行。</p>
 <h4 id="3-查看网络设备"><a href="#3-查看网络设备" class="headerlink" title="3. 查看网络设备"></a>3. <strong>查看网络设备</strong></h4><ul>
 <li><p>使用以下命令列出所有无线网络设备：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">device list</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">device list</span><br></pre></td></tr></table></figure></div></li>
 <li><p>输出示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Devices:</span><br><span class="line">Name Address Powered Adapter Mode</span><br><span class="line">wlan0 xx:xx:xx:xx:xx:xx on phy0 station</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Devices:</span><br><span class="line">Name Address Powered Adapter Mode</span><br><span class="line">wlan0 xx:xx:xx:xx:xx:xx on phy0 station</span><br></pre></td></tr></table></figure></div></li>
 <li><p><code>wlan0</code> 是网络接口名，后续步骤中会用到它。</p>
 </li>
 </ul>
 <h4 id="4-扫描可用-Wi-Fi-网络"><a href="#4-扫描可用-Wi-Fi-网络" class="headerlink" title="4. 扫描可用 Wi-Fi 网络"></a>4. <strong>扫描可用 Wi-Fi 网络</strong></h4><ul>
 <li><p>在指定设备上扫描 Wi-Fi 网络：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 scan</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 scan</span><br></pre></td></tr></table></figure></div></li>
 <li><p>等待扫描完成后，使用以下命令列出所有可用的 Wi-Fi 网络：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 get-networks</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 get-networks</span><br></pre></td></tr></table></figure></div></li>
 <li><p>输出示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Available networks:</span><br><span class="line">SSID Security</span><br><span class="line">MyHomeWiFi psk</span><br><span class="line">OpenNetwork open</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Available networks:</span><br><span class="line">SSID Security</span><br><span class="line">MyHomeWiFi psk</span><br><span class="line">OpenNetwork open</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h4 id="5-连接到-Wi-Fi-网络"><a href="#5-连接到-Wi-Fi-网络" class="headerlink" title="5. 连接到 Wi-Fi 网络"></a>5. <strong>连接到 Wi-Fi 网络</strong></h4><ul>
 <li><p>连接到一个指定的 Wi-Fi 网络（例如</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyHomeWiFi</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyHomeWiFi</span><br></pre></td></tr></table></figure></div>
 
 <p>）：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 connect MyHomeWiFi</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 connect MyHomeWiFi</span><br></pre></td></tr></table></figure></div></li>
 <li><p>如果 Wi-Fi 网络需要密码，系统会提示你输入密码。</p>
 </li>
 <li><p>成功连接后，你会看到类似以下的输出：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connected to MyHomeWiFi</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connected to MyHomeWiFi</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h4 id="6-断开-Wi-Fi-网络"><a href="#6-断开-Wi-Fi-网络" class="headerlink" title="6. 断开 Wi-Fi 网络"></a>6. <strong>断开 Wi-Fi 网络</strong></h4><ul>
 <li><p>如果你想断开 Wi-Fi 连接，可以使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 disconnect</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 disconnect</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h4 id="7-显示当前连接状态"><a href="#7-显示当前连接状态" class="headerlink" title="7. 显示当前连接状态"></a>7. <strong>显示当前连接状态</strong></h4><ul>
 <li><p>查看当前的连接状态，包括 IP 地址、SSID 等信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 show</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 show</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h4 id="8-列出保存的-Wi-Fi-配置"><a href="#8-列出保存的-Wi-Fi-配置" class="headerlink" title="8. 列出保存的 Wi-Fi 配置"></a>8. <strong>列出保存的 Wi-Fi 配置</strong></h4><ul>
 <li><p>显示系统中保存的 Wi-Fi 网络配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">known-networks list</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">known-networks list</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h4 id="9-删除保存的-Wi-Fi-配置"><a href="#9-删除保存的-Wi-Fi-配置" class="headerlink" title="9. 删除保存的 Wi-Fi 配置"></a>9. <strong>删除保存的 Wi-Fi 配置</strong></h4><ul>
 <li><p>删除某个保存的 Wi-Fi 网络配置（例如</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyHomeWiFi</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyHomeWiFi</span><br></pre></td></tr></table></figure></div>
 
 <p>）：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">known-networks remove MyHomeWiFi</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">known-networks remove MyHomeWiFi</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h4 id="10-退出-iwctl"><a href="#10-退出-iwctl" class="headerlink" title="10. 退出 iwctl"></a>10. <strong>退出 <code>iwctl</code></strong></h4><p>完成操作后，可以输入以下命令退出 <code>iwctl</code> 交互模式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure></div>
 
 <hr>
 <h3 id="示例操作流程（完整流程）："><a href="#示例操作流程（完整流程）：" class="headerlink" title="示例操作流程（完整流程）："></a>示例操作流程（完整流程）：</h3><ol>
 <li><p><strong>启动 <code>iwd</code> 服务：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start iwd</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start iwd</span><br></pre></td></tr></table></figure></div></li>
 <li><p><strong>进入 <code>iwctl</code>：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br></pre></td></tr></table></figure></div></li>
 <li><p><strong>查看网络设备：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">device list</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">device list</span><br></pre></td></tr></table></figure></div></li>
 <li><p><strong>扫描 Wi-Fi 网络：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 scan</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 scan</span><br></pre></td></tr></table></figure></div></li>
 <li><p><strong>显示扫描结果：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 get-networks</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 get-networks</span><br></pre></td></tr></table></figure></div></li>
 <li><p><strong>连接到指定 Wi-Fi 网络：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 connect MyHomeWiFi</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 connect MyHomeWiFi</span><br></pre></td></tr></table></figure></div></li>
 <li><p><strong>显示当前连接状态：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 show</span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">station wlan0 show</span><br></pre></td></tr></table></figure></div></li>
 <li><p><strong>退出 <code>iwctl</code>：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure></li>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure></div></li>
 </ol>
 <hr>
 <h3 id="常用命令列表"><a href="#常用命令列表" class="headerlink" title="常用命令列表"></a>常用命令列表</h3><table>

@@ -303,7 +303,7 @@
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<h1 id="渗透学习之掌控者教程"><a href="#渗透学习之掌控者教程" class="headerlink" title="渗透学习之掌控者教程"></a>渗透学习之掌控者教程</h1><p>本笔记跟随封神台的在线攻防演练平台学习，感谢提供这么好的免费学习平台。</p>
-<h2 id="第一章-SQL注入攻击原理-实战演练"><a href="#第一章-SQL注入攻击原理-实战演练" class="headerlink" title="第一章 SQL注入攻击原理 实战演练"></a>第一章 SQL注入攻击原理 实战演练</h2><p>目标网址:<a target="_blank" rel="noopener" href="http://pu2lh35s.ia.aqlab.cn/">http://pu2lh35s.ia.aqlab.cn/</a></p>
+<h2 id="第一章-SQL注入攻击原理-实战演练"><a href="#第一章-SQL注入攻击原理-实战演练" class="headerlink" title="第一章 SQL注入攻击原理 实战演练"></a>第一章 SQL注入攻击原理 实战演练</h2><p>目标网址:<a class="link"   target="_blank" rel="noopener" href="http://pu2lh35s.ia.aqlab.cn/" >http://pu2lh35s.ia.aqlab.cn/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>第一步，判断是否存在SQL漏洞，想要探寻漏洞的方法有很多，通过KALI的的SQLmap，或者更加简单粗暴一点</p>
 <p>使用?id&#x3D;1 and 1&#x3D;1检测是否预防了SQL注入，这样的语句返回解决永远为ture，如果正常返回页面，说明该网站有可能存在SQL注入漏洞</p>
 <p>使用?id&#x3D;1 and 1&#x3D;2来观察是否页面是否发生了改变，这样的语句返回永远为false，执行这样的结果将返回一个空结果集，如果正常返回，，这通常意味着您的输入被应用程序错误处理或执行，从而表明存在潜在的 SQL 注入漏洞。</p>

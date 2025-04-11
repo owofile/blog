@@ -321,16 +321,16 @@
 <p>因为目前我做这个教程的时候gitee的托管服务在维护，所以这里使用github演示，当然你可以选择自己喜欢的平台。</p>
 <p>如果要使用gitee托管，记得要提前实名认证才能使用网页托管服务，反之在github上只要注册账号就可以正常托管。</p>
 <h1 id="1-下载Git"><a href="#1-下载Git" class="headerlink" title="1.下载Git"></a>1.下载Git</h1><p>在部署前，我们需要下载git。</p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://git-scm.com/" >https://git-scm.com/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>访问网址打开官网，然后下载，点击电脑上的Download for windows就可以，自动选择当前合适版本。</p>
 <p>这时候可以看到32 64等数字，这时候需要根据电脑的位数选择，现在的电脑一般都是64位，当然如果你想要确定可以通过右键我的电脑或者此电脑，查看电脑属性，系统信息里会显示。</p>
 <p>具体的下载教程可以查看其他人分享的教程，这里不过多赘述，直接搜索Git安装教程即可。</p>
-<p>这里推荐一个教程:<a target="_blank" rel="noopener" href="https://blog.csdn.net/mukes/article/details/115693833">https://blog.csdn.net/mukes/article/details/115693833</a></p>
+<p>这里推荐一个教程:<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/mukes/article/details/115693833" >https://blog.csdn.net/mukes/article/details/115693833<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <h1 id="2-选择静态博客工具"><a href="#2-选择静态博客工具" class="headerlink" title="2.选择静态博客工具"></a>2.选择静态博客工具</h1><p>如果之前搜过静态博客的教程，你会频繁的看到 hexo typecho hugo等等的字样，这些都是能帮你快速生成博客代码的工具，同时只要通过几个代码就能创建新的博文。</p>
 <p>同时这些工具还包含各种各样制作的网页模板，也就是个性化，有大佬用爱发电制作的，也有官方制作的。</p>
 <p>选择哪个都可以，这里我使用的是hexo，之前的博客就是用hexo生成的，所以这里使用它演示。</p>
 <p>找到hexo的官方文档，查看如何使用</p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" >https://hexo.io/zh-cn/docs/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>可以看到它让我们安装git和node.js</p>
 <p>因为我们已经安装了git所以接下来安装node.js</p>
 <p>这里简单介绍一下node</p>
@@ -345,29 +345,29 @@
 </ol>
 <p>总的来说，Node.js 提供了一个强大的平台和工具，使得开发人员可以使用 JavaScript 来构建高性能、可伸缩的服务器端应用程序。</p>
 <p>这里也推荐一个node安装教程文档</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60870118/article/details/129727274">https://blog.csdn.net/qq_60870118/article/details/129727274</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60870118/article/details/129727274" >https://blog.csdn.net/qq_60870118/article/details/129727274<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>安装了node后就可以使用npm去下载所需要的文件。</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>如果遇到了下载失败，或者卡住的情况，也请不要慌张，有时候网络是这样的。</p>
 <p>多试几次或者通过修改国内镜像来下载。</p>
 <h2 id="如果npm下载插件报错"><a href="#如果npm下载插件报错" class="headerlink" title="如果npm下载插件报错"></a>如果npm下载插件报错</h2><p>可是通过使用yarn add下载插件。</p>
 <h1 id="3-创建博客"><a href="#3-创建博客" class="headerlink" title="3.创建博客"></a>3.创建博客</h1><p>使用hexo init创建Hexo工具</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &#x27;输入你的blog文件夹名称&#x27;</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &#x27;输入你的blog文件夹名称&#x27;</span><br></pre></td></tr></table></figure></div>
 
 <p>打开_config.yml更改deploy</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="comment">#仓库链接</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line"><span class="attr">message:</span> <span class="string">&#x27;hello blog&#x27;</span> <span class="comment">#msg</span></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="comment">#仓库链接</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line"><span class="attr">message:</span> <span class="string">&#x27;hello blog&#x27;</span> <span class="comment">#msg</span></span><br></pre></td></tr></table></figure></div>
 
 <p>下载deploy插件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div>
 
 <p>创建一个新文章</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &#x27;blog name&#x27;</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &#x27;blog name&#x27;</span><br></pre></td></tr></table></figure></div>
 
 <p>在本地渲染运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
 
 <p>确保没有问题后，上传到github</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
 
 <p>打开Settings的Pages，将Branch改为main然后save保存。</p>
 <p>刷新等待，打开连接查看博客。</p>

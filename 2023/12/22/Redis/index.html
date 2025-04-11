@@ -308,11 +308,16 @@
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>Redis是一个开源的使用ANSI C编写、支持网络、基于内存、可选持久性的键值对存储数据库。它通常被用作缓存、消息代理和排行榜等应用中。Redis支持多种类型的数据结构，如字符串、列表、集合、哈希表等，提供了丰富的功能和命令来操作这些数据结构。由于其高性能和灵活性，Redis被广泛应用于大型互联网应用系统中。</p>
-<p><img src="/Blackcat-loveBlog/png/redis.jpg"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/blog/Blackcat-loveBlog/png/redis.jpg"
+                     
+                ></p>
 <h1 id="Win本地安装"><a href="#Win本地安装" class="headerlink" title="Win本地安装"></a>Win本地安装</h1><p>解压win包</p>
 <p>添加redis服务</p>
 <p>到解压文件目录下 运行cmd</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf --loglevel verbose</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf --loglevel verbose</span><br></pre></td></tr></table></figure></div>
 
 <p>启动服务 redis</p>
 <p>本地链接填入 本地ip 127.0.0.1</p>

