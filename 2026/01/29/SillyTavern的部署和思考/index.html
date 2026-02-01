@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://owofile.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2026-01-29T15:52:22.000Z">
-<meta property="article:modified_time" content="2026-01-29T16:59:35.506Z">
+<meta property="article:modified_time" content="2026-02-01T17:53:42.368Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="node ai">
 <meta name="twitter:card" content="summary">
@@ -341,8 +341,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-01-30 00:59:35</span>
-            <span class="mobile">2026-01-30 00:59:35</span>
+            <span class="desktop">2026-02-02 01:53:42</span>
+            <span class="mobile">2026-02-02 01:53:42</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -407,6 +407,9 @@
 <h3 id="下载失败了怎么办"><a href="#下载失败了怎么办" class="headerlink" title="下载失败了怎么办"></a>下载失败了怎么办</h3><p>当一切安装完成就可以不出意外就可以运行项目啦，但是不出意外的话可能会出意外，如果你遇到了下载失败或者报错的时候，多半都是网络原因，这时候我们需要增加一个镜像前缀就有概率成功了</p>
 <div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://ghproxy.net/https://github.com/用户名/仓库.git</span><br><span class="line"><span class="comment"># 或 https://mirror.ghproxy.com/   https://gitclone.com/github.com/</span></span><br></pre></td></tr></table></figure></div>
 
+<h3 id="Termux自带切换镜像源"><a href="#Termux自带切换镜像源" class="headerlink" title="Termux自带切换镜像源"></a>Termux自带切换镜像源</h3><p>在最新的一次部署中，我发现Termux提供的非常友好的可视化换源，以下是命令，直接切换中国区即可</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-change-repo</span><br></pre></td></tr></table></figure></div>
+
 <p>完整命令</p>
 <div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://ghproxy.net/https://github.com/SillyTavern/SillyTavern -b release</span><br></pre></td></tr></table></figure></div>
 
@@ -427,6 +430,13 @@
 <h3 id="我想要快速游玩，我应该怎么做？"><a href="#我想要快速游玩，我应该怎么做？" class="headerlink" title="我想要快速游玩，我应该怎么做？"></a>我想要快速游玩，我应该怎么做？</h3><p>当你部署完成后，你需要先购买API，拿到API密钥后填写在酒馆里，然后再相关社群比如类脑，寻找对应AI模型的<strong>预设</strong>，同时需要下载酒馆助手，也就是酒馆中的插件，因为目前大部分大佬写的角色卡都有好看的前端，有了这个插件才能被正确渲染出来，之后下载角色卡导入就可以正常游玩了</p>
 <h3 id="我对SillyTavern有更深入的兴趣，想要边玩边了解更多"><a href="#我对SillyTavern有更深入的兴趣，想要边玩边了解更多" class="headerlink" title="我对SillyTavern有更深入的兴趣，想要边玩边了解更多"></a>我对SillyTavern有更深入的兴趣，想要边玩边了解更多</h3><p>如果你愿意为此花费更多时间了解，不只是游玩，SillyTavern这个项目本身的很多技术和社区都能满足你，比如你可以加入社群编写角色卡和世界书，这会让你对AI预设词和AI模型本身有更多深入的了解，其本身的逻辑非常有趣，当然你也可以专注于编写前端UI或者预设，这回丰富你的编码技术，抛离SillyTavern有很多有意思或者涩涩的角色卡，其项目的技术和对AI的理解是很领先的，同时这一切在社群中都是免费的，这里也感谢社群中的每个人，正是因为社群中的大佬们不断编写新的角色卡，构建新的玩法，才能有这么多有趣的内容，所以如果你想要进入社群，还请遵循社群的规则，这样才能让社群更好的维护下去</p>
 <h3 id="为什么我的SillyTavern和市面上玩到的成品AI酒馆差别这么大？"><a href="#为什么我的SillyTavern和市面上玩到的成品AI酒馆差别这么大？" class="headerlink" title="为什么我的SillyTavern和市面上玩到的成品AI酒馆差别这么大？"></a>为什么我的SillyTavern和市面上玩到的成品AI酒馆差别这么大？</h3><p>因为市面上成品的酒馆针对预设和规则等进行的专门的优化和设置，所以一开始的时候可能无法达到那么好的效果，但是多阅读技术文章，或者礼貌询问大佬，一切都会慢慢好起来的，这些是成品酒馆之所以这么贵的原因，他们抓住了小白不愿意琢磨，比较如果是完全不懂的新手，部署整套流程，调教，设置，确实很耗费时间，即使完成后，可能耐心也被消耗了不少，但请记住一点，这里才是一切的起源</p>
+<h3 id="如何让整个局域网可以访问部署好的酒馆？"><a href="#如何让整个局域网可以访问部署好的酒馆？" class="headerlink" title="如何让整个局域网可以访问部署好的酒馆？"></a>如何让整个局域网可以访问部署好的酒馆？</h3><p>SillyTavern项目提供的配置文件中已经提供了暴露在局域网的做法，需要根据以下方式修改配置文件即可：</p>
+<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 改为 true 以允许外部连接</span></span><br><span class="line"><span class="attr">listen:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 监听地址保持 0.0.0.0（监听所有网络接口）</span></span><br><span class="line"><span class="attr">listenAddress:</span></span><br><span class="line">  <span class="attr">ipv4:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">  <span class="attr">ipv6:</span> <span class="string">&#x27;[::]&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>Tip:注意还需要修改白名单，如果关闭白名单会报错，建议还是开启然后将IP段手动添加到白名单，如果是其他不方便的环境，也可以启用身份认证，这里只演示白名单</p>
+<div class="code-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">whitelistMode:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">whitelist:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">::1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span><span class="string">/16</span>    <span class="comment"># 允许 192.168.x.x 网段所有IP</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">10.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/8</span>        <span class="comment"># 允许 10.x.x.x 网段所有IP（如有需要）</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">172.16</span><span class="number">.0</span><span class="number">.0</span><span class="string">/12</span>     <span class="comment"># 允许 Docker 网段（通常自动处理）</span></span><br></pre></td></tr></table></figure></div>
+
+<p>如果你是PC端，需要注意关闭防火墙或者添加放行端口的协议，否则无法在局域网中进行访问</p>
 
 		</div>
 
@@ -441,7 +451,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2026-01-30 00:59:35
+                    :</strong> 2026-02-02 01:53:42
             </li>
         
         <li>
@@ -547,7 +557,7 @@
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">SillyTavern的部署和思考</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85Git"><span class="nav-text">如何安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDSillyTavern"><span class="nav-text">如何下载SillyTavern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85Node"><span class="nav-text">如何安装Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-text">下载失败了怎么办</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E9%85%92%E9%A6%86"><span class="nav-text">启动酒馆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8SillyTavern%E7%9A%84%E9%A1%BE%E8%99%91%E5%92%8C%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">第一次使用SillyTavern的顾虑和可能出现的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E6%83%B3%E8%A6%81%E5%BF%AB%E9%80%9F%E6%B8%B8%E7%8E%A9%EF%BC%8C%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F"><span class="nav-text">我想要快速游玩，我应该怎么做？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E5%AF%B9SillyTavern%E6%9C%89%E6%9B%B4%E6%B7%B1%E5%85%A5%E7%9A%84%E5%85%B4%E8%B6%A3%EF%BC%8C%E6%83%B3%E8%A6%81%E8%BE%B9%E7%8E%A9%E8%BE%B9%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A"><span class="nav-text">我对SillyTavern有更深入的兴趣，想要边玩边了解更多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84SillyTavern%E5%92%8C%E5%B8%82%E9%9D%A2%E4%B8%8A%E7%8E%A9%E5%88%B0%E7%9A%84%E6%88%90%E5%93%81AI%E9%85%92%E9%A6%86%E5%B7%AE%E5%88%AB%E8%BF%99%E4%B9%88%E5%A4%A7%EF%BC%9F"><span class="nav-text">为什么我的SillyTavern和市面上玩到的成品AI酒馆差别这么大？</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85Git"><span class="nav-text">如何安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDSillyTavern"><span class="nav-text">如何下载SillyTavern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85Node"><span class="nav-text">如何安装Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-text">下载失败了怎么办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Termux%E8%87%AA%E5%B8%A6%E5%88%87%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-text">Termux自带切换镜像源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E9%85%92%E9%A6%86"><span class="nav-text">启动酒馆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8SillyTavern%E7%9A%84%E9%A1%BE%E8%99%91%E5%92%8C%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">第一次使用SillyTavern的顾虑和可能出现的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E6%83%B3%E8%A6%81%E5%BF%AB%E9%80%9F%E6%B8%B8%E7%8E%A9%EF%BC%8C%E6%88%91%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F"><span class="nav-text">我想要快速游玩，我应该怎么做？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E5%AF%B9SillyTavern%E6%9C%89%E6%9B%B4%E6%B7%B1%E5%85%A5%E7%9A%84%E5%85%B4%E8%B6%A3%EF%BC%8C%E6%83%B3%E8%A6%81%E8%BE%B9%E7%8E%A9%E8%BE%B9%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A"><span class="nav-text">我对SillyTavern有更深入的兴趣，想要边玩边了解更多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84SillyTavern%E5%92%8C%E5%B8%82%E9%9D%A2%E4%B8%8A%E7%8E%A9%E5%88%B0%E7%9A%84%E6%88%90%E5%93%81AI%E9%85%92%E9%A6%86%E5%B7%AE%E5%88%AB%E8%BF%99%E4%B9%88%E5%A4%A7%EF%BC%9F"><span class="nav-text">为什么我的SillyTavern和市面上玩到的成品AI酒馆差别这么大？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%A9%E6%95%B4%E4%B8%AA%E5%B1%80%E5%9F%9F%E7%BD%91%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E9%83%A8%E7%BD%B2%E5%A5%BD%E7%9A%84%E9%85%92%E9%A6%86%EF%BC%9F"><span class="nav-text">如何让整个局域网可以访问部署好的酒馆？</span></a></li></ol></li></ol>
 
 	</div>
 </div>
