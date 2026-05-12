@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="微信小程序学习笔记 小程序简介小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。 官方文档:https:&#x2F;&#x2F;developers.weixin.qq.com&#x2F;miniprogram&#x2F;dev&#x2F;framework&#x2F;quickstart&#x2F; 项目构成目录结构小程序包含一个描述整体程序的 app 和多个描述各自页面的 page。 一个小程序主体部分由三个文件组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序学习笔记">
+<meta property="og:url" content="https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="微信小程序学习笔记 小程序简介小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。 官方文档:https:&#x2F;&#x2F;developers.weixin.qq.com&#x2F;miniprogram&#x2F;dev&#x2F;framework&#x2F;quickstart&#x2F; 项目构成目录结构小程序包含一个描述整体程序的 app 和多个描述各自页面的 page。 一个小程序主体部分由三个文件组">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://owofile.github.io/blog/images/loading.svg">
+<meta property="og:image" content="https://owofile.github.io/blog/images/loading.svg">
+<meta property="og:image" content="https://owofile.github.io/blog/images/loading.svg">
+<meta property="article:published_time" content="2023-12-19T03:28:25.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:13.900Z">
+<meta property="article:author" content="Lain">
+<meta property="article:tag" content="微信小程序">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://owofile.github.io/blog/images/loading.svg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>微信小程序学习笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2023/12/20/%E5%A4%A7%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2023/12/18/linux%E4%B8%AD%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&text=微信小程序学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&is_video=false&description=微信小程序学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=微信小程序学习笔记&body=Check out this article: https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&name=微信小程序学习笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&t=微信小程序学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">微信小程序学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">小程序简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%84%E6%88%90"><span class="toc-number">2.1.</span> <span class="toc-text">项目构成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.1.</span> <span class="toc-text">目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#app-json"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">app.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#project-config-json"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">project.config.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sitemap-json"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">sitemap.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2-json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.1.4.</span> <span class="toc-text">页面.json配置文件的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2"><span class="toc-number">2.1.1.5.</span> <span class="toc-text">新建小程序页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E9%A6%96%E9%A1%B5"><span class="toc-number">2.1.1.6.</span> <span class="toc-text">修改项目首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WXML%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.1.1.7.</span> <span class="toc-text">WXML模板</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#WXML%E5%92%8CHTML%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.1.7.1.</span> <span class="toc-text">WXML和HTML的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WXSS%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.1.1.8.</span> <span class="toc-text">WXSS样式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#WXSS%E5%92%8CCSS%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.1.8.1.</span> <span class="toc-text">WXSS和CSS的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS"><span class="toc-number">2.1.1.9.</span> <span class="toc-text">JS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%BF%E4%B8%BB%E7%8E%AF%E5%A2%83-Host-environment"><span class="toc-number">2.1.1.10.</span> <span class="toc-text">宿主环境(Host environment)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E9%A1%BA%E5%BA%8F"><span class="toc-number">2.1.1.11.</span> <span class="toc-text">小程序启动过程顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="toc-number">2.1.1.12.</span> <span class="toc-text">页面渲染过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.1.13.</span> <span class="toc-text">通信模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-number">2.1.1.14.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#view"><span class="toc-number">2.1.1.14.1.</span> <span class="toc-text">view</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#image"><span class="toc-number">2.1.1.14.2.</span> <span class="toc-text">image</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API"><span class="toc-number">2.1.1.15.</span> <span class="toc-text">API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%BC%A0%E5%8F%82%E5%92%8C%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5"><span class="toc-number">2.1.1.16.</span> <span class="toc-text">事件传参和数据同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">2.1.1.17.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API%E8%B0%83%E7%94%A8"><span class="toc-number">2.1.1.18.</span> <span class="toc-text">API调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE"><span class="toc-number">2.1.1.19.</span> <span class="toc-text">全局配置</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        微信小程序学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-19T03:28:25.000Z" class="dt-published" itemprop="datePublished">2023-12-19</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/blog/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="微信小程序学习笔记"><a href="#微信小程序学习笔记" class="headerlink" title="微信小程序学习笔记"></a>微信小程序学习笔记</h1><p><img src="/blog/images/loading.svg"></p>
+<h1 id="小程序简介"><a href="#小程序简介" class="headerlink" title="小程序简介"></a>小程序简介</h1><p>小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
+<p>官方文档:<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/">https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/</a></p>
+<h2 id="项目构成"><a href="#项目构成" class="headerlink" title="项目构成"></a>项目构成</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>小程序包含一个描述整体程序的 <code>app</code> 和多个描述各自页面的 <code>page</code>。</p>
+<p>一个小程序主体部分由三个文件组成，必须放在项目的根目录，如下：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>必需</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html">app.js</a></td>
+<td>是</td>
+<td>小程序逻辑</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html">app.json</a></td>
+<td>是</td>
+<td>小程序公共配置</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">app.wxss</a></td>
+<td>否</td>
+<td>小程序公共样式表</td>
+</tr>
+</tbody></table>
+<p>一个小程序页面由四个文件组成，分别是：</p>
+<table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>必需</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html">js</a></td>
+<td>是</td>
+<td>页面逻辑</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/">wxml</a></td>
+<td>是</td>
+<td>页面结构</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE">json</a></td>
+<td>否</td>
+<td>页面配置</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">wxss</a></td>
+<td>否</td>
+<td>页面样式表</td>
+</tr>
+</tbody></table>
+<p><strong>注意：为了方便开发者减少配置项，描述页面的四个文件必须具有相同的路径与文件名。</strong></p>
+<p>微信小程序的项目目录构成主要包括以下几个部分：</p>
+<ol>
+<li><code>pages</code> 文件夹：主要存放小程序的页面文件。每个页面包含四个文件：<ul>
+<li><code>index.js</code>：小程序的逻辑文件，也称事件交互文件和脚本文件，用于处理界面的点击事件等功能。</li>
+<li><code>index.wxml</code>：界面文件，是页面结构文件，用于构建页面，在页面上增加控件，相当于HTML。</li>
+<li><code>index.wxss</code>：样式表文件，类似于前端中的CSS，是为<code>index.wxml</code>文件和<code>page</code>文件进行美化的文件，让界面显示的更加美观。</li>
+<li><code>index.json</code>：配置当前页面的默认项，主要是JSON数据格式存放，用于设置程序的配置效果。</li>
+</ul>
+</li>
+<li><code>utils</code> 文件夹：存放一些辅助函数或工具类。</li>
+<li><code>app.js</code> 文件：小程序的全局配置文件，包括全局变量、函数、生命周期函数等。</li>
+</ol>
+<p>以下是微信小程序项目目录树的一个示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/my\\_wechat\\_app</span><br><span class="line">|-- pages/</span><br><span class="line">| |-- index/</span><br><span class="line">| | |-- index.js</span><br><span class="line">| | |-- index.wxml</span><br><span class="line">| | |-- index.wxss</span><br><span class="line">| | |-- index.json</span><br><span class="line">|-- utils/</span><br><span class="line">| |-- helper.js</span><br><span class="line">| |-- another\\_helper.js</span><br><span class="line">|-- app.js</span><br></pre></td></tr></table></figure>
+
+<p>这里只是一个基本的目录结构示例，实际上可能还有其他的文件夹和文件。为了方便新手理解，可以按照以下步骤操作：</p>
+<ol>
+<li>在你的开发环境中创建一个新的文件夹，例如命名为<code>my_wechat_app</code>。</li>
+<li>在<code>my_wechat_app</code>文件夹下创建<code>pages</code>文件夹，并按照上面的示例结构进行创建。</li>
+<li>在<code>my_wechat_app</code>文件夹下创建<code>utils</code>文件夹，并添加一些辅助函数或工具类文件。</li>
+<li>在<code>my_wechat_app</code>文件夹下创建<code>app.js</code>文件，这是小程序的全局配置文件。</li>
+<li>在你的开发环境中打开<code>my_wechat_app</code>文件夹，就可以看到完整的目录结构了。</li>
+</ol>
+<p>在我看来，小程序的开发过程其实和Vue开发是有些许相同的，在Data,渲染，和生命周期来看，都能看到些许共同点，不同的是，小程序提供了更多的封装功能API，方便开发者更快的实现功能，小程序的出现比起现在的Web项目，应该更加方便和容易开发，以微信的庞大人群，可以让开发者更快的实现自己想要的功能和部署出自己的项目。</p>
+<h4 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h4><p>这是一个全局配置文件</p>
+<p><strong>pages</strong>:用来记录当前小程序所有页面的路径</p>
+<p><strong>window</strong>:全局定义定义小程序所有页面的背景颜色，文字颜色等</p>
+<p><strong>style</strong>:全局定义小程序组件所使用的样式版本 默认v2是最新版本 删除后回到老版</p>
+<p><strong>sitemapLocation</strong>:指明sitemap.json的位置</p>
+<h4 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json"></a>project.config.json</h4><p>这是一个个性化配置文件</p>
+<p><strong>setting</strong>:编译相关配置</p>
+<p><strong>progectname</strong>:项目名称</p>
+<p><strong>appid</strong>:小程序账号ID</p>
+<h4 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a>sitemap.json</h4><p>这个文件用来配置小程序页面是否允许微信索引</p>
+<p>有些类似PC网页的SEO</p>
+<p>aciton:是否允许被索引 默认是allow允许，如果你不想被索引可以替换为disallow</p>
+<p>page:页面 默认是*号，就是允许所有页面被索引</p>
+<p>tip:如果不想看到索引的黄色警告，可以在project.config.json的setting里的checkSiteMap改为false，意为关闭警告 如果没有找到这个数据可以自己补全。</p>
+<h4 id="页面-json配置文件的作用"><a href="#页面-json配置文件的作用" class="headerlink" title="页面.json配置文件的作用"></a>页面.json配置文件的作用</h4><p>此文件作用是用来配置页面的外观</p>
+<p><strong>tip</strong>:在相同配置中，页面的配置文件会覆盖全局的配置文件</p>
+<h4 id="新建小程序页面"><a href="#新建小程序页面" class="headerlink" title="新建小程序页面"></a>新建小程序页面</h4><p>当你在<strong>app.json</strong>的<strong>pages</strong>里<strong>新增</strong>一个<strong>页面路径</strong>，程序就会<strong>自动生成</strong>相关文件和配置</p>
+<h4 id="修改项目首页"><a href="#修改项目首页" class="headerlink" title="修改项目首页"></a>修改项目首页</h4><p>在<strong>app.json</strong>的<strong>pages</strong>里，顺序就可以决定首页，排在最上方的会被微信小程序自动识别为首页</p>
+<h4 id="WXML模板"><a href="#WXML模板" class="headerlink" title="WXML模板"></a>WXML模板</h4><p>微信小程序用来构建网页结构的模板文件</p>
+<p>虽然名字不同，但是其原理和HTML相同，套用即可快速学会</p>
+<h5 id="WXML和HTML的区别"><a href="#WXML和HTML的区别" class="headerlink" title="WXML和HTML的区别"></a>WXML和HTML的区别</h5><p><strong>1.标签名称不同</strong></p>
+<ul>
+<li>HTML (div, span, img, a)</li>
+<li>WXML (view, text, image, navigator)</li>
+</ul>
+<p><strong>2.属性节点不同</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;ahref=&quot;#&quot;&gt;超链接&lt;/a&gt;</span><br><span class="line">&lt;navigator url=&quot;/pages/home/home&quot;&gt;&lt;/navigator&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.提供了类似于 Vue 中的模板语法</strong></p>
+<p>可以帮助我们快速实现模板的渲染</p>
+<ul>
+<li>数据绑定</li>
+<li>列表渲染</li>
+<li>条件渲染</li>
+</ul>
+<h4 id="WXSS样式"><a href="#WXSS样式" class="headerlink" title="WXSS样式"></a>WXSS样式</h4><p>微信小程序用来描述组件的样式文件</p>
+<p>和HTML的CSS逻辑类似</p>
+<h5 id="WXSS和CSS的区别"><a href="#WXSS和CSS的区别" class="headerlink" title="WXSS和CSS的区别"></a>WXSS和CSS的区别</h5><p><strong>1.新增了 rpx 尺寸单位</strong></p>
+<ul>
+<li>CSS中需要手动进行像素单位换算，例如 rem</li>
+<li>WXSS在底层支持新的尺寸单位 rpx，在不同大小的屏幕上小程序会自动进行换算</li>
+</ul>
+<p><strong>2.提供了全局的样式和局部样式</strong></p>
+<ul>
+<li>项目根目录中的app.wxss 会作用于所有小程序页面</li>
+<li>局部页面的.wxss样式仅对当前页面生效</li>
+</ul>
+<p><strong>3.WXSS 仅支持部分 CSS 选择器</strong></p>
+<ul>
+<li>.class和#id</li>
+<li>element</li>
+<li>并集选择器、后代选择器</li>
+<li>::after和::before 等伪类选择器</li>
+</ul>
+<h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><p>使用Js文件来编写页面逻辑部分的操作判断</p>
+<p>app.js是整个小程序项目的入口文件</p>
+<p>页面.js是创建页面后自动生成的js文件，用来实现个人页面的逻辑功能</p>
+<p>普通的.js文件用来封装公共的函数或者属性来供页面使用</p>
+<h4 id="宿主环境-Host-environment"><a href="#宿主环境-Host-environment" class="headerlink" title="宿主环境(Host environment)"></a>宿主环境(Host environment)</h4><p>不同的宿主环境支持不同的程序项目</p>
+<p><img src="/blog/images/loading.svg"></p>
+<p>而小程序的宿主环境基于微信中</p>
+<p><img src="/blog/images/loading.svg"></p>
+<p>基于微信环境这个特殊的位置，我们可以使用微信提供的各种封装接口来实现在普通网页无法完成的功能，比如，微信扫码、微信支付、微信登陆、地理定位、etc….等等等。</p>
+<p>小程序宿主环境包含的内容</p>
+<ul>
+<li>通信模型</li>
+<li>运行机制</li>
+<li>组件</li>
+<li>API</li>
+</ul>
+<h4 id="小程序启动过程顺序"><a href="#小程序启动过程顺序" class="headerlink" title="小程序启动过程顺序"></a>小程序启动过程顺序</h4><ol>
+<li>把小程序的代码包下载到本地</li>
+<li>解析app.json 全局配置文件</li>
+<li>执行 app.js 小程序入口文件</li>
+<li>调用 App() 创建小程序实例</li>
+<li>渲染小程序首页</li>
+<li>小程序启动完成</li>
+</ol>
+<h4 id="页面渲染过程"><a href="#页面渲染过程" class="headerlink" title="页面渲染过程"></a>页面渲染过程</h4><ol>
+<li>加载解析页面的json配置文件</li>
+<li>加载页面的wxl模板和wxss样式</li>
+<li>执行页面的 .js 文件，调用 Page() 创建页面实例</li>
+<li>页面渲染完成</li>
+</ol>
+<h4 id="通信模型"><a href="#通信模型" class="headerlink" title="通信模型"></a>通信模型</h4><h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><p>组件的出现可以让开发者快速开发出自己想要的功能，这些组件都是微信官方封装好的，可以直接调用</p>
+<h5 id="view"><a href="#view" class="headerlink" title="view"></a>view</h5><h5 id="image"><a href="#image" class="headerlink" title="image"></a>image</h5><h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><h4 id="事件传参和数据同步"><a href="#事件传参和数据同步" class="headerlink" title="事件传参和数据同步"></a>事件传参和数据同步</h4><h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><h4 id="API调用"><a href="#API调用" class="headerlink" title="API调用"></a>API调用</h4><h4 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h4>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">微信小程序学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">小程序简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%84%E6%88%90"><span class="toc-number">2.1.</span> <span class="toc-text">项目构成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.1.</span> <span class="toc-text">目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#app-json"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">app.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#project-config-json"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">project.config.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sitemap-json"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">sitemap.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2-json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.1.4.</span> <span class="toc-text">页面.json配置文件的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2"><span class="toc-number">2.1.1.5.</span> <span class="toc-text">新建小程序页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E9%A6%96%E9%A1%B5"><span class="toc-number">2.1.1.6.</span> <span class="toc-text">修改项目首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WXML%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.1.1.7.</span> <span class="toc-text">WXML模板</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#WXML%E5%92%8CHTML%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.1.7.1.</span> <span class="toc-text">WXML和HTML的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WXSS%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.1.1.8.</span> <span class="toc-text">WXSS样式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#WXSS%E5%92%8CCSS%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.1.8.1.</span> <span class="toc-text">WXSS和CSS的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS"><span class="toc-number">2.1.1.9.</span> <span class="toc-text">JS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%BF%E4%B8%BB%E7%8E%AF%E5%A2%83-Host-environment"><span class="toc-number">2.1.1.10.</span> <span class="toc-text">宿主环境(Host environment)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E9%A1%BA%E5%BA%8F"><span class="toc-number">2.1.1.11.</span> <span class="toc-text">小程序启动过程顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="toc-number">2.1.1.12.</span> <span class="toc-text">页面渲染过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.1.13.</span> <span class="toc-text">通信模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-number">2.1.1.14.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#view"><span class="toc-number">2.1.1.14.1.</span> <span class="toc-text">view</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#image"><span class="toc-number">2.1.1.14.2.</span> <span class="toc-text">image</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API"><span class="toc-number">2.1.1.15.</span> <span class="toc-text">API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%BC%A0%E5%8F%82%E5%92%8C%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5"><span class="toc-number">2.1.1.16.</span> <span class="toc-text">事件传参和数据同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">2.1.1.17.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API%E8%B0%83%E7%94%A8"><span class="toc-number">2.1.1.18.</span> <span class="toc-text">API调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE"><span class="toc-number">2.1.1.19.</span> <span class="toc-text">全局配置</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&text=微信小程序学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&is_video=false&description=微信小程序学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=微信小程序学习笔记&body=Check out this article: https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=微信小程序学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&name=微信小程序学习笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&t=微信小程序学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

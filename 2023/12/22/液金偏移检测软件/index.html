@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="液金偏移检测软件说是液金偏移检测软件，其实也只是通过监控不同的核心温度温差来做一个是否偏移的判断 oshi是一个用于获取系统信息的Java库，可以用来获取关于硬件、操作系统和进程的详细信息。它提供了一组简单易用的API，使得获取系统信息变得非常方便。 oshi库的主要功能包括：  获取硬件信息：包括CPU、内存、磁盘、网络接口等硬件相关信息。 获取操作系统信息：包括操作系统类型、版本、文件系统等信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="液金偏移检测软件">
+<meta property="og:url" content="https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="液金偏移检测软件说是液金偏移检测软件，其实也只是通过监控不同的核心温度温差来做一个是否偏移的判断 oshi是一个用于获取系统信息的Java库，可以用来获取关于硬件、操作系统和进程的详细信息。它提供了一组简单易用的API，使得获取系统信息变得非常方便。 oshi库的主要功能包括：  获取硬件信息：包括CPU、内存、磁盘、网络接口等硬件相关信息。 获取操作系统信息：包括操作系统类型、版本、文件系统等信">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-21T22:05:09.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:14.455Z">
+<meta property="article:author" content="Lain">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>液金偏移检测软件</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2023/12/26/SpringBoot-Redis%E6%95%B4%E5%90%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2023/12/22/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&text=液金偏移检测软件"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&is_video=false&description=液金偏移检测软件"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=液金偏移检测软件&body=Check out this article: https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&name=液金偏移检测软件&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&t=液金偏移检测软件"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">液金偏移检测软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E6%98%AF0"><span class="toc-number">1.1.</span> <span class="toc-text">返回结果是0</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        液金偏移检测软件
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-21T22:05:09.000Z" class="dt-published" itemprop="datePublished">2023-12-22</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="液金偏移检测软件"><a href="#液金偏移检测软件" class="headerlink" title="液金偏移检测软件"></a>液金偏移检测软件</h1><p>说是液金偏移检测软件，其实也只是通过监控不同的核心温度温差来做一个是否偏移的判断</p>
+<p><strong>oshi</strong>是一个用于获取系统信息的Java库，可以用来获取关于硬件、操作系统和进程的详细信息。它提供了一组简单易用的API，使得获取系统信息变得非常方便。</p>
+<p>oshi库的主要功能包括：</p>
+<ol>
+<li>获取硬件信息：包括CPU、内存、磁盘、网络接口等硬件相关信息。</li>
+<li>获取操作系统信息：包括操作系统类型、版本、文件系统等信息。</li>
+<li>获取进程信息：包括进程列表、资源利用率、线程数等信息。</li>
+</ol>
+<p>通过oshi库，你可以轻松地编写Java代码来获取系统的各种信息，从而实现一些系统管理、性能监控或诊断工具等应用程序。oshi库还在不断更新和改进中，以适应不同操作系统和硬件平台的需求。</p>
+<p>总之，oshi库为Java开发者提供了一个强大且易用的工具，用于获取系统信息并进行相应处理。</p>
+<p>首先，你需要在Maven或Gradle中添加oshi库的依赖项。</p>
+<p>对于Maven项目，可以在 <code>pom.xml</code> 文件中添加以下依赖项：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.oshi<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>oshi-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>5.7.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>对于Gradle项目，可以在 <code>build.gradle</code> 文件中添加以下依赖项：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">implementation <span class="string">&#x27;com.github.oshi:oshi-core:5.7.4&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后，你可以使用以下代码示例来获取CPU温度信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> oshi.SystemInfo;</span><br><span class="line"><span class="keyword">import</span> oshi.hardware.CentralProcessor;</span><br><span class="line"><span class="keyword">import</span> oshi.hardware.Sensors;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"><span class="type">SystemInfo</span> <span class="variable">systemInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SystemInfo</span>();</span><br><span class="line"><span class="type">CentralProcessor</span> <span class="variable">processor</span> <span class="operator">=</span> systemInfo.getHardware().getProcessor();</span><br><span class="line"><span class="type">Sensors</span> <span class="variable">sensors</span> <span class="operator">=</span> systemInfo.getHardware().getSensors();</span><br><span class="line"><span class="type">double</span> <span class="variable">cpuTemperature</span> <span class="operator">=</span> sensors.getCpuTemperature();</span><br><span class="line">System.out.println(<span class="string">&quot;CPU温度: &quot;</span> + cpuTemperature + <span class="string">&quot;°C&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码将使用oshi库获取CPU温度信息，并将其打印到控制台上。记得处理可能的异常情况，比如未能获取到CPU温度的情况。</p>
+<p>在上一个示例中，我展示了如何使用oshi来获取整个CPU的温度，如果你想获取每一个CPU核心的温度，你可以使用以下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> oshi.SystemInfo;</span><br><span class="line"><span class="keyword">import</span> oshi.hardware.CentralProcessor;</span><br><span class="line"><span class="keyword">import</span> oshi.hardware.CentralProcessor.TickType;</span><br><span class="line"><span class="keyword">import</span> oshi.hardware.HardwareAbstractionLayer;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"><span class="type">SystemInfo</span> <span class="variable">systemInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SystemInfo</span>();</span><br><span class="line"><span class="type">HardwareAbstractionLayer</span> <span class="variable">hardware</span> <span class="operator">=</span> systemInfo.getHardware();</span><br><span class="line"><span class="type">CentralProcessor</span> <span class="variable">processor</span> <span class="operator">=</span> hardware.getProcessor();</span><br><span class="line"><span class="type">double</span>[] temperatures = processor.getTemperatures();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; temperatures.length; i++) &#123;</span><br><span class="line">System.out.println(<span class="string">&quot;Core &quot;</span> + i + <span class="string">&quot; 温度: &quot;</span> + temperatures[i] + <span class="string">&quot;°C&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这段代码中，我们使用 <code>processor.getTemperatures()</code> 方法获取到每个CPU核心的温度，并将其打印出来。这样你就能够查看每个CPU核心的温度了。</p>
+<h3 id="返回结果是0"><a href="#返回结果是0" class="headerlink" title="返回结果是0"></a>返回结果是0</h3><p>很多PC机的硬件生产商一般都不会把CPU的温度、风扇转速、电压值向WMI开放，但是我们获取CPU的性能数据就是通过向WMI请求返回值的，这就造成请求下发但是不能返回值，返回的性能值都是 0</p>
+<p>解决办法：目前只能通过一个window插件获取到CPU的温度，其他参数还是不能获取到</p>
+<p>插件下载地址：<a target="_blank" rel="noopener" href="https://openhardwaremonitor.org/">https://openhardwaremonitor.org/</a><br>————————————————<br>版权声明：本文为CSDN博主「请干了这碗鸡汤」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23296327/article/details/104685687">https://blog.csdn.net/qq_23296327/article/details/104685687</a></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">液金偏移检测软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E6%98%AF0"><span class="toc-number">1.1.</span> <span class="toc-text">返回结果是0</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&text=液金偏移检测软件"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&is_video=false&description=液金偏移检测软件"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=液金偏移检测软件&body=Check out this article: https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&title=液金偏移检测软件"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&name=液金偏移检测软件&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/12/22/%E6%B6%B2%E9%87%91%E5%81%8F%E7%A7%BB%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6/&t=液金偏移检测软件"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
