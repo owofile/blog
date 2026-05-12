@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Git的基础使用以下是关于Git中几个区域及其作用的表格，包括暂存区、工作区、本地仓库和远程仓库：    区域 描述    暂存区（Stage&#x2F;Index） 用于暂存待提交的更改。通过git add命令将文件添加到暂存区，可以将其标记为待提交的更改。   工作区（Working Directory） 用户在本地计算机上实际看到的目录和文件。工作区是Git仓库的根目录，其中包含所有版本控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git的基础使用">
+<meta property="og:url" content="https://owofile.github.io/blog/2023/11/18/Git/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="Git的基础使用以下是关于Git中几个区域及其作用的表格，包括暂存区、工作区、本地仓库和远程仓库：    区域 描述    暂存区（Stage&#x2F;Index） 用于暂存待提交的更改。通过git add命令将文件添加到暂存区，可以将其标记为待提交的更改。   工作区（Working Directory） 用户在本地计算机上实际看到的目录和文件。工作区是Git仓库的根目录，其中包含所有版本控制">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-17T23:05:36.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:13.210Z">
+<meta property="article:author" content="Lain">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Git的基础使用</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2023/12/11/python/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2023/10/13/Web/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/11/18/Git/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/11/18/Git/&text=Git的基础使用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/11/18/Git/&is_video=false&description=Git的基础使用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Git的基础使用&body=Check out this article: https://owofile.github.io/blog/2023/11/18/Git/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/11/18/Git/&name=Git的基础使用&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/11/18/Git/&t=Git的基础使用"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">Git的基础使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">2.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80-%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">一.作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C-git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.2.</span> <span class="toc-text">二.git常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89-%E5%9C%A8idea%E4%B8%AD%E4%BD%BF%E7%94%A8git"><span class="toc-number">2.3.</span> <span class="toc-text">三.在idea中使用git</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Git的基础使用
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-11-17T23:05:36.000Z" class="dt-published" itemprop="datePublished">2023-11-18</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/blog/tags/Git/" rel="tag">Git</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="Git的基础使用"><a href="#Git的基础使用" class="headerlink" title="Git的基础使用"></a>Git的基础使用</h1><p>以下是关于Git中几个区域及其作用的表格，包括暂存区、工作区、本地仓库和远程仓库：</p>
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>暂存区（Stage&#x2F;Index）</td>
+<td>用于暂存待提交的更改。通过<code>git add</code>命令将文件添加到暂存区，可以将其标记为待提交的更改。</td>
+</tr>
+<tr>
+<td>工作区（Working Directory）</td>
+<td>用户在本地计算机上实际看到的目录和文件。工作区是Git仓库的根目录，其中包含所有版本控制下的文件。</td>
+</tr>
+<tr>
+<td>本地仓库（Local Repository）</td>
+<td>存储在用户计算机上的实际Git仓库。它包含所有提交的历史记录、分支、标签等信息。</td>
+</tr>
+<tr>
+<td>远程仓库（Remote Repository）</td>
+<td>存储在远程服务器上的Git仓库。通常用于与他人共享代码或备份代码。可以通过<code>git push</code>命令将本地仓库的更改推送到远程仓库。</td>
+</tr>
+</tbody></table>
+<p>这些区域在Git中扮演着不同的角色，它们协同工作以实现版本控制和协作。通过使用暂存区，用户可以临时保存多个版本的更改，并在准备好提交时将它们一起提交到本地仓库。工作区是用户实际看到和操作的文件和目录，而本地仓库则存储了整个Git仓库的历史记录和元数据。远程仓库用于与他人共享代码或备份代码，可以通过<code>git push</code>命令将本地仓库的更改推送到远程仓库。</p>
+<ol>
+<li><strong>工作区</strong>：从Git版本库解包出来的实际可编辑的文件，放在磁盘上供我们使用或修改，即我们能直接看到的项目目录。</li>
+<li><strong>暂存区</strong>：是一个文件，实际位于.git&#x2F;index，所以把暂存区也叫做索引（Index），保存了下次将要提交的文件列表信息。通过执行<code>git add</code>命令将工作区中的文件添加到暂存区。</li>
+<li><strong>本地仓库</strong>：存储在用户计算机上的实际Git仓库，包含所有提交的历史记录、分支、标签等信息。执行<code>git commit</code>命令将暂存区的文件提交到本地仓库。</li>
+<li><strong>远程仓库</strong>：存储在远程服务器上的Git仓库，通常用于与他人共享代码或备份代码。通过执行<code>git push</code>命令将本地仓库的更改推送到远程仓库。</li>
+</ol>
+<p>命令:</p>
+<p>克隆 远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span></span><br></pre></td></tr></table></figure>
+
+<p>检查本地仓库状态</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>将工作区的修改添加到暂存区</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将暂存区的修改提交到本地仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &lt;msg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将本地仓库提交到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>查看日志</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>tip:输入q退出</p>
+<p>查看提交记录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>tip:使用此方式查看的文件Id比较短</p>
+<p>编写：</p>
+<p>在工作区撤销指定文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>从暂存区撤销到工作区</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset <span class="built_in">head</span> .</span><br></pre></td></tr></table></figure>
+
+<p>tip:当你已经将代码add 到暂存区的时候 你想要撤回先要将代码从暂存区撤销回工作区 才能使用checkout撤销文件做出修改</p>
+<p>从本地仓库撤销已提交消息</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard</span><br></pre></td></tr></table></figure>
+
+<p>假设您有一个 Git 仓库，里面包含了一些提交记录，并且当前分支位于最新的提交上。现在，假设您误提交了一些代码并且想撤回这个提交。</p>
+<p>您可以使用 <code>git log</code> 命令查看提交记录，找到您想要撤回的提交的哈希值或引用，然后运行 <code>git reset --hard &lt;commit-hash&gt;</code> 命令撤回提交。在这个例子中，假设您要撤回最后一个提交，可以使用 <code>git reset --hard HEAD~1</code> 命令。</p>
+<p>这个命令的效果是将工作目录和索引恢复到上一个提交状态，并且丢弃所有在重置点之后进行的修改。任何未提交的更改都会被丢弃。</p>
+<p>回到之前的版本</p>
+<p>首先，使用 <code>git reflog</code> 命令可以查看提交历史记录以及每次操作对应的哈希值。这可以帮助你找到需要回退到的特定提交。接下来，你可以使用 <code>git revert --no-edit &lt;hash&gt;</code> 命令来撤销指定提交的更改，但不会打开编辑器以供编辑提交信息。</p>
+<p>例如，假设要回退到哈希值为 <code>&lt;hash&gt;</code> 的提交，你可以执行以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert --no-edit &lt;<span class="built_in">hash</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这将会创建一个新的提交，内容是撤销了哈希值为 <code>&lt;hash&gt;</code> 的提交所引入的更改。该命令不会打开编辑器以进行提交信息的修改，而是使用默认的撤销提交信息。</p>
+<p>分支</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>git init</code></td>
+<td>初始化一个Git仓库</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>git branch</code></td>
+<td>查看当前分支列表</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>git branch &lt;branch-name&gt;</code></td>
+<td>创建一个新的分支，名为<code>&lt;branch-name&gt;</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>git checkout &lt;branch-name&gt;</code></td>
+<td>切换到新创建的分支，名为<code>&lt;branch-name&gt;</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>git merge &lt;branch-name&gt;</code></td>
+<td>将当前分支与指定的<code>&lt;branch-name&gt;</code>分支合并</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>git branch -d &lt;branch-name&gt;</code></td>
+<td>删除名为<code>&lt;branch-name&gt;</code>的分支（如果合并后的分支已被删除）</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>git branch -D &lt;branch-name&gt;</code></td>
+<td>强制删除名为<code>&lt;branch-name&gt;</code>的分支（即使合并未完成）</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>git push origin &lt;branch-name&gt;</code></td>
+<td>将名为<code>&lt;branch-name&gt;</code>的分支推送到远程仓库（如果已关联）</td>
+</tr>
+</tbody></table>
+<p>创建本地仓库和远程仓库然后链接仓库进行操作</p>
+<p>使用</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+<p>关联远程仓库</p>
+<p>强制拉取远程仓库的数据</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+
+<p>如果在强制拉取的时候报错则需要输入当前远程仓库名字和分支</p>
+<p>然后将本地仓库内容推送到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &lt;msg&gt;</span><br><span class="line"><span class="comment">#origin 是你链接远程仓库时设置的名称 master是你要推送的分支</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<p>tip:如果报错</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br><span class="line">fatal: The current branch master has no upstream branch.</span><br><span class="line">To push the current branch and <span class="built_in">set</span> the remote as upstream, use</span><br><span class="line">git push --set-upstream origin master</span><br><span class="line">To have this happen automatically <span class="keyword">for</span> branches without a tracking</span><br><span class="line">upstream, see <span class="string">&#x27;push.autoSetupRemote&#x27;</span> <span class="keyword">in</span> <span class="string">&#x27;git help config&#x27;</span>.</span><br></pre></td></tr></table></figure>
+
+<p>则是因为你没有设置你要推送的远程仓库名称和分支</p>
+<p>分支:</p>
+<p>不同的分支都是独立的，合并分支后才会统一，适合多线程操作</p>
+<p>创建分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;分支名称&gt; master</span><br></pre></td></tr></table></figure>
+
+<p>推送分支到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push - u origin &lt;分支名称&gt;</span><br></pre></td></tr></table></figure>
+
+<p>创建一个新分支到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;new branch name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>删除远程仓库的分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;old-branch-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>删除本地分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>查看分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>查看所有分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+
+<p>tip:如果你创建了但是没有显示分支，那么就切换你创建的分支再回到主分支就出现了</p>
+<p>切换分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;分支名称&gt;</span><br></pre></td></tr></table></figure>
+
+<p>合并分支</p>
+<p>git merge master</p>
+<p>如果想要将其他分支的内容合并到master那么按照以下流程操作</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge frr</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<p>或者直接</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>分支改名</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -m &lt;旧名字&gt; &lt;新名字&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h4 id="一-作用"><a href="#一-作用" class="headerlink" title="一.作用"></a>一.作用</h4><p>分布式版本控制工具,主要管理java源代码,xml文件,html页面,可以通过它进行 代码回溯,版本切换,多人协作,远程备份</p>
+<h4 id="二-git常用命令"><a href="#二-git常用命令" class="headerlink" title="二.git常用命令"></a>二.git常用命令</h4><ol>
+<li><p>全局设置</p>
+<p>当安装Git后首先要做的事情是设置用户名称和email地址。这是非常重要的，因为每次Git提交都会使用该用户信息。<br>在Git命令行中执行下面命令:<br>◆设置用户信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;zyw&quot;</span><br><span class="line">git config --global user.email &quot;1024655706@qq.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>◆查看配置信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+<p>注意:上面设置的user.name和user.email并不是我们在注册码云账号时使用的用户名和邮箱，此处可以任意设置。</p>
+</li>
+<li><p>获取git仓库</p>
+<ol>
+<li>在本地初始化仓库 git init(不常用)</li>
+<li>拉去远程仓库(常用)</li>
+</ol>
+</li>
+<li><p>git基本概念</p>
+<ol>
+<li>版本库 git文件包含配置信息,日志信息,文件信息.</li>
+<li>工作区包含git文件的目录存放开发代码<ul>
+<li>untracked未跟踪(未被纳入版本控制) 创建完文件没有执行git add *</li>
+<li>tracked已跟踪(被纳入版本控制)<ol>
+<li>unmodified 未修改状态</li>
+<li>Modified 已修改状态</li>
+<li>staged 已暂存状态</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>暂存区.git目录中的index文件也叫stage</li>
+</ol>
+</li>
+<li><p>本地仓库操作命令</p>
+<ol>
+<li><p>git status 查看文件状态</p>
+</li>
+<li><p>git add 将文件存入暂存区</p>
+</li>
+<li><p>git reset 将暂存区的文件取消 或者切换到指定版本 git rest –hard</p>
+</li>
+<li><p>git commit 将暂存区的文件提交到 版本库</p>
+<p>ps:处理完冲突后提交报错 后面跟 -i</p>
+</li>
+<li><p>git log 查看日志</p>
+</li>
+</ol>
+</li>
+<li><p>远程仓库操作命令</p>
+<ol>
+<li><p>git remote -v 查看远程仓库</p>
+</li>
+<li><p>git remote add origin 添加远程仓库 将本地仓库和远程仓库进行关联</p>
+<p>ps: git pull origin master</p>
+<p>ps:关联后拉取远程仓库信息会报错,在拉取的后面添加–allow-unrelated-histories</p>
+</li>
+<li><p>git clone 从远程仓库克隆</p>
+</li>
+<li><p>git pull 从远程仓库拉取</p>
+</li>
+<li><p>git push 推送远程仓库</p>
+</li>
+</ol>
+</li>
+<li><p>分支操作命令</p>
+<ol>
+<li>git branch 查看分支 -r 远程分支 -a 远程分支和本地分支</li>
+<li>git branch [name] 创建分支</li>
+<li>git checkout [name] 切换分支</li>
+<li>git push [shortName] [name] 推送至远程仓库分支</li>
+<li>git merge [name] 合并分支</li>
+</ol>
+</li>
+<li><p>标签操作命令(版本)</p>
+<ol>
+<li>git tag 查看标签</li>
+<li>git tag [name] 创建标签</li>
+<li>git push [shortName] [name] 推送至远程仓库</li>
+<li>git checkout -b [branch] [name] 检出标签</li>
+</ol>
+</li>
+</ol>
+<h4 id="三-在idea中使用git"><a href="#三-在idea中使用git" class="headerlink" title="三.在idea中使用git"></a>三.在idea中使用git</h4><ol>
+<li><p>初始化仓库</p>
+<ol>
+<li>本地初始化仓库 去cvs中</li>
+<li>克隆远程仓库 去cvs中</li>
+</ol>
+</li>
+<li><p>按照图形化界面提交代码即可</p>
+</li>
+<li><p>如果是本地初始化仓库需要拉取 代码在进行提交</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Push rejected</span><br><span class="line">推拒</span><br><span class="line">Push to origin/master was rejected</span><br><span class="line">推到原点/主人被拒绝</span><br><span class="line">git pull origin master -–allow-unrelated-histories</span><br><span class="line">git push -u origin master -f</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">Git的基础使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">2.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80-%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">一.作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C-git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.2.</span> <span class="toc-text">二.git常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89-%E5%9C%A8idea%E4%B8%AD%E4%BD%BF%E7%94%A8git"><span class="toc-number">2.3.</span> <span class="toc-text">三.在idea中使用git</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/11/18/Git/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/11/18/Git/&text=Git的基础使用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/11/18/Git/&is_video=false&description=Git的基础使用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Git的基础使用&body=Check out this article: https://owofile.github.io/blog/2023/11/18/Git/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/11/18/Git/&title=Git的基础使用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/11/18/Git/&name=Git的基础使用&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/11/18/Git/&t=Git的基础使用"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

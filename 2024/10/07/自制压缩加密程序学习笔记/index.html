@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="自制压缩加密程序学习笔记1. 压缩（Compression）原理压缩的目的是减少数据的存储空间或传输带宽。通过去掉冗余信息，压缩算法可以将文件的大小显著减小。 类型 无损压缩：在这种方法中，压缩后可以完全还原原始数据。例如 ZIP、PNG 等格式。处理过程中不会丢失任何信息。 有损压缩：这种方法会丢弃一些不重要的信息，以达到更高的压缩比。例如 JPEG 图像和 MP3 音频。  常见算法 Huff">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自制压缩加密程序学习笔记">
+<meta property="og:url" content="https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="自制压缩加密程序学习笔记1. 压缩（Compression）原理压缩的目的是减少数据的存储空间或传输带宽。通过去掉冗余信息，压缩算法可以将文件的大小显著减小。 类型 无损压缩：在这种方法中，压缩后可以完全还原原始数据。例如 ZIP、PNG 等格式。处理过程中不会丢失任何信息。 有损压缩：这种方法会丢弃一些不重要的信息，以达到更高的压缩比。例如 JPEG 图像和 MP3 音频。  常见算法 Huff">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-07T05:50:27.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:15.543Z">
+<meta property="article:author" content="Lain">
+<meta property="article:tag" content="开发">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>自制压缩加密程序学习笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2024/10/08/pip%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%96%87%E6%A1%A3/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2024/09/29/%E8%99%BD%E7%84%B6%E9%9D%A2%E6%97%A0%E8%A1%A8%E6%83%85%E4%BD%86%E5%86%85%E5%BF%83%E5%8D%B4%E6%80%BB%E6%98%AF%E5%9C%A8%E5%93%AD%E6%B3%A3/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&text=自制压缩加密程序学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&is_video=false&description=自制压缩加密程序学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=自制压缩加密程序学习笔记&body=Check out this article: https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&name=自制压缩加密程序学习笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&t=自制压缩加密程序学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">自制压缩加密程序学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8E%8B%E7%BC%A9%EF%BC%88Compression%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">1. 压缩（Compression）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">常见算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.1.4.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8A%A0%E5%AF%86%EF%BC%88Encryption%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">2. 加密（Encryption）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%90%86-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">常见算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">1.2.4.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.</span> <span class="toc-text">综合示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text">小结</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        自制压缩加密程序学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-10-07T05:50:27.000Z" class="dt-published" itemprop="datePublished">2024-10-07</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/blog/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="自制压缩加密程序学习笔记"><a href="#自制压缩加密程序学习笔记" class="headerlink" title="自制压缩加密程序学习笔记"></a>自制压缩加密程序学习笔记</h1><h3 id="1-压缩（Compression）"><a href="#1-压缩（Compression）" class="headerlink" title="1. 压缩（Compression）"></a>1. 压缩（Compression）</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>压缩的目的是减少数据的存储空间或传输带宽。通过去掉冗余信息，压缩算法可以将文件的大小显著减小。</p>
+<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><ul>
+<li><strong>无损压缩</strong>：在这种方法中，压缩后可以完全还原原始数据。例如 ZIP、PNG 等格式。处理过程中不会丢失任何信息。</li>
+<li><strong>有损压缩</strong>：这种方法会丢弃一些不重要的信息，以达到更高的压缩比。例如 JPEG 图像和 MP3 音频。</li>
+</ul>
+<h4 id="常见算法"><a href="#常见算法" class="headerlink" title="常见算法"></a>常见算法</h4><ul>
+<li><strong>Huffman 编码</strong>：基于字符频率生成固定长度或变长的二进制编码，频繁出现的字符使用较短的编码，从而达到压缩效果。</li>
+<li><strong>LZ78 和 LZW</strong>：这些算法通过查找重复的字符串模式并用短代码替换它们来实现有效压缩。</li>
+</ul>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>假设有一个字符串 “AAAAABBBCCDAA”：</p>
+<ul>
+<li>无损压缩可能将其压缩为 “5A3B2C1D2A”，表示5个A，3个B，2个C，1个D，2个A。</li>
+</ul>
+<h3 id="2-加密（Encryption）"><a href="#2-加密（Encryption）" class="headerlink" title="2. 加密（Encryption）"></a>2. 加密（Encryption）</h3><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>加密的目的是保护数据的机密性，使只有被授权的用户才能读取数据。加密算法通过某种方式改变数据，使得未授权的人无法理解。</p>
+<h4 id="类型-1"><a href="#类型-1" class="headerlink" title="类型"></a>类型</h4><ul>
+<li><strong>对称加密</strong>：加密和解密都使用相同的密钥，如 AES、DES。速度快，但密钥管理是个挑战。</li>
+<li><strong>非对称加密</strong>：使用一对密钥，公钥用于加密，私钥用于解密，如 RSA。虽然相对慢，但安全性高，适合公开通信。</li>
+</ul>
+<h4 id="常见算法-1"><a href="#常见算法-1" class="headerlink" title="常见算法"></a>常见算法</h4><ul>
+<li><strong>AES（高级加密标准）</strong>：一种广泛使用的对称加密算法，使用128位、192位或256位密钥，安全性高且快速。</li>
+<li><strong>RSA</strong>：一种常见的非对称加密算法，通常用于安全的数据传输。</li>
+</ul>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><p>假设您使用 AES 对字符串 “Hello, World!” 进行加密，使用一个密钥 <code>mysecretkey</code>：</p>
+<ul>
+<li>加密后的结果可能是一串看似随机的字节，比如 <code>XzF8j9&amp;...</code>，此时没有密钥的人无法解读这个数据。</li>
+</ul>
+<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><p>假设您要处理一个文本文件，其中包含了一些敏感信息：</p>
+<ol>
+<li><strong>首先，加密内容</strong>：<ul>
+<li>使用 AES 算法和密钥将文件内容转换成不可读的格式。</li>
+</ul>
+</li>
+<li><strong>然后，压缩加密后的内容</strong>：<ul>
+<li>使用如 zlib 的无损压缩算法进一步减小加密数据的大小。</li>
+</ul>
+</li>
+<li><strong>最终输出</strong>：<ul>
+<li>将压缩后的数据写入一个文件（例如 <code>.slth</code>），并在文件开头附加必要的元数据，例如使用的加密算法、密钥长度等。</li>
+</ul>
+</li>
+</ol>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li><strong>压缩</strong> 是为了节省空间和提高传输效率，通过消除冗余信息实现。</li>
+<li><strong>加密</strong> 是为了保护数据安全，使得只有拥有正确密钥的人才能访问数据。</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">自制压缩加密程序学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8E%8B%E7%BC%A9%EF%BC%88Compression%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">1. 压缩（Compression）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">常见算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.1.4.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8A%A0%E5%AF%86%EF%BC%88Encryption%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">2. 加密（Encryption）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%90%86-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">常见算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">1.2.4.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.</span> <span class="toc-text">综合示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text">小结</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&text=自制压缩加密程序学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&is_video=false&description=自制压缩加密程序学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=自制压缩加密程序学习笔记&body=Check out this article: https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=自制压缩加密程序学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&name=自制压缩加密程序学习笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2024/10/07/%E8%87%AA%E5%88%B6%E5%8E%8B%E7%BC%A9%E5%8A%A0%E5%AF%86%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&t=自制压缩加密程序学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

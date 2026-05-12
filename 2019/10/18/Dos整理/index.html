@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Dos操作指令DOS整理文件路径  [桌面目录cmd.exe] c:\windows\system32\cmd [xp桌面目录] c:\documents and settings\all users\桌面 [win7桌面目录] c:\users\administrator[name]\desktop\ cmd程序  winver - 检查windows版本 wscript - windows脚本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dos操作指令">
+<meta property="og:url" content="https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="Dos操作指令DOS整理文件路径  [桌面目录cmd.exe] c:\windows\system32\cmd [xp桌面目录] c:\documents and settings\all users\桌面 [win7桌面目录] c:\users\administrator[name]\desktop\ cmd程序  winver - 检查windows版本 wscript - windows脚本">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://owofile.github.io/blog/images/loading.svg">
+<meta property="article:published_time" content="2019-10-17T23:05:36.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:12.780Z">
+<meta property="article:author" content="Lain">
+<meta property="article:tag" content="Dos">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://owofile.github.io/blog/images/loading.svg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Dos操作指令</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2020/09/03/sqlserver/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2019/10/18/hexo/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&text=Dos操作指令"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&is_video=false&description=Dos操作指令"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Dos操作指令&body=Check out this article: https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&name=Dos操作指令&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&t=Dos操作指令"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dos%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Dos操作指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DOS%E6%95%B4%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">DOS整理</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Dos操作指令
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-10-17T23:05:36.000Z" class="dt-published" itemprop="datePublished">2019-10-18</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/blog/tags/Dos/" rel="tag">Dos</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="Dos操作指令"><a href="#Dos操作指令" class="headerlink" title="Dos操作指令"></a>Dos操作指令</h1><h4 id="DOS整理"><a href="#DOS整理" class="headerlink" title="DOS整理"></a>DOS整理</h4><p><strong>文件路径</strong></p>
+<hr>
+<p><strong>[桌面目录cmd.exe]</strong> c:\windows\system32\cmd</p>
+<p><strong>[xp桌面目录]</strong> c:\documents and settings\all users\桌面</p>
+<p>[win7桌面目录] c:\users\administrator[name]\desktop\</p>
+<p><strong>cmd程序</strong></p>
+<hr>
+<p>winver - 检查windows版本</p>
+<p>wscript - windows脚本宿主设置</p>
+<p>write - 写字板</p>
+<p>wiaacmgr - 扫描仪和照相机向导</p>
+<p>winchat - xp自在局域网聊天</p>
+<p>msconfig.exe - 系统配置实用程序</p>
+<p>mspaint - 画图板</p>
+<p>mstsc - 远程桌面连接</p>
+<p>magnify - 放大镜程序</p>
+<p>mmc - 打开控制台</p>
+<p>mobsync - 同步命令</p>
+<p>dxdiag - 检查DirectX信息</p>
+<p>diskmgmt.msc - 磁盘管理实用程序</p>
+<p>dcomcnfg - 系统组件服务</p>
+<p>dvdplay - DVD播放器</p>
+<p>notepad - 打开记事本</p>
+<p>narrator - 屏幕讲述人</p>
+<p>netstat -an – (TC命令检查接口</p>
+<p>sigverif - 文件签名验证系统</p>
+<p>shrpubw - 创建共享文件夹</p>
+<p>syskey - 系统加密双重加密</p>
+<p>services.msc - 本地服务设置</p>
+<p>sfc.exe - 系统文件检查器</p>
+<p>taskmgr - 任务管理器</p>
+<p>eventvwr - 事件查看器</p>
+<p>eudcedit - 造字程序</p>
+<p>explorer - 打开资源管理器</p>
+<p>perfmon.msc - 计算机性能监测程序</p>
+<p>regedit.exe - 注册表</p>
+<p>rsop.msc - 注册表结果集</p>
+<p>chkdsk.exe - 磁盘检查</p>
+<p>certmgr.msc - 证书管理实用程序</p>
+<p>calc - 启动计算机</p>
+<p>charmap - 启动字符映射表</p>
+<p>compmgmt.msc - 计算机管理</p>
+<p>cleanmgr - 垃圾清理</p>
+<p>osk - 打开屏幕键盘</p>
+<p>lusrmgr.msc - 本机用户和组</p>
+<p>iexpress - mu马捆绑系统自带CAB压缩和自解压工具</p>
+<p>fsmgmt.msc - 共享文件夹管理器</p>
+<p>utilman - 辅助工具管理器</p>
+<p><strong>备忘录</strong></p>
+<hr>
+<p>**一般管理员服务器账号****：**administrator</p>
+<p><strong>快捷键</strong></p>
+<hr>
+<p>[打开输入法] ctrl+空格</p>
+<p><strong>运行</strong></p>
+<hr>
+<p>explorer.exe [桌面程序]</p>
+<p>mstsc [远程桌面程序]</p>
+<p>[ip] [访问共享文件夹，多数适用于局域网内的文件运输]</p>
+<p>\ [ip]*<em>c$</em>* [默认情况处在同一网络中可以访问c盘]</p>
+<p>logoff [注销]</p>
+<p>regedit [修改注册表]</p>
+<p>services.msc [服务管理窗口]</p>
+<p><strong>基础目录控制 [按tab可以补全]</strong></p>
+<hr>
+<p>dir [浏览文件] &#x2F;a&#x3D;浏览包括隐藏的文件和文件夹</p>
+<p>cls [清屏]</p>
+<p>ren [重命名]</p>
+<p>rd [删除]</p>
+<p>cd [进入]</p>
+<p>md [创建文件夹]</p>
+<p>move [移动]</p>
+<p>copy [复制]</p>
+<p>xcopy [复制文件夹及文件夹里的文件]</p>
+<p>more [显示内容] more 1.txt 2.txt 分页显示多个文档</p>
+<p>type [打印]</p>
+<p>del [删除文件]</p>
+<p>echo nul&gt; 路径 [创建一个自义定内容和路径的文件]</p>
+<p>echo. [回响空行]</p>
+<p>attrib <strong>+s +h</strong> [更改属性 s&#x3D;系统 h&#x3D;隐藏]</p>
+<p>tree [扫描文件]</p>
+<p>exit [退出窗口]</p>
+<p><strong>命令</strong></p>
+<hr>
+<p>arp -a [查看局域网其他人的IP]</p>
+<p>shutdown <strong>-s -f -t</strong> time[关机 s&#x3D;关机 f&#x3D;强制 t&#x3D;时间 time&#x3D;自义定]</p>
+<p>pause [暂停]</p>
+<p>color [改变背景和文字颜色]</p>
+<p>fsutil file createnew [创建文件，并自定义文件占内存大小]</p>
+<p>taskkill <strong>&#x2F;f &#x2F;im</strong> [强制杀死电脑进程]</p>
+<p>tasklist [列出进程&#x2F;管理进程]</p>
+<p>nslookup [ip] [检查ip地址的ns服务器]</p>
+<p>at [time] [添加计划任务] #如果使用at来打开其他bat有两种方法1: at [time] c:\1.bat 2: at [time] “start c:\1.bat” 加引号是为了把start当做是参数，不过我推荐直接输入路径就好</p>
+<p>at [查看计划任务]</p>
+<p>telnet towel.blinkenlights.nl [观看ASCLL版星球大战]</p>
+<p><strong>[输出] | clip</strong> [ |&#x3D;管道符可以输出字符 clip&#x3D;剪贴板 管道符快捷键：shift+] [可以联合type 部分系统无法使用 测试：win7可以使用]</p>
+<p>&amp;&amp; [同时执行多个命令]</p>
+<p><img src="/blog/images/loading.svg" alt="img"></p>
+<p><strong>start</strong> [运行]</p>
+<p>mode con cols&#x3D;300 lines&#x3D;80 [改变窗口大小，cols&#x3D;长 lines&#x3D;宽]</p>
+<p><strong>变量和引用变量与判断</strong></p>
+<hr>
+<p>set &#x2F;p num[num也是可定义字符]&#x3D;[自义定文字] <strong>[定义变量]</strong></p>
+<p>%变量名% <strong>[引用变量]</strong></p>
+<p>：a [创立区间]</p>
+<p>goto a [跳转区间]</p>
+<p>if — [判断成立后的动作] <strong>[判断]</strong></p>
+<p><strong>&#x3D;是赋值</strong></p>
+<p><strong>&#x3D;&#x3D;是等于</strong></p>
+<p><strong>用户管理和组管理</strong></p>
+<hr>
+<p>whoami <strong>&#x2F;user</strong> [查看sid值]</p>
+<p>whoami [显示主机名和用户名]</p>
+<p>net user [查看所有用户]</p>
+<p>net user [name] [passworld] [改密码or创建用户]</p>
+<p>net user [name] [passworld] <strong>&#x2F;add</strong> [创建一个新用户添加到电脑中]</p>
+<p>net localgroup administrators [name] <strong>&#x2F;add</strong> [将普通用户移入管理员用户] <strong>提权</strong></p>
+<p>net user [name] &#x2F;del [删除用户]</p>
+<p>net user [name] &#x2F;active:yes [激活禁用用户]</p>
+<p>net user [name] &#x2F;active:no [禁用用户]</p>
+<p>组管理</p>
+<p>net localgroup [查看所有组]</p>
+<p>net localgroup [组name] <strong>&#x2F;add</strong> [创建一个组]</p>
+<p>net localgroup [组name] [查看一个组的成员]</p>
+<p>net localgroup [组name] [用户] <strong>&#x2F;add</strong> [将一个用户创建并添加到组里]</p>
+<p>net localgroup [组name] [用户] <strong>&#x2F;del</strong> [将一个用户从组里删除]</p>
+<p>net localgroup [组name] <strong>&#x2F;del</strong> [删除一个组]</p>
+<p><strong>服务器与端口</strong></p>
+<hr>
+<p>net start [服务名] 开启服务&#x2F;端口</p>
+<p>netstat 查询当前使用端口</p>
+<p>netstat -an [查询当前端口]</p>
+<p>ipconfig [查询本机Ip]</p>
+<p>ipconfig &#x2F;all [查询本机IP和详细信息]</p>
+<p>ping [ip] [检查网络流畅] <strong>-t</strong> [一直ping <strong>ctrl+c****停止</strong>] -n[修改Ping包的数量]</p>
+<p>共享服务</p>
+<p>net share [列出对外开放的共享文件夹&#x2F;&#x2F;<strong>包括隐藏共享文件夹$</strong>]</p>
+<p>net share [共享名] &#x2F;del [删除共享文件夹，也可以删除共享隐藏文件夹]</p>
+<p><strong>注释：服务器重启后会默认重新打开****默认共享</strong></p>
+<p>net use [ip]\ipc$ [密码] &#x2F;nser:[用户名] [连接对方的<strong>空链接</strong>]</p>
+<p>net time [ip] [查询目标主机时间]</p>
+<p>copy [路径] [目标ip]\c$\ [复制文件到目标主机<strong>c</strong>盘上]</p>
+<p>at [目标ip] [time] [路径] [给目标主机添加计划任务]</p>
+<p>at [目标ip] [查看目标主机时间任务]</p>
+<p>at [目标ip] &#x2F;del [删除目标主机时间任务]</p>
+<p><strong>DHCP服务</strong></p>
+<hr>
+<p>开始DHCP服务后会自动开启67&#x2F;68端口</p>
+<p>ipconfig &#x2F;release [释放地址]</p>
+<p>ipconfig &#x2F;renew [重新获取地址]</p>
+<p><strong>端口</strong></p>
+<hr>
+<p>3389_远程桌面服务(<strong>RDP)</strong></p>
+<p>445_文件共享服务 [默认微软开机自动打开共享] <strong>(SMB)</strong></p>
+<p>23_telnet [命令行远程服务]</p>
+<p>67&#x2F;68_DHCP协议端口 [自动分配ip地址服务器]</p>
+<p>53_DNS服务监听端口</p>
+<p>80_WEB <strong>http协议</strong> <strong>默认端口</strong></p>
+<p><strong>DNS</strong></p>
+<hr>
+<p>nslookup [域名&#x2F;ip] [手动域名解析]</p>
+<p>ipconfig &#x2F;flushdns [清空本地DNS缓存]</p>
+<p>ipconfig &#x2F;displaydns [显示本地DNS缓存]</p>
+<p><strong>WEB</strong></p>
+<hr>
+<p><strong>当IIS里没有发布网站时，80端口会自动关闭，发布网站后在打开80端口</strong></p>
+<p><strong>一些创新</strong></p>
+<hr>
+<p><strong>图片隐藏文件.jpg</strong></p>
+<p><strong>c</strong>opy &#x2F;b 图片.jpg + 需要隐藏的文件.zip 图片.jpg -b表示一个二进位文件</p>
+<p><strong>查看</strong></p>
+<hr>
+<p>按 ctrl+c 以后输入 cls 清除屏幕</p>
+<p>ver 显示当前windows系统的版本号</p>
+<p>winver 弹框显示当前windows系统信息</p>
+<p>vol 显示当前分区的卷标</p>
+<p>label 显示当前分区的卷标，同时提示输入新卷标</p>
+<p>label c:system 设置c盘的卷标为system</p>
+<p>time 显示或设置当前时间</p>
+<p>date 显示或设置当前日期</p>
+<p>ver 查看系统详细版本号</p>
+<p>msinfo32 查看window详细版本号</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dos%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Dos操作指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DOS%E6%95%B4%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">DOS整理</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&text=Dos操作指令"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&is_video=false&description=Dos操作指令"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Dos操作指令&body=Check out this article: https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&title=Dos操作指令"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&name=Dos操作指令&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2019/10/18/Dos%E6%95%B4%E7%90%86/&t=Dos操作指令"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

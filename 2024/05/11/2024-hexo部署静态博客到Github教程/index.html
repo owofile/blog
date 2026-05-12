@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="[2024]hexo部署静态博客到Github教程维护博客，写博客，本身就是一件有意义的事情，在这个过程中，对自己的收获最大，这就像是以前的人们写笔记，不断总结，让自己变得更好。 一开始总是会感到迷茫，不知道写什么，我觉得任何你想要分享的内容都可以，给他人带来启发，亦或者帮助他人解答困惑。 如果你未来或者现在已经打算从事互联网相关的行业，那么博客必然能为你带来更多的帮助，总结自己的技术，既能够让自">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo部署静态博客到Github教程">
+<meta property="og:url" content="https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="[2024]hexo部署静态博客到Github教程维护博客，写博客，本身就是一件有意义的事情，在这个过程中，对自己的收获最大，这就像是以前的人们写笔记，不断总结，让自己变得更好。 一开始总是会感到迷茫，不知道写什么，我觉得任何你想要分享的内容都可以，给他人带来启发，亦或者帮助他人解答困惑。 如果你未来或者现在已经打算从事互联网相关的行业，那么博客必然能为你带来更多的帮助，总结自己的技术，既能够让自">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-11T03:22:08.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:15.119Z">
+<meta property="article:author" content="Lain">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>hexo部署静态博客到Github教程</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2024/05/27/%E6%9C%80%E8%BF%91%E6%84%9F%E5%88%B0%E5%BE%88%E7%84%A6%E8%99%91/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2024/05/06/%E8%AE%B0%E8%B4%A6%E8%BD%AF%E4%BB%B6%E6%96%87%E6%A1%88/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&text=hexo部署静态博客到Github教程"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&is_video=false&description=hexo部署静态博客到Github教程"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=hexo部署静态博客到Github教程&body=Check out this article: https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&name=hexo部署静态博客到Github教程&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&t=hexo部署静态博客到Github教程"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">[2024]hexo部署静态博客到Github教程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDGit"><span class="toc-number">2.</span> <span class="toc-text">1.下载Git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">2.选择静态博客工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">3.1.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E6%9E%9Cnpm%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99"><span class="toc-number">3.2.</span> <span class="toc-text">如果npm下载插件报错</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">4.</span> <span class="toc-text">3.创建博客</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        hexo部署静态博客到Github教程
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-05-11T03:22:08.000Z" class="dt-published" itemprop="datePublished">2024-05-11</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/blog/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="2024-hexo部署静态博客到Github教程"><a href="#2024-hexo部署静态博客到Github教程" class="headerlink" title="[2024]hexo部署静态博客到Github教程"></a>[2024]hexo部署静态博客到Github教程</h1><p>维护博客，写博客，本身就是一件有意义的事情，在这个过程中，对自己的收获最大，这就像是以前的人们写笔记，不断总结，让自己变得更好。</p>
+<p>一开始总是会感到迷茫，不知道写什么，我觉得任何你想要分享的内容都可以，给他人带来启发，亦或者帮助他人解答困惑。</p>
+<p>如果你未来或者现在已经打算从事互联网相关的行业，那么博客必然能为你带来更多的帮助，总结自己的技术，既能够让自己理解更加深刻，再忘记的时候也能快速找到，这种不断构建属于自己的图书馆的感觉，真的很满足。</p>
+<p>回到主题，想要部署博客，首先需要根据自己的需求选择，目前部署的方法有两种。</p>
+<p>第一种:gitee GitHub上的静态部署</p>
+<p>第二种:购买服务器的动态部署</p>
+<p>那么两种的优缺点是什么呢？</p>
+<p>静态部署和动态部署是两种不同的部署方式，主要的区别在于如何处理和生成网页内容。</p>
+<ul>
+<li><strong>静态部署</strong>：在静态部署中，网站的内容在部署之前已经预先生成好，并作为静态文件存储在服务器上。当用户请求网页时，服务器直接将保存在硬盘上的静态文件返回给用户。这意味着服务器不需要动态地生成网页内容，因此可以快速且高效地响应请求。静态部署适用于那些不需要频繁更新内容的网站，例如博客、企业官网等。</li>
+<li><strong>动态部署</strong>：与静态部署不同，动态部署是在用户请求时动态生成网页内容。当用户请求到达服务器时，服务器会根据用户的需求，从数据库、文件系统、或其他数据源中提取数据，并将其与动态网页模板结合生成最终的网页内容。这种方式允许用户获得个性化的内容，但动态生成网页的过程可能需要更多的计算资源和时间。动态部署适用于需要实时更新和交互性较强的网站，例如社交媒体、电子商务网站等。</li>
+</ul>
+<p>选择静态部署还是动态部署取决于网站的需求和特点。对于简单的网站，静态部署可以提供更快的响应速度和更低的服务器负载。而对于复杂的网站，可能需要动态部署来满足用户的个性化需求和实时数据更新。</p>
+<p>本次教程是静态部署，如果需要动态部署的教程的话，可以私信我或者留言，需求大的话，我会专门购买服务器再做一个专门的教程。</p>
+<p>如果我们的目标只是编写文章发布的话，静态已经能满足大多数人了，倘若你对于博客有更高的要求可以选择购买服务器。</p>
+<p>静态部署博客需要将博客代码上传到代码托管平台，然后按照平台规定，通过网址访问。</p>
+<p>因为目前我做这个教程的时候gitee的托管服务在维护，所以这里使用github演示，当然你可以选择自己喜欢的平台。</p>
+<p>如果要使用gitee托管，记得要提前实名认证才能使用网页托管服务，反之在github上只要注册账号就可以正常托管。</p>
+<h1 id="1-下载Git"><a href="#1-下载Git" class="headerlink" title="1.下载Git"></a>1.下载Git</h1><p>在部署前，我们需要下载git。</p>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p>访问网址打开官网，然后下载，点击电脑上的Download for windows就可以，自动选择当前合适版本。</p>
+<p>这时候可以看到32 64等数字，这时候需要根据电脑的位数选择，现在的电脑一般都是64位，当然如果你想要确定可以通过右键我的电脑或者此电脑，查看电脑属性，系统信息里会显示。</p>
+<p>具体的下载教程可以查看其他人分享的教程，这里不过多赘述，直接搜索Git安装教程即可。</p>
+<p>这里推荐一个教程:<a target="_blank" rel="noopener" href="https://blog.csdn.net/mukes/article/details/115693833">https://blog.csdn.net/mukes/article/details/115693833</a></p>
+<h1 id="2-选择静态博客工具"><a href="#2-选择静态博客工具" class="headerlink" title="2.选择静态博客工具"></a>2.选择静态博客工具</h1><p>如果之前搜过静态博客的教程，你会频繁的看到 hexo typecho hugo等等的字样，这些都是能帮你快速生成博客代码的工具，同时只要通过几个代码就能创建新的博文。</p>
+<p>同时这些工具还包含各种各样制作的网页模板，也就是个性化，有大佬用爱发电制作的，也有官方制作的。</p>
+<p>选择哪个都可以，这里我使用的是hexo，之前的博客就是用hexo生成的，所以这里使用它演示。</p>
+<p>找到hexo的官方文档，查看如何使用</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<p>可以看到它让我们安装git和node.js</p>
+<p>因为我们已经安装了git所以接下来安装node.js</p>
+<p>这里简单介绍一下node</p>
+<p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时环境，用于开发服务器端和网络应用程序。Node.js 允许使用 JavaScript 编写服务器端代码，这使得前端开发人员可以使用相同的语言和技术栈来编写完整的 Web 应用程序。</p>
+<p>Node.js 的主要特点包括：</p>
+<ol>
+<li>事件驱动和非阻塞 I&#x2F;O 模型：Node.js 使用事件驱动的方式处理请求和响应，从而使得处理高并发请求成为可能。它也采用了非阻塞的 I&#x2F;O 模型，可以在处理 I&#x2F;O 操作时同时处理其他任务，提高了应用程序的性能和可伸缩性。</li>
+<li>轻量和高效：Node.js 是一个轻量级的运行时环境，它的代码执行非常快速。这得益于底层的 V8 引擎，该引擎将 JavaScript 直接编译成本地机器码。</li>
+<li>跨平台：Node.js 支持多个操作系统，如 Windows、Linux 和 macOS，使得开发人��可以在不同平台上构建和运行应用程序。</li>
+<li>模块化：Node.js 提供了一个强大的模块化系统，使得开发人员可以将代码组织成可重复使用的模块。这极大地促进了代码的可维护性和可重用性。</li>
+<li>生态系统：Node.js 拥有庞大的第三方模块和工具库，可以帮助开发人员快速构建各种类型的应用程序，包括 Web 服务器、API 服务、实时应用程序等。</li>
+</ol>
+<p>总的来说，Node.js 提供了一个强大的平台和工具，使得开发人员可以使用 JavaScript 来构建高性能、可伸缩的服务器端应用程序。</p>
+<p>这里也推荐一个node安装教程文档</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60870118/article/details/129727274">https://blog.csdn.net/qq_60870118/article/details/129727274</a></p>
+<p>安装了node后就可以使用npm去下载所需要的文件。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>如果遇到了下载失败，或者卡住的情况，也请不要慌张，有时候网络是这样的。</p>
+<p>多试几次或者通过修改国内镜像来下载。</p>
+<h2 id="如果npm下载插件报错"><a href="#如果npm下载插件报错" class="headerlink" title="如果npm下载插件报错"></a>如果npm下载插件报错</h2><p>可是通过使用yarn add下载插件。</p>
+<h1 id="3-创建博客"><a href="#3-创建博客" class="headerlink" title="3.创建博客"></a>3.创建博客</h1><p>使用hexo init创建Hexo工具</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &#x27;输入你的blog文件夹名称&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>打开_config.yml更改deploy</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="comment">#仓库链接</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line"><span class="attr">message:</span> <span class="string">&#x27;hello blog&#x27;</span> <span class="comment">#msg</span></span><br></pre></td></tr></table></figure>
+
+<p>下载deploy插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>创建一个新文章</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &#x27;blog name&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>在本地渲染运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>确保没有问题后，上传到github</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>打开Settings的Pages，将Branch改为main然后save保存。</p>
+<p>刷新等待，打开连接查看博客。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">[2024]hexo部署静态博客到Github教程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDGit"><span class="toc-number">2.</span> <span class="toc-text">1.下载Git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">2.选择静态博客工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">3.1.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E6%9E%9Cnpm%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99"><span class="toc-number">3.2.</span> <span class="toc-text">如果npm下载插件报错</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">4.</span> <span class="toc-text">3.创建博客</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&text=hexo部署静态博客到Github教程"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&is_video=false&description=hexo部署静态博客到Github教程"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=hexo部署静态博客到Github教程&body=Check out this article: https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&title=hexo部署静态博客到Github教程"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&name=hexo部署静态博客到Github教程&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2024/05/11/2024-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%88%B0Github%E6%95%99%E7%A8%8B/&t=hexo部署静态博客到Github教程"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Vue3学习笔记Vue3 官方文档:https:&#x2F;&#x2F;cn.vuejs.org&#x2F;guide&#x2F;introduction.html Vue (发音为 &#x2F;vjuː&#x2F;，类似 view) 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。无论是简单还是复杂的界">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue3学习笔记">
+<meta property="og:url" content="https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="Vue3学习笔记Vue3 官方文档:https:&#x2F;&#x2F;cn.vuejs.org&#x2F;guide&#x2F;introduction.html Vue (发音为 &#x2F;vjuː&#x2F;，类似 view) 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。无论是简单还是复杂的界">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://owofile.github.io/blog/images/loading.svg">
+<meta property="article:published_time" content="2023-12-12T16:29:19.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:13.787Z">
+<meta property="article:author" content="Lain">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://owofile.github.io/blog/images/loading.svg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Vue3学习笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2023/12/13/Vue/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2023/12/12/Springboot-vue%E6%A1%86%E6%9E%B6%E9%83%A8%E7%BD%B2/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&text=Vue3学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&is_video=false&description=Vue3学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vue3学习笔记&body=Check out this article: https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&name=Vue3学习笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&t=Vue3学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">Vue3学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAVue3%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">1.1.</span> <span class="toc-text">创建Vue3脚手架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E5%8D%A1%E4%BD%8F%E4%B8%8D%E5%8A%A8%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">1.2.</span> <span class="toc-text">遇到卡住不动的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue3%E7%9B%B8%E6%AF%94Vue2%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">Vue3相比Vue2的变化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">关键文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E5%8C%96"><span class="toc-number">1.3.2.</span> <span class="toc-text">变化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue3%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">Vue3页面结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%98%E9%87%8F%EF%BC%8C%E5%88%9B%E5%BB%BA%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">创建变量，创建方法，使用变量和方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6API"><span class="toc-number">1.6.</span> <span class="toc-text">组件API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#reative"><span class="toc-number">1.6.1.</span> <span class="toc-text">reative()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ref"><span class="toc-number">1.6.2.</span> <span class="toc-text">ref</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#computed"><span class="toc-number">1.6.3.</span> <span class="toc-text">computed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#watch"><span class="toc-number">1.6.4.</span> <span class="toc-text">watch</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%A6%E5%90%AC%E5%AF%B9%E8%B1%A1%E5%BC%80%E5%90%AF%E6%B7%B1%E5%BA%A6%E7%9B%91%E5%90%AC"><span class="toc-number">1.6.4.1.</span> <span class="toc-text">侦听对象开启深度监听</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B2%BE%E7%A1%AE%E7%9B%91%E5%90%AC"><span class="toc-number">1.6.4.2.</span> <span class="toc-text">精确监听</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9FonMounted"><span class="toc-number">1.6.4.3.</span> <span class="toc-text">生命周期onMounted</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B6%E4%BC%A0%E5%AD%90"><span class="toc-number">1.6.5.</span> <span class="toc-text">父传子</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8props%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0"><span class="toc-number">1.6.5.1.</span> <span class="toc-text">使用props接收参数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E4%BC%A0%E7%88%B6"><span class="toc-number">1.6.6.</span> <span class="toc-text">子传父</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96Dom%E5%85%83%E7%B4%A0"><span class="toc-number">1.6.7.</span> <span class="toc-text">获取Dom元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#defineExpose"><span class="toc-number">1.6.7.1.</span> <span class="toc-text">defineExpose</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#provide%E5%92%8Cinject"><span class="toc-number">1.6.8.</span> <span class="toc-text">provide和inject</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Element"><span class="toc-number">1.6.9.</span> <span class="toc-text">Element</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pinia"><span class="toc-number">1.7.</span> <span class="toc-text">Pinia</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8get%E6%8E%A5%E5%8F%A3%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">1.7.1.</span> <span class="toc-text">使用get接口获取数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pnpm"><span class="toc-number">1.8.</span> <span class="toc-text">pnpm</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Vue3学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-12T16:29:19.000Z" class="dt-published" itemprop="datePublished">2023-12-13</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/blog/tags/Vue/" rel="tag">Vue</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="Vue3学习笔记"><a href="#Vue3学习笔记" class="headerlink" title="Vue3学习笔记"></a>Vue3学习笔记</h1><p>Vue3</p>
+<p>官方文档:<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html">https://cn.vuejs.org/guide/introduction.html</a></p>
+<p>Vue (发音为 &#x2F;vjuː&#x2F;，类似 <strong>view</strong>) 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。无论是简单还是复杂的界面，Vue 都可以胜任。</p>
+<p>好处：</p>
+<ol>
+<li>性能优化：Vue 3引入了一系列性能优化，包括更快的渲染和更新机制，以及更小的包大小，提高了整体性能。</li>
+<li>更好的 TypeScript 支持：Vue 3对 TypeScript 的支持更加友好，使开发过程更加可靠和高效。</li>
+<li>Composition API：引入了Composition API，让代码更加灵活和可维护，能更好地组织组件逻辑。</li>
+<li>更好的响应式系统：Vue 3中的响应式系统进行了重写，使其更加高效和可靠。</li>
+<li>更好的服务器端渲染支持：Vue 3对服务器端渲染的支持更加完善，能够更好地应用于复杂的应用场景。</li>
+</ol>
+<p>坏处：</p>
+<ol>
+<li>学习曲线：对于之前使用过Vue2的开发者来说，需要花一些时间来适应Vue 3的新特性和变化。</li>
+<li>生态系统的不稳定性：由于Vue 3相对较新，一些与Vue 3兼容的第三方库和插件可能不够完善或不稳定。</li>
+</ol>
+<p>总体来说，Vue 3带来了许多优点，但也需要开发者在使用时留意一些潜在的问题。</p>
+<p>在我看来此次更新最重要的点就在于它的组合式API编程，让代码逻辑更清晰和好维护，创建和使用过程也更加快速，响应也很快</p>
+<p><img src="/blog/images/loading.svg"></p>
+<h3 id="创建Vue3脚手架"><a href="#创建Vue3脚手架" class="headerlink" title="创建Vue3脚手架"></a>创建Vue3脚手架</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init vue@latest</span><br></pre></td></tr></table></figure>
+
+<p>输入项目名称并且配置你需要的模块</p>
+<p>一般默认都选否 <strong>End to End</strong>测试工具则选不需要</p>
+<p>然后按照教程进入项目 下载依赖</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>运行vue3</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="遇到卡住不动的情况"><a href="#遇到卡住不动的情况" class="headerlink" title="遇到卡住不动的情况"></a>遇到卡住不动的情况</h3><p>当创建脚手架和下载依赖的时候如果遇到卡住不同的情况，多半是网络问题或者镜像问题,更换镜像或者降低npm版本即可。</p>
+<p>参考教程:</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46695182/article/details/127846670">https://blog.csdn.net/m0_46695182/article/details/127846670</a></p>
+<h3 id="Vue3相比Vue2的变化"><a href="#Vue3相比Vue2的变化" class="headerlink" title="Vue3相比Vue2的变化"></a>Vue3相比Vue2的变化</h3><h4 id="关键文件"><a href="#关键文件" class="headerlink" title="关键文件"></a>关键文件</h4><p>1.vite.config.js - 项目的配置文件 基于vite的配置<br>2.package.json - 项目包文件 核心依赖项变成了 Vue3.x 和 vite<br>3.main.js - 入口文件 createApp函数创建应用实例<br>4.app.vue - 根组件 SFC单文件组件 script - template - style</p>
+<h4 id="变化"><a href="#变化" class="headerlink" title="变化"></a>变化</h4><p>变化一: 脚本script和模板template顺序调整<br>变化二: 模板template不再要求唯一根元素<br>变化三:脚本script添加setup标识支持组合式API<br>5.index.html- 单页入口 提供id为app的挂载点</p>
+<h3 id="Vue3页面结构"><a href="#Vue3页面结构" class="headerlink" title="Vue3页面结构"></a>Vue3页面结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>相比于Vue2,结构发生了一些变换，script 放在了最上方 中间的template不在需要div包裹直接写也可以显示</p>
+<p>setup是最早的生命周期，创建的生命周期代码直接写在setup里就好</p>
+<h3 id="创建变量，创建方法，使用变量和方法"><a href="#创建变量，创建方法，使用变量和方法" class="headerlink" title="创建变量，创建方法，使用变量和方法"></a>创建变量，创建方法，使用变量和方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 变量</span><br><span class="line">const count = 999</span><br><span class="line">// 方法</span><br><span class="line">const logCount = ()=&gt;&#123;</span><br><span class="line">console.log(count);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;!-- 页面渲染 --&gt;</span><br><span class="line">&lt;h1&gt;&#123;&#123; count &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;button @click=&quot;logCount&quot;&gt;打印&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组件API"><a href="#组件API" class="headerlink" title="组件API"></a>组件API</h3><h4 id="reative"><a href="#reative" class="headerlink" title="reative()"></a>reative()</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 这里的数据是死的</span><br><span class="line">const count = 999;</span><br><span class="line">// 这里是响应式数据，可以++</span><br><span class="line">import &#123; reactive &#125; from &#x27;vue&#x27;;</span><br><span class="line">const msg = reactive(&#123;</span><br><span class="line">// 只能接收对象</span><br><span class="line">count:123,</span><br><span class="line">name:&#x27;小明&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">const logmsg = ()=&gt;&#123;</span><br><span class="line">// console.log(msg.count);</span><br><span class="line">msg.count++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;!-- 页面渲染 --&gt;</span><br><span class="line">&lt;h1&gt;&#123;&#123; msg.count &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;h1&gt;&#123;&#123; msg.name &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;button @click=&quot;logmsg&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用reative()里的对象数据是响应式的，可以被加一</p>
+<h4 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h4><p>直接定义创建数据</p>
+<p>由于ref定义后直接msg++会出问题，需要使用它的value值</p>
+<p>ref返回永远是一个响应式对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line">//创建变量 值为1</span><br><span class="line">const msg = ref(0)</span><br><span class="line">//创建方法改变变量msg值</span><br><span class="line">const logmsg = ()=&gt;&#123;</span><br><span class="line">msg.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;!-- 页面渲染 --&gt;</span><br><span class="line">&lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;button @click=&quot;logmsg&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用对象创建数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line">const msg = ref(&#123;</span><br><span class="line">const:0</span><br><span class="line">&#125;)</span><br><span class="line">const logmsg = ()=&gt;&#123;</span><br><span class="line">msg.value.const++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;!-- 页面渲染 --&gt;</span><br><span class="line">&lt;h1&gt;&#123;&#123; msg.const &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;button @click=&quot;logmsg&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h4><p>计算属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; computed, ref &#125; from &#x27;vue&#x27;;</span><br><span class="line">const list = ref([1,2,3,4,5,6,7,8]);</span><br><span class="line">// 调用函数</span><br><span class="line">const logList = computed(() =&gt; &#123;</span><br><span class="line">// return list.value.filter(item =&gt; item &gt; 3);</span><br><span class="line">return list.value.filter((item) =&gt; &#123;return item &gt; 3&#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;!--接收变量 --&gt;</span><br><span class="line">&lt;p&gt;&#123;&#123; list &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&#123;&#123; logList &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h4><p>监听器</p>
+<p>基础监听器</p>
+<p>检测到count值发生变化后控制台打印信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref,watch&#125; from &#x27;vue&#x27;;&#x27;&#x27;</span><br><span class="line">const count = ref(0)</span><br><span class="line">watch(count,(newValue,oldValue)=&gt;&#123;</span><br><span class="line">console.log(newValue,oldValue);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;button @click=&quot;count++&quot; &gt;&#123;&#123; count &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="侦听对象开启深度监听"><a href="#侦听对象开启深度监听" class="headerlink" title="侦听对象开启深度监听"></a>侦听对象开启深度监听</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deep</span>:<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref,watch&#125; from &#x27;vue&#x27;;&#x27;&#x27;</span><br><span class="line">const msg = ref(&#123;</span><br><span class="line">const:0</span><br><span class="line">&#125;)</span><br><span class="line">watch(msg,(newValue,oldValue)=&gt;&#123;</span><br><span class="line">console.log(newValue,oldValue);</span><br><span class="line">&#125;,&#123;</span><br><span class="line">deep:true</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;button @click=&quot;msg.const++&quot; &gt;&#123;&#123; msg.const &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="精确监听"><a href="#精确监听" class="headerlink" title="精确监听"></a>精确监听</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref,watch&#125; from &#x27;vue&#x27;;&#x27;&#x27;</span><br><span class="line">const msg = ref(&#123;</span><br><span class="line">// 只监听const</span><br><span class="line">const:0,</span><br><span class="line">age:&#x27;cp&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">watch(</span><br><span class="line">// 精确监听某个属性</span><br><span class="line">()=&gt;msg.value.const,</span><br><span class="line">(newValue,oldValue)=&gt;&#123;</span><br><span class="line">console.log(newValue,oldValue);</span><br><span class="line">&#125;</span><br><span class="line">)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;button @click=&quot;msg.const++&quot; &gt;&#123;&#123; msg.const &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="生命周期onMounted"><a href="#生命周期onMounted" class="headerlink" title="生命周期onMounted"></a>生命周期onMounted</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; onMounted &#125; from &#x27;vue&#x27;;</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">console.log(&#x27;mounted1&#x27;);</span><br><span class="line">&#125;);</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">console.log(&#x27;mounted2&#x27;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;h1&gt;你好&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h4><p>父组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">//导入子组件</span><br><span class="line">import Soncon from &#x27;./components/son-con.vue&#x27;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;h1&gt;这是父组件&lt;/h1&gt;</span><br><span class="line">&lt;Soncon message=&quot;这是传给子组件的数据&quot;&gt;&lt;/Soncon&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 编译器宏函数</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">// 因为setup生命周期太早所以需要使用defineProps编译器宏</span><br><span class="line">message:String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;h1&gt;这是子组件==&#123;&#123; message &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用props接收参数"><a href="#使用props接收参数" class="headerlink" title="使用props接收参数"></a>使用props接收参数</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span><br><span class="line"><span class="comment">// 因为setup生命周期太早所以需要使用defineProps编译器宏</span></span><br><span class="line"><span class="attr">message</span>:<span class="title class_">String</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h4><p>父组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import Soncon from &#x27;./components/son-con.vue&#x27;</span><br><span class="line">const getMessage = (mes)=&gt;&#123;</span><br><span class="line">console.log(mes);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;h1&gt;这是父组件&lt;/h1&gt;</span><br><span class="line">&lt;Soncon message=&quot;这是传给子组件的数据&quot; @get-message=&quot;getMessage&quot;&gt;&lt;/Soncon&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 编译器宏函数</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">// 因为setup生命周期太早所以需要使用defineProps编译器宏</span><br><span class="line">message:String</span><br><span class="line">&#125;)</span><br><span class="line">const emit = defineEmits([&#x27;get-message&#x27;])</span><br><span class="line">const show = ()=&gt;&#123;</span><br><span class="line">emit(&#x27;get-message&#x27;,&#x27;子组件数据&#x27;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;h1&gt;这是子组件==&#123;&#123; message &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;button @click=&quot;show&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取Dom元素"><a href="#获取Dom元素" class="headerlink" title="获取Dom元素"></a>获取Dom元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref,onMounted &#125; from &#x27;vue&#x27;;</span><br><span class="line">const h1Ref = ref(null)</span><br><span class="line">// setup生命周期在早，页面未渲染直接输出不会显示</span><br><span class="line">// 所以换一个生命周期</span><br><span class="line">onMounted(()=&gt;&#123;</span><br><span class="line">console.log(h1Ref.value);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;h1 ref=&quot;h1Ref&quot;&gt;这是根组件&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="defineExpose"><a href="#defineExpose" class="headerlink" title="defineExpose"></a>defineExpose</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;hello world&#x27;</span>);</span><br><span class="line"><span class="title function_">defineExpose</span>(&#123;</span><br><span class="line">msg</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>使用defineExpose再去获取Dom元素才能在跨层获取才能获取到数据</p>
+<p><code>defineExpose</code> 是 Vue 3 中的一个特性，用于向父组件公开子组件的内部状态或方法。通过 <code>defineExpose</code>，子组件可以显式地公开需要暴露给父组件的属性或方法。</p>
+<p>在上述代码中，我们使用 <code>defineExpose</code> 来向父组件暴露了一个名为 <code>msg</code> 的响应式数据。</p>
+<p>下面是一个简单的示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ChildComponent.vue</span></span><br><span class="line"><span class="keyword">import</span> &#123; defineComponent, ref, defineExpose &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineComponent</span>(&#123;</span><br><span class="line"><span class="title function_">setup</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;hello world&#x27;</span>);</span><br><span class="line"><span class="title function_">defineExpose</span>(&#123;</span><br><span class="line">msg</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">msg</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// ParentComponent.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;ChildComponent ref=&quot;childComponent&quot; /&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import ChildComponent from &#x27;./ChildComponent.vue&#x27;;</span><br><span class="line">export default &#123;</span><br><span class="line">mounted() &#123;</span><br><span class="line">console.log(this.$refs.childComponent.msg); // 输出: &quot;hello world&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，子组件通过 <code>defineExpose</code> 公开了 <code>msg</code> 这个数据，然后在父组件中通过 <code>$refs</code> 访问子组件并获取到了 <code>msg</code> 数据。</p>
+<p>这种方式适用于需要在子组件中定义一些内部状态或方法，并且需要在父组件中进行访问或操作时。</p>
+<h4 id="provide和inject"><a href="#provide和inject" class="headerlink" title="provide和inject"></a>provide和inject</h4><p>除了使用上述的方式来跨层传递数据还有一种更便捷的方法那就是provide创建数据和inject接收</p>
+<p><code>provide</code> 和 <code>inject</code> 是 Vue 中用于在父组件和子组件之间跨层级传递数据的一种方式。<code>provide</code> 在父组件中创建数据，而 <code>inject</code> 则在子组件中接收这些数据。</p>
+<p>在父组件中，通过 <code>provide</code> 来提供数据，子组件通过 <code>inject</code> 来注入这些数据。这种方式可以跨越多个嵌套层级，让数据在组件之间更方便地流动。</p>
+<p>下面是一个简单的示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ParentComponent.vue</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line"><span class="attr">provide</span>: &#123;</span><br><span class="line"><span class="attr">message</span>: <span class="string">&#x27;这是来自父组件的消息&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ChildComponent.vue</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line"><span class="attr">inject</span>: [<span class="string">&#x27;message&#x27;</span>],</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">message</span>); <span class="comment">// 输出: &quot;这是来自父组件的消息&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，父组件通过 <code>provide</code> 提供了一个名为 <code>message</code> 的数据，而子组件则通过 <code>inject</code> 注入了这个数据，并在 <code>mounted</code> 钩子中访问了这个数据。</p>
+<p>这种方式比较方便，但需要注意的是，使用 <code>inject</code> 时要确保你知道提供数据的来源，以避免意外的耦合。</p>
+<h4 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h4><p>在Vue3中使用ElementUI需要使用Element-plus</p>
+<p>官网链接:<a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/component/button.html">https://element-plus.org/zh-CN/component/button.html</a></p>
+<p>在对应路径按照依赖</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element-plus --save</span><br></pre></td></tr></table></figure>
+
+<p>也可以选择线上引入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Import style --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;//unpkg.com/element-plus/dist/index.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Import Vue 3 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//unpkg.com/vue@3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Import component library --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//unpkg.com/element-plus&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>详细参考官方文档</p>
+<h3 id="Pinia"><a href="#Pinia" class="headerlink" title="Pinia"></a>Pinia</h3><p>官方文档:<a target="_blank" rel="noopener" href="https://pinia.vuejs.org/zh/getting-started.html">https://pinia.vuejs.org/zh/getting-started.html</a></p>
+<p>安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm cteate vue@latest <span class="comment">#安装最新vue3脚手架</span></span><br><span class="line">yarn add pinia</span><br><span class="line"><span class="comment"># 或者使用 npm</span></span><br><span class="line">npm install pinia</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用get接口获取数据"><a href="#使用get接口获取数据" class="headerlink" title="使用get接口获取数据"></a>使用get接口获取数据</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineStore &#125; <span class="keyword">from</span> <span class="string">&quot;pinia&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; computed&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> useCounterStore= <span class="title function_">defineStore</span>(<span class="string">&#x27;counter&#x27;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line"><span class="comment">//创建变量</span></span><br><span class="line"><span class="keyword">const</span> count=<span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"><span class="comment">// 创建响应式数组</span></span><br><span class="line"><span class="keyword">const</span> arrayr = <span class="title function_">ref</span>([]);</span><br><span class="line"><span class="comment">//创建计算属性</span></span><br><span class="line"><span class="keyword">const</span> logList = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">return</span> count.<span class="property">value</span> \\* <span class="number">2</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//创建方法</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">increment</span>=(<span class="params"></span>)=&gt;&#123;-+</span><br><span class="line">count.<span class="property">value</span>++</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取数据</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fetchData</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> res = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&#x27;http://geek.itheima.net/v1\\_0/channels&#x27;</span>);</span><br><span class="line"><span class="comment">// console.log(res.data.data.channels);</span></span><br><span class="line">arrayr.<span class="property">value</span> = res.<span class="property">data</span>.<span class="property">data</span>.<span class="property">channels</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;res&#x27;</span> + arrayr.<span class="property">value</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//用对象的形式返回</span></span><br><span class="line"><span class="comment">//所有方法和变量都需要返回，否则报错和接收不到</span></span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">count,</span><br><span class="line">logList,</span><br><span class="line">increment,</span><br><span class="line"><span class="comment">// 返回结果</span></span><br><span class="line">fetchData,</span><br><span class="line">arrayr,</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>组件展示数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import sPage from &#x27;./components/store-page.vue&#x27;</span><br><span class="line">import sMsg from &#x27;./components/store-msg.vue&#x27;</span><br><span class="line">//1、导入</span><br><span class="line">import &#123; useCounterStore &#125;from &#x27;./stores/Counter&#x27;</span><br><span class="line">//2、执行方法</span><br><span class="line">const counterStore = useCounterStore()</span><br><span class="line">counterStore.fetchData()</span><br><span class="line">console.log(&#x27;hello:&#x27; + counterStore.arrayr);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li v-for=&quot;item in counterStore.arrayr&quot; :key=&quot;item.id&quot;&gt;&#123;&#123; item.name &#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;button @click=&quot;counterStore.increment&quot;&gt;这是按钮&lt;/button&gt;</span><br><span class="line">&lt;h1&gt;这是父组件==&#123;&#123; counterStore.count &#125;&#125;==&#123;&#123; counterStore.logList&#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;sPage&gt;&lt;/sPage&gt;</span><br><span class="line">&lt;sMsg&gt;&lt;/sMsg&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h3><p>全局安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g pnpm</span><br></pre></td></tr></table></figure>
+
+<p>使用pnpm创建Vue</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm create vue</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">Vue3学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAVue3%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">1.1.</span> <span class="toc-text">创建Vue3脚手架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E5%8D%A1%E4%BD%8F%E4%B8%8D%E5%8A%A8%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">1.2.</span> <span class="toc-text">遇到卡住不动的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue3%E7%9B%B8%E6%AF%94Vue2%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">Vue3相比Vue2的变化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">关键文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E5%8C%96"><span class="toc-number">1.3.2.</span> <span class="toc-text">变化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue3%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">Vue3页面结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%98%E9%87%8F%EF%BC%8C%E5%88%9B%E5%BB%BA%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">创建变量，创建方法，使用变量和方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6API"><span class="toc-number">1.6.</span> <span class="toc-text">组件API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#reative"><span class="toc-number">1.6.1.</span> <span class="toc-text">reative()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ref"><span class="toc-number">1.6.2.</span> <span class="toc-text">ref</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#computed"><span class="toc-number">1.6.3.</span> <span class="toc-text">computed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#watch"><span class="toc-number">1.6.4.</span> <span class="toc-text">watch</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%A6%E5%90%AC%E5%AF%B9%E8%B1%A1%E5%BC%80%E5%90%AF%E6%B7%B1%E5%BA%A6%E7%9B%91%E5%90%AC"><span class="toc-number">1.6.4.1.</span> <span class="toc-text">侦听对象开启深度监听</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B2%BE%E7%A1%AE%E7%9B%91%E5%90%AC"><span class="toc-number">1.6.4.2.</span> <span class="toc-text">精确监听</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9FonMounted"><span class="toc-number">1.6.4.3.</span> <span class="toc-text">生命周期onMounted</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B6%E4%BC%A0%E5%AD%90"><span class="toc-number">1.6.5.</span> <span class="toc-text">父传子</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8props%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0"><span class="toc-number">1.6.5.1.</span> <span class="toc-text">使用props接收参数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E4%BC%A0%E7%88%B6"><span class="toc-number">1.6.6.</span> <span class="toc-text">子传父</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96Dom%E5%85%83%E7%B4%A0"><span class="toc-number">1.6.7.</span> <span class="toc-text">获取Dom元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#defineExpose"><span class="toc-number">1.6.7.1.</span> <span class="toc-text">defineExpose</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#provide%E5%92%8Cinject"><span class="toc-number">1.6.8.</span> <span class="toc-text">provide和inject</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Element"><span class="toc-number">1.6.9.</span> <span class="toc-text">Element</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pinia"><span class="toc-number">1.7.</span> <span class="toc-text">Pinia</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8get%E6%8E%A5%E5%8F%A3%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">1.7.1.</span> <span class="toc-text">使用get接口获取数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pnpm"><span class="toc-number">1.8.</span> <span class="toc-text">pnpm</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&text=Vue3学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&is_video=false&description=Vue3学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vue3学习笔记&body=Check out this article: https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Vue3学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&name=Vue3学习笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/12/13/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&t=Vue3学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

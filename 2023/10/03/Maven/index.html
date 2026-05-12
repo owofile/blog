@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="部署MavenMaven配置1.下载包下载 apache-maven-3.8.1-bin.zip 解压 2.配置环境变量3.修改配置文件在conf-settings.xml里配置你的仓库路径 123456789&lt;settings xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;SETTINGS&#x2F;1.2.0&quot;xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部署Maven">
+<meta property="og:url" content="https://owofile.github.io/blog/2023/10/03/Maven/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="部署MavenMaven配置1.下载包下载 apache-maven-3.8.1-bin.zip 解压 2.配置环境变量3.修改配置文件在conf-settings.xml里配置你的仓库路径 123456789&lt;settings xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;SETTINGS&#x2F;1.2.0&quot;xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-03T03:22:40.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:13.036Z">
+<meta property="article:author" content="Lain">
+<meta property="article:tag" content="框架">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>部署Maven</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2023/10/13/Web/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2022/10/03/MyBatis%E6%A1%86%E6%9E%B6/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/10/03/Maven/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/10/03/Maven/&text=部署Maven"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/10/03/Maven/&is_video=false&description=部署Maven"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=部署Maven&body=Check out this article: https://owofile.github.io/blog/2023/10/03/Maven/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/10/03/Maven/&name=部署Maven&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/10/03/Maven/&t=部署Maven"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Maven"><span class="toc-number">1.</span> <span class="toc-text">部署Maven</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">Maven配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD%E5%8C%85"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.下载包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.配置环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.修改配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-IDEA%E7%BB%91%E5%AE%9AMaven"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.IDEA绑定Maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-IDEA%E9%80%89%E5%8C%85"><span class="toc-number">1.1.5.</span> <span class="toc-text">5.IDEA选包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Artifact-Coordinates%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.6.</span> <span class="toc-text">6.Artifact Coordinates修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%9C%A8Maven%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%AF%A6%E7%BB%86%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AAProperties"><span class="toc-number">1.1.7.</span> <span class="toc-text">7.在Maven项目的详细设置窗口增加一个Properties</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%AE%8C%E6%88%90"><span class="toc-number">1.1.8.</span> <span class="toc-text">8.完成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pom-xml"><span class="toc-number">1.1.9.</span> <span class="toc-text">pom.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90"><span class="toc-number">1.1.10.</span> <span class="toc-text">路径解析</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        部署Maven
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-10-03T03:22:40.000Z" class="dt-published" itemprop="datePublished">2023-10-03</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/blog/tags/%E6%A1%86%E6%9E%B6/" rel="tag">框架</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="部署Maven"><a href="#部署Maven" class="headerlink" title="部署Maven"></a>部署Maven</h1><h2 id="Maven配置"><a href="#Maven配置" class="headerlink" title="Maven配置"></a>Maven配置</h2><h4 id="1-下载包"><a href="#1-下载包" class="headerlink" title="1.下载包"></a>1.下载包</h4><p>下载 apache-maven-3.8.1-bin.zip 解压</p>
+<h4 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h4><h4 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3.修改配置文件"></a>3.修改配置文件</h4><p>在conf-settings.xml里配置你的仓库路径</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.2.0&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- localRepository</span></span><br><span class="line"><span class="comment">| The path to the local repository maven will use to store artifacts.</span></span><br><span class="line"><span class="comment">|</span></span><br><span class="line"><span class="comment">| Default: $&#123;user.home&#125;/.m2/repository</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\maven\apache-maven-3.8.1\repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span> 替换成你要配置的路径</span><br></pre></td></tr></table></figure>
+
+<p>tip:注意，repository文件夹需要自己创建</p>
+<p>然后增加一个阿里云下载</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>maven-default-http-blocker<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>external:http:\\*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>Pseudo repository to mirror external repositories initially using HTTP.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url</span>&gt;</span>http://0.0.0.0/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blocked</span>&gt;</span>true<span class="tag">&lt;/<span class="name">blocked</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-IDEA绑定Maven"><a href="#4-IDEA绑定Maven" class="headerlink" title="4.IDEA绑定Maven"></a>4.IDEA绑定Maven</h4><p>在创建Maven框架项目的时候会弹出路径选择，选择你<strong>环境配置</strong>的那个Maven</p>
+<h4 id="5-IDEA选包"><a href="#5-IDEA选包" class="headerlink" title="5.IDEA选包"></a>5.IDEA选包</h4><p>选择你要创建的包项目 wepapp or String boot</p>
+<h4 id="6-Artifact-Coordinates修改"><a href="#6-Artifact-Coordinates修改" class="headerlink" title="6.Artifact Coordinates修改"></a>6.Artifact Coordinates修改</h4><p>GroupId:根目录</p>
+<p>ArtifactId:每次创建的名称</p>
+<p>version:版本号</p>
+<h4 id="7-在Maven项目的详细设置窗口增加一个Properties"><a href="#7-在Maven项目的详细设置窗口增加一个Properties" class="headerlink" title="7.在Maven项目的详细设置窗口增加一个Properties"></a>7.在Maven项目的详细设置窗口增加一个Properties</h4><p>groupId:<strong>archetypeCatalog</strong></p>
+<p>com.<strong>bqdn:internal</strong></p>
+<h4 id="8-完成"><a href="#8-完成" class="headerlink" title="8.完成"></a>8.完成</h4><p>等待下载 如有报错 点击刷新</p>
+<h4 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h4><p><code>pom.xml</code>是Maven项目的核心配置文件，用于描述项目的构建信息、依赖管理、插件配置等。下面是一个简单的表格，介绍了一些常见的<code>pom.xml</code>节点及其描述：</p>
+<table>
+<thead>
+<tr>
+<th>节点名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>project</code></td>
+<td>根节点，用于定义Maven项目的全局配置。</td>
+</tr>
+<tr>
+<td><code>modelVersion</code></td>
+<td>项目模型的版本号。</td>
+</tr>
+<tr>
+<td><code>groupId</code></td>
+<td>项目所属的组ID。</td>
+</tr>
+<tr>
+<td><code>artifactId</code></td>
+<td>项目ID。</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>项目版本号。</td>
+</tr>
+<tr>
+<td><code>packaging</code></td>
+<td>项目的打包方式，如<code>jar</code>、<code>war</code>等。</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>项目的名称。</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>项目的URL地址。</td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td>项目属性配置，可以在这里定义自定义属性。</td>
+</tr>
+<tr>
+<td><code>dependencies</code></td>
+<td>项目的依赖列表，用于描述项目所依赖的库及其版本号。</td>
+</tr>
+<tr>
+<td><code>dependencyManagement</code></td>
+<td>依赖管理节点，用于集中配置项目中所有依赖的版本号和传递性依赖关系。</td>
+</tr>
+<tr>
+<td><code>build</code></td>
+<td>构建配置节点，用于定义项目的构建过程、插件配置等。</td>
+</tr>
+<tr>
+<td><code>sourceDirectory</code></td>
+<td>项目的源代码目录。</td>
+</tr>
+<tr>
+<td><code>outputDirectory</code></td>
+<td>编译输出目录。</td>
+</tr>
+<tr>
+<td><code>testSourceDirectory</code></td>
+<td>测试源代码目录。</td>
+</tr>
+<tr>
+<td><code>testOutputDirectory</code></td>
+<td>测试编译输出目录。</td>
+</tr>
+<tr>
+<td><code>plugins</code></td>
+<td>插件列表，用于定义项目构建过程中使用的插件及其配置。</td>
+</tr>
+<tr>
+<td><code>pluginManagement</code></td>
+<td>插件管理节点，用于集中配置项目中所有插件的版本号和配置。</td>
+</tr>
+<tr>
+<td><code>profiles</code></td>
+<td>配置文件节点，用于定义不同环境下的项目配置，如开发、测试、生产等。</td>
+</tr>
+<tr>
+<td><code>activeProfiles</code></td>
+<td>激活的配置文件列表，用于指定在构建过程中要使用的配置文件。</td>
+</tr>
+</tbody></table>
+<h4 id="路径解析"><a href="#路径解析" class="headerlink" title="路径解析"></a>路径解析</h4><p>静态文件放在<strong>webapp</strong>下方</p>
+<p>在src创建Java文件夹 用来<strong>实际</strong>运行JAVA WEB 项目</p>
+<p>在src创建Test文件夹 用来<strong>测试</strong>运行JAVA 项目</p>
+<p>在pom.xml导包 无需在webapp下方创建lib文件夹 因为之前设置的阿里云导包目录和Url路径，Maven会自动在阿里云下载相关包</p>
+<p>在src创建 <strong>配置</strong>文件夹</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Maven"><span class="toc-number">1.</span> <span class="toc-text">部署Maven</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">Maven配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD%E5%8C%85"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.下载包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.配置环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.修改配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-IDEA%E7%BB%91%E5%AE%9AMaven"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.IDEA绑定Maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-IDEA%E9%80%89%E5%8C%85"><span class="toc-number">1.1.5.</span> <span class="toc-text">5.IDEA选包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Artifact-Coordinates%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.6.</span> <span class="toc-text">6.Artifact Coordinates修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%9C%A8Maven%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%AF%A6%E7%BB%86%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AAProperties"><span class="toc-number">1.1.7.</span> <span class="toc-text">7.在Maven项目的详细设置窗口增加一个Properties</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%AE%8C%E6%88%90"><span class="toc-number">1.1.8.</span> <span class="toc-text">8.完成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pom-xml"><span class="toc-number">1.1.9.</span> <span class="toc-text">pom.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90"><span class="toc-number">1.1.10.</span> <span class="toc-text">路径解析</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2023/10/03/Maven/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2023/10/03/Maven/&text=部署Maven"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2023/10/03/Maven/&is_video=false&description=部署Maven"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=部署Maven&body=Check out this article: https://owofile.github.io/blog/2023/10/03/Maven/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2023/10/03/Maven/&title=部署Maven"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2023/10/03/Maven/&name=部署Maven&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2023/10/03/Maven/&t=部署Maven"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

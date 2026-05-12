@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="godot学习笔记godot是一个开源的游戏引擎，支持2D 和 3D 的游戏制作 内涵丰富的插件库 节点节点是godot组成的重要部分，一切的基础，不同的节点实现不同的功能 Timer计时器 更改节点的属性通过在节点上创建脚本，可以通过引用脚本的属性做出改变 123#更改节点的属性$Label.text &#x3D; &quot;hello world&quot;$Label.modulate &#x3D; Colo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="godot学习笔记">
+<meta property="og:url" content="https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Lain&#39;s Blog">
+<meta property="og:description" content="godot学习笔记godot是一个开源的游戏引擎，支持2D 和 3D 的游戏制作 内涵丰富的插件库 节点节点是godot组成的重要部分，一切的基础，不同的节点实现不同的功能 Timer计时器 更改节点的属性通过在节点上创建脚本，可以通过引用脚本的属性做出改变 123#更改节点的属性$Label.text &#x3D; &quot;hello world&quot;$Label.modulate &#x3D; Colo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-17T03:01:26.000Z">
+<meta property="article:modified_time" content="2026-05-12T06:03:15.205Z">
+<meta property="article:author" content="Lain">
+<meta property="article:tag" content="godot">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>godot学习笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/blog/2024/07/01/godot%E6%A8%AA%E6%9D%BF%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%8F%B0%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/blog/2024/06/08/%E5%88%9B%E4%B8%9A%E7%9A%84%E4%B8%80%E4%BA%9B%E5%90%AF%E5%8F%91/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&text=godot学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&is_video=false&description=godot学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=godot学习笔记&body=Check out this article: https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&name=godot学习笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&t=godot学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">godot学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8A%82%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">节点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Timer"><span class="toc-number">2.1.</span> <span class="toc-text">Timer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E8%8A%82%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.</span> <span class="toc-text">更改节点的属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF"><span class="toc-number">3.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99"><span class="toc-number">4.</span> <span class="toc-text">脚本编写</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#func-ready"><span class="toc-number">4.1.1.</span> <span class="toc-text">func _ready():</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#func-input-event"><span class="toc-number">4.1.2.</span> <span class="toc-text">func _input(event):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.3.</span> <span class="toc-text">随机函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%82%A8%E5%AD%98"><span class="toc-number">4.1.4.</span> <span class="toc-text">储存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">4.1.4.1.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.1.4.2.</span> <span class="toc-text">对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">4.1.5.</span> <span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86"><span class="toc-number">4.1.6.</span> <span class="toc-text">遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%8A%82%E7%82%B9"><span class="toc-number">4.2.</span> <span class="toc-text">修改节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0"><span class="toc-number">4.3.</span> <span class="toc-text">移动代码学习</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        godot学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Lain</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-06-17T03:01:26.000Z" class="dt-published" itemprop="datePublished">2024-06-17</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/blog/tags/godot/" rel="tag">godot</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="godot学习笔记"><a href="#godot学习笔记" class="headerlink" title="godot学习笔记"></a>godot学习笔记</h1><p>godot是一个开源的游戏引擎，支持2D 和 3D 的游戏制作 内涵丰富的插件库</p>
+<h1 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h1><p>节点是godot组成的重要部分，一切的基础，不同的节点实现不同的功能</p>
+<h2 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h2><p>计时器</p>
+<h2 id="更改节点的属性"><a href="#更改节点的属性" class="headerlink" title="更改节点的属性"></a>更改节点的属性</h2><p>通过在节点上创建脚本，可以通过引用脚本的属性做出改变</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#更改节点的属性</span><br><span class="line">$Label.text = &quot;hello world&quot;</span><br><span class="line">$Label.modulate = Color.AQUAMARINE</span><br></pre></td></tr></table></figure>
+
+<p>这里我在Main里创建了子节点Label，然后在Main节点创建脚本main.gd，通过拖动节点到脚本里，然后更改节点的属性。</p>
+<p>将他将在ready函数里，可以在游戏启动加载的一瞬间，执行脚本一次，然后会把属性设置成我们更改好的样子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func \\_ready():</span><br><span class="line">#更改节点的属性</span><br><span class="line">$Label.text = &quot;hello world&quot;</span><br><span class="line">$Label.modulate = Color.AQUAMARINE</span><br></pre></td></tr></table></figure>
+
+<h1 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h1><p>一个游戏包含多个场景，在场景间不同切换，最终实现无限的可能性</p>
+<p>我们可以把场景看成一个合集，比如今天我想要创建一个人物，那么我新建一个场景，然后增加人物节点，动画节点，物理碰撞检测节点，然后写一个人物移动的脚本。</p>
+<p>将这个场景保存后，我们在新建一个场景，实现背景的渲染和显示，之后将人物场景拖入其中，会发现人物可以在场景中走动了！</p>
+<h1 id="脚本编写"><a href="#脚本编写" class="headerlink" title="脚本编写"></a>脚本编写</h1><p>使用GDscript用来编写重要的游戏逻辑，让资源，精灵，动画在合适的地方播放或者移动。</p>
+<p>通过按住ctrl点击函数，可以直接链接到相关介绍文档</p>
+<p>要注意的是，在GDscript中，是通过缩进的方式来区分</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>这些函数会在不同的状态下，和操作下去自动调用</p>
+<h3 id="func-ready"><a href="#func-ready" class="headerlink" title="func _ready():"></a>func _ready():</h3><p>ready函数将在资源被加载的时候执行一次</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func \\_ready():</span><br><span class="line">pass</span><br></pre></td></tr></table></figure>
+
+<h3 id="func-input-event"><a href="#func-input-event" class="headerlink" title="func _input(event):"></a>func _input(event):</h3><p>当按键被按下时，会调用这个方法，event会保存当前的按键，可以根据按键不同做出判断，比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#当有按钮被按下时调用</span><br><span class="line">func \\_input(event):</span><br><span class="line"># is\\_action\\_pressed 检测按键被按下</span><br><span class="line">if event.is\\_action\\_pressed(&quot;move\\_up&quot;):</span><br><span class="line">$Label.modulate = Color.RED</span><br><span class="line"># is\\_action\\_released 检测按钮被释放</span><br><span class="line">if event.is\\_action\\_released(&quot;move\\_up&quot;):</span><br><span class="line">$Label.modulate = Color.GREEN</span><br><span class="line">pass</span><br></pre></td></tr></table></figure>
+
+<h3 id="随机函数"><a href="#随机函数" class="headerlink" title="随机函数"></a>随机函数</h3><p>这里我通过做一个简单的抽奖来测试随机函数,要注意的是如果需要拼接字符串可以使用str()，否则会报错</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func slot\\_machine():</span><br><span class="line">var roll = randf()</span><br><span class="line">if roll &lt;= <span class="number">0.8</span>:</span><br><span class="line">$roll.text = <span class="string">&quot;谢谢惠顾&quot;</span></span><br><span class="line">else:</span><br><span class="line">#范围内数字的随机</span><br><span class="line">var money = randi\\_range(<span class="name">140</span>,<span class="number">210</span>)</span><br><span class="line">print(<span class="name">money</span>)</span><br><span class="line">$roll.text = <span class="string">&quot;大奖！获得&quot;</span>+str(<span class="name">money</span>)+<span class="string">&quot;金币&quot;</span> <span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="储存"><a href="#储存" class="headerlink" title="储存"></a>储存</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>使用数组存储数据，在GDscript中，数组的类型没有限制，可以同时存储多个类型的数值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var items = [&quot;Potion&quot;,3,6]</span><br></pre></td></tr></table></figure>
+
+<p>亦或者静态定义类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var items: Array[String] = [&quot;Potion&quot;,&quot;Feather&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>使用数组通过索引 index 进行调用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(items[1])</span><br></pre></td></tr></table></figure>
+
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>通过创建对象可以存储数据，并且调用很方便，对象存在键和值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var players = &#123;</span><br><span class="line">&quot;Lain&quot;:1,</span><br><span class="line">&quot;Boss&quot;:100</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(players[&quot;Lain&quot;])</span><br></pre></td></tr></table></figure>
+
+<p>更改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">players[&quot;Lain&quot;] = 50</span><br></pre></td></tr></table></figure>
+
+<p>增加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">players[&quot;AAA&quot;] = 200</span><br></pre></td></tr></table></figure>
+
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enum Alignment &#123;ALLY , NEUTRAL , ENEMY&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>通过for循环遍历数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for item in items:</span><br><span class="line">print(item)</span><br></pre></td></tr></table></figure>
+
+<p>特定次数循环</p>
+<p>循环8次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for n in 8:</span><br><span class="line">print(n)</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改节点"><a href="#修改节点" class="headerlink" title="修改节点"></a>修改节点</h2><p>每次我们修改节点，都是将节点直接拖入脚本，会出现路径，但我们可以通过把节点拖入顶部，然后按ctrl再松开，这样我们会获得一个保存好节点路径的变量。</p>
+<h2 id="移动代码学习"><a href="#移动代码学习" class="headerlink" title="移动代码学习"></a>移动代码学习</h2><p>我的写法</p>
+<p>有Bug</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func \\_process(delta):</span><br><span class="line">if plyyer.position.x &lt; -1290.413:</span><br><span class="line">camera\\_2d.position.x = -1290.413</span><br><span class="line">#if plyyer.position.x &gt; 965.5228:</span><br><span class="line">#camera\\_2d.position.x = 965.5228</span><br><span class="line">else:</span><br><span class="line">camera\\_2d.position = plyyer.position</span><br><span class="line">print(plyyer.position),</span><br></pre></td></tr></table></figure>
+
+<p>AI优化写法</p>
+<p>解决了Bug</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func \\_process(delta):</span><br><span class="line">var camera\\_position = camera\\_2d.position</span><br><span class="line">var target\\_position = plyyer.position</span><br><span class="line">var min\\_x = -1290</span><br><span class="line">var max\\_x = 965</span><br><span class="line">target\\_position.x = clamp(target\\_position.x, min\\_x, max\\_x)</span><br><span class="line">camera\\_position = target\\_position</span><br><span class="line">camera\\_2d.position = camera\\_position</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/blog/">首页</a></li>
+        
+          <li><a href="/blog/about/">关于</a></li>
+        
+          <li><a href="/blog/archives/">归档</a></li>
+        
+          <li><a href="/blog/tags/">tags</a></li>
+        
+          <li><a href="/blog/categories/">categories</a></li>
+        
+          <li><a href="/blog/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">godot学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8A%82%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">节点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Timer"><span class="toc-number">2.1.</span> <span class="toc-text">Timer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E8%8A%82%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.</span> <span class="toc-text">更改节点的属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF"><span class="toc-number">3.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99"><span class="toc-number">4.</span> <span class="toc-text">脚本编写</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#func-ready"><span class="toc-number">4.1.1.</span> <span class="toc-text">func _ready():</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#func-input-event"><span class="toc-number">4.1.2.</span> <span class="toc-text">func _input(event):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.3.</span> <span class="toc-text">随机函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%82%A8%E5%AD%98"><span class="toc-number">4.1.4.</span> <span class="toc-text">储存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">4.1.4.1.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.1.4.2.</span> <span class="toc-text">对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">4.1.5.</span> <span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86"><span class="toc-number">4.1.6.</span> <span class="toc-text">遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%8A%82%E7%82%B9"><span class="toc-number">4.2.</span> <span class="toc-text">修改节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0"><span class="toc-number">4.3.</span> <span class="toc-text">移动代码学习</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&text=godot学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&is_video=false&description=godot学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=godot学习笔记&body=Check out this article: https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=godot学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&name=godot学习笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://owofile.github.io/blog/2024/06/17/godot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&t=godot学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    Lain
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/blog/">首页</a></li><!--
+     --><!--
+       --><li><a href="/blog/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/blog/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/blog/tags/">tags</a></li><!--
+     --><!--
+       --><li><a href="/blog/categories/">categories</a></li><!--
+     --><!--
+       --><li><a href="/blog/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
