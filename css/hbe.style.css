@@ -1,0 +1,181 @@
+.hbe,
+.hbe:after,
+.hbe:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.hbe-container {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 2.5rem auto;
+  padding: 2.5rem 2rem;
+  background: rgba(29, 31, 33, 0.7);
+  border: 1px solid rgba(144, 141, 141, 0.15);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hbe-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hbe-lock-icon {
+  color: rgba(43, 188, 138, 0.6);
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hbe-container:hover .hbe-lock-icon {
+  color: rgba(43, 188, 138, 0.8);
+  transform: scale(1.05);
+}
+
+.hbe-title {
+  font-size: 0.9rem;
+  color: #908d8d;
+  margin: 0 0 1.75rem 0;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+.hbe-form {
+  width: 100%;
+}
+
+.hbe-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.hbe-input-field {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(20, 20, 25, 0.9);
+  border: 1px solid rgba(144, 141, 141, 0.25);
+  border-radius: 6px;
+  color: #c9cacc;
+  font-size: 0.9rem;
+  font-family: "Menlo", "Meslo LG", monospace;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hbe-input-field::placeholder {
+  color: #5a5a5a;
+}
+
+.hbe-input-field:focus {
+  border-color: rgba(43, 188, 138, 0.4);
+  box-shadow: 0 0 0 3px rgba(43, 188, 138, 0.08);
+}
+
+.hbe-button {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, #2bbc8a 0%, #259a70 100%);
+  border: none;
+  border-radius: 6px;
+  color: #1d1f21;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Menlo", "Meslo LG", monospace;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  margin-top: 0.25rem;
+}
+
+.hbe-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(43, 188, 138, 0.25);
+}
+
+.hbe-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(43, 188, 138, 0.15);
+}
+
+.hbe-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.hbe-button[aria-busy="true"]::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.5rem;
+  width: 0.75em;
+  height: 0.75em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: hbe-spin 0.65s linear infinite;
+}
+
+@keyframes hbe-spin {
+  to { transform: rotate(360deg); }
+}
+
+.hbe-error {
+  min-height: 1em;
+  margin-top: 1rem;
+  color: #ff6b6b;
+  font-size: 0.82rem;
+  font-family: "Menlo", "Meslo LG", monospace;
+}
+
+.hbe-error:not(:empty) {
+  background: rgba(255, 107, 107, 0.08);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 107, 107, 0.15);
+}
+
+@media (max-width: 480px) {
+  .hbe-container {
+    margin: 1.5rem 1rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .hbe-title {
+    font-size: 0.85rem;
+  }
+
+  .hbe-input-field,
+  .hbe-button {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .hbe-input-field {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+
+  .hbe-input-field::placeholder {
+    color: #999;
+  }
+
+  .hbe-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .hbe-title {
+    color: #666;
+  }
+
+  .hbe-lock-icon {
+    color: rgba(43, 188, 138, 0.7);
+  }
+}
